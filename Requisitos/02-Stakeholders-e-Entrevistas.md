@@ -3,16 +3,16 @@
 ---
 
 ## 1. Introdução
-Este documento detalha o mapeamento das partes interessadas (stakeholders) envolvidas no **Sistema de Apoio à Internacionalização** da Universidade de Fortaleza (Unifor), bem como o planeamento e os resultados preliminares dos métodos de elicitação (entrevistas e questionários) conduzidos com a equipa do Núcleo de Estratégias Internacionais (NEI) e com os estudantes de graduação.
+Este documento detalha o mapeamento das partes interessadas (stakeholders) envolvidas no Sistema de Apoio à Internacionalização da Universidade de Fortaleza (Unifor), bem como o planeamento e os resultados dos métodos de elicitação (entrevistas e questionários) conduzidos com a equipa do Núcleo de Estratégias Internacionais (NEI) e com os estudantes de graduação.
 
 ---
 
 ## 2. Identificação de Stakeholders
 
-Os stakeholders foram divididos entre beneficiários diretos e indiretos, mapeando os seus papéis, interesses e necessidades no sistema[cite: 7].
+Os stakeholders foram divididos entre beneficiários diretos e indiretos, mapeando os seus papéis, interesses e necessidades no sistema.
 
 ### 2.1 Beneficiários Diretos
-* **Estudantes de Graduação (Candidatos):** Alunos elegíveis (com 30% a 70% do curso concluído, média global $\ge 7,0$ e sem reprovações)[cite: 7, 8]. Necessitam de transparência em editais, facilidade na busca de destinos e acompanhamento claro das suas candidaturas.
+* **Estudantes de Graduação (Candidatos):** Alunos elegíveis (com 30% a 70% do curso concluído, média global superior ou igual a 7,0 e sem reprovações). Necessitam de transparência em editais, facilidade na busca de destinos e acompanhamento claro das suas candidaturas.
 * **Equipe do Núcleo de Estratégias Internacionais (NEI):** Gestores institucionais responsáveis pelas parcerias e editais. Necessitam de automação na análise de elegibilidade, gestão de convênios e emissão de relatórios consolidados.
 * **Alunos Estrangeiros (Incoming):** Estudantes de instituições parceiras estrangeiras que vêm fazer intercâmbio na Unifor. Necessitam de suporte de integração e ambientação.
 
@@ -26,16 +26,16 @@ Os stakeholders foram divididos entre beneficiários diretos e indiretos, mapean
 ## 3. Metodologia de Elicitação de Requisitos
 
 Para levantar as necessidades reais dos utilizadores, a equipa adotou uma abordagem mista baseada em:
-1. **Análise Documental:** Exame de editais anteriores do NEI, páginas institucionais e regulamentos de mobilidade académica da Unifor[cite: 6].
+1. **Análise Documental:** Exame de editais anteriores do NEI, páginas institucionais e regulamentos de mobilidade académica da Unifor.
 2. **Entrevistas semiestruturadas:** Conversas direcionadas com gestores e colaboradores do NEI.
 3. **Questionários eletrónicos:** Formulários aplicados a amostras de estudantes para captar dores na busca por informações de intercâmbio.
 
 ---
 
-## 4. Roteiro de Entrevistas / Questões Orientadoras
+## 4. Roteiro de Entrevistas e Questões Orientadoras
 
 ### 4.1 Com a Equipe do NEI (Gestores)
-* **Q1:** Como é feita atualmente a divulgação de editais e a gestão dos convênios com as mais de 140 instituições parceiras[cite: 2, 4]?
+* **Q1:** Como é feita atualmente a divulgação de editais e a gestão dos convênios com as instituições parceiras?
 * **Q2:** Quais são os maiores gargalos na validação manual dos pré-requisitos dos estudantes (como média académica e histórico sem reprovações)?
 * **Q3:** Como é realizado o acompanhamento dos alunos que já se encontram no exterior e o registo do pós-intercâmbio?
 
@@ -49,5 +49,5 @@ Para levantar as necessidades reais dos utilizadores, a equipa adotou uma aborda
 ## 5. Síntese dos Resultados Obtidos
 
 * **Centralização da Informação:** Constatou-se que a fragmentação de dados em múltiplos locais gera desinformação e sobrecarga de atendimento no NEI.
-* **Automação de Regras:** A validação de elegibilidade baseada em critérios acadêmicos ($\ge 7,0$ de média e 30-70% concluído) deve ser feita de forma automatizada pelo sistema para evitar erros humanos e retrabalho[cite: 8].
-* **Apoio Prévio e Pós:** Há forte demanda por uma central de preparação linguística/cultural e por um espaço de mentoria com ex-alunos (redes de partilha de experiências)[cite: 4, 8].
+* **Automação de Regras:** A validação de elegibilidade baseada em critérios acadêmicos deve ser feita de forma automatizada pelo sistema para evitar erros humanos e retrabalho.
+* **Apoio Prévio e Pós:** Há forte demanda por uma central de preparação linguística/cultural e por um espaço de mentoria com ex-alunos para partilha de experiências.
