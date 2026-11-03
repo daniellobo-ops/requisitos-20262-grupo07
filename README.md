@@ -5,7 +5,7 @@ Repositório oficial do **Grupo 7** para a disciplina de **Requisitos e Modelage
 ## 👥 Integrantes do Grupo 7
 * [Daniel Willian Moura Lobo] - [2612716]
 * [Arthur Cavalcante Melo Teixeira] - [2612652]
-* [Nome do Aluno 3] - [Matrícula]
+* [Andre Eisler Comar] - [2612709]
 
 
 ---
