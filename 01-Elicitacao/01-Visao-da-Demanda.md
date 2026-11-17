@@ -88,6 +88,7 @@ Candidatura formal, notificações, autenticação institucional e elegibilidade
 | F04 | Consultar manifestações próprias | NEC03 | AT01 | Importante | A definir | A definir | RF04, UC04 |
 | F05 | Atualizar situação de manifestações | NEC03 | AT02 | Importante | A definir | A definir | RF05, UC05 |
 | F06 | Editar, encerrar e arquivar oportunidade | NEC02 | AT02 | Importante | A definir | A definir | RF06, UC01 |
+| F07 | Identificar perfil para acesso a funções restritas | NEC02/NEC03 | AT01, AT02 | Essencial (suporte) | A definir | A definir | RF07, UC06 |
 
 Prioridade, valor e frequência são preliminares e devem ser revisados com participantes reais ou com o professor.
 
