@@ -22,7 +22,7 @@ Especificação de um sistema web responsivo para a **gestão de oportunidades i
 
 ### Produto mínimo (MVP)
 
-Cadastro, edição e divulgação de oportunidades por um responsável autorizado; consulta e filtragem de editais e bolsas; visualização de requisitos, prazos e documentos; registro de **manifestação de interesse** pelo estudante e acompanhamento da situação desse registro (RF01 a RF06).
+Cadastro, edição e divulgação de oportunidades por um responsável autorizado; consulta e filtragem de editais e bolsas; visualização de requisitos, prazos e documentos; registro de **manifestação de interesse** pelo estudante e acompanhamento da situação desse registro (RF01 a RF07).
 
 A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. O protótipo adotará fluxos propostos de identificação por perfil, cadastro de oportunidades e acompanhamento de interesse; seus detalhes permanecem decisões acadêmicas, não regras institucionais confirmadas.
 
@@ -41,9 +41,9 @@ Rede social de intercambistas, relatos e troca de idiomas; portal institucional 
 | 01 | [Documento de Visão](01-Elicitacao/01-Visao-da-Demanda.md) | Problema, objetivos, escopo, usuários, necessidades e pendências | ✅ Rascunho elaborado |
 | 02 | [Identificação de Stakeholders](01-Elicitacao/02-Stakeholders.md) | Interessados, papéis, influência e plano de levantamento | ✅ Rascunho elaborado |
 | 03 | [Roteiro e resultados de entrevistas](01-Elicitacao/03-Entrevistas-Simuladas.md) | Perguntas e respostas **simuladas**, sem entrevistas reais | ✅ Entrevistas simuladas realizadas no exercício acadêmico |
-| 04 | [Requisitos Funcionais](02-Requisitos/01-Requisitos-Funcionais.md) | RF01–RF06, prioridades e critérios de aceitação | ✅ Rascunho elaborado |
+| 04 | [Requisitos Funcionais](02-Requisitos/01-Requisitos-Funcionais.md) | RF01–RF07, prioridades e critérios de aceitação | ✅ Rascunho elaborado |
 | 05 | [Requisitos Não Funcionais](02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Qualidade, segurança, desempenho, acessibilidade e verificações propostas | ✅ Rascunho elaborado |
-| 06 | [Regras de Negócio](02-Requisitos/03-Regras-de-Negocio.md) | RN01–RN06 e vínculos com os requisitos | ✅ Rascunho elaborado |
+| 06 | [Regras de Negócio](02-Requisitos/03-Regras-de-Negocio.md) | RN01–RN09 e vínculos com os requisitos | ✅ Rascunho elaborado |
 | 07 | [Backlog Priorizado](GestaoConfiguracao/01-Backlog-Priorizado.md) | Histórias de usuário e priorização MoSCoW proposta | ✅ Rascunho elaborado |
 | 08 | [UML — Casos de Uso](03-UML/01-Casos-de-Uso.md) | Atores, funcionalidades e fluxos iniciais | 🟡 Fonte PlantUML pronta; revisar/exportar |
 | 09 | [UML — Componentes](03-UML/02-Componentes.md) | Componentes lógicos e dependências propostas | 🟡 Fonte PlantUML pronta; revisar/exportar |
