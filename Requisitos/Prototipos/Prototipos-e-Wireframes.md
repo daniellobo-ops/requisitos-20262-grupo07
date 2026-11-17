@@ -183,4 +183,4 @@ Especifica a interface do **Sistema de Apoio à Internacionalização** da Unifo
 ## 5. Próximos passos
 1. Reproduzir T1 a T6 no Figma e vincular o link acima.
 2. Validar T1 a T3 com estudantes e T5 e T6 com o NEI.
-3. Registrar os ajustes nas pendências do documento [09](09-Premissas-Decisoes-e-Fontes.md).
+3. Registrar os ajustes nas pendências do documento [09](../Artefatos/Premissas-Decisoes-e-Fontes.md).
