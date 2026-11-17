@@ -24,7 +24,7 @@ Especificação de um sistema web responsivo para a **gestão de oportunidades i
 
 Cadastro, edição e divulgação de oportunidades por um responsável autorizado; consulta e filtragem de editais e bolsas; visualização de requisitos, prazos e documentos; registro de **manifestação de interesse** pelo estudante e acompanhamento da situação desse registro (RF01 a RF06).
 
-A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. Papéis institucionais e regras detalhadas ainda exigem validação.
+A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. O protótipo adotará fluxos propostos de identificação por perfil, cadastro de oportunidades e acompanhamento de interesse; seus detalhes permanecem decisões acadêmicas, não regras institucionais confirmadas.
 
 ### Fora do escopo desta especificação
 
@@ -40,7 +40,7 @@ Rede social de intercambistas, relatos e troca de idiomas; portal institucional 
 | :-: | :--- | :--- | :--- |
 | 01 | [Documento de Visão](01-Elicitacao/01-Visao-da-Demanda.md) | Problema, objetivos, escopo, usuários, necessidades e pendências | ✅ Rascunho elaborado |
 | 02 | [Identificação de Stakeholders](01-Elicitacao/02-Stakeholders.md) | Interessados, papéis, influência e plano de levantamento | ✅ Rascunho elaborado |
-| 03 | [Roteiro e resultados de entrevistas](01-Elicitacao/03-Entrevistas-Simuladas.md) | Perguntas e respostas **simuladas**, sem entrevistas reais | 🟡 Simulação produzida; aceite do professor a confirmar |
+| 03 | [Roteiro e resultados de entrevistas](01-Elicitacao/03-Entrevistas-Simuladas.md) | Perguntas e respostas **simuladas**, sem entrevistas reais | ✅ Entrevistas simuladas realizadas no exercício acadêmico |
 | 04 | [Requisitos Funcionais](02-Requisitos/01-Requisitos-Funcionais.md) | RF01–RF06, prioridades e critérios de aceitação | ✅ Rascunho elaborado |
 | 05 | [Requisitos Não Funcionais](02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Qualidade, segurança, desempenho, acessibilidade e verificações propostas | ✅ Rascunho elaborado |
 | 06 | [Regras de Negócio](02-Requisitos/03-Regras-de-Negocio.md) | RN01–RN06 e vínculos com os requisitos | ✅ Rascunho elaborado |
@@ -64,7 +64,7 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 | :--- | :-: | :--- | :--- |
 | Especificação (completude e clareza) | 30% | 01, 04–07 | 🟡 Rascunhos prontos; revisão e validação pendentes |
 | Modelagem UML | 25% | 08–10 | 🟡 Diagramas descritos em Mermaid/PlantUML; revisão e exportação pendentes |
-| Elicitação (entrevistas e questionários) | 20% | 02–03 | 🟡 **Entrevistas simuladas**, não pesquisa de campo |
+| Elicitação (entrevistas e questionários) | 20% | 02–03 | ✅ Entrevistas simuladas realizadas, não pesquisa de campo |
 | Protótipos (qualidade e usabilidade) | 15% | 2ª entrega | ⬜ Ainda não iniciada |
 | Apresentação (defesa e comunicação) | 10% | 3ª entrega | ⬜ Ainda não iniciada |
 
@@ -85,4 +85,4 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 * [LAPIS — Engenharia de Requisitos (repositório de referência do professor)](https://github.com/marcelobezerra-dotcom/Lapis-unifor).
 * [Templates de requisitos do LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/tree/main/Requisitos/Artefatos/Templates).
 
-**Nota:** os roteiros e resultados de entrevistas deste repositório são construções fictícias para o exercício acadêmico. Sua aceitação como substitutos de entrevistas reais ainda precisa ser confirmada com o professor.
+**Nota:** os roteiros e resultados de entrevistas deste repositório são construções fictícias para o exercício acadêmico. A modalidade simulada foi informada pelo grupo como definida para esta entrega; isso não transforma as respostas em dados obtidos de participantes reais.
