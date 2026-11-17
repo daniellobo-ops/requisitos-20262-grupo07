@@ -8,7 +8,7 @@
 ## 2. Atores
 | Ator | Descrição | Situação |
 | --- | --- | --- |
-| Estudante | Consulta oportunidades e registra/acompaha manifestações | Proposto |
+| Estudante | Consulta oportunidades e registra/acompanha manifestações | Proposto |
 | Gestor de oportunidades | Cadastra, publica, edita e encerra oportunidades; acompanha interesses | Papel institucional real a confirmar |
 
 ## 3. Catálogo de casos de uso
@@ -74,7 +74,7 @@ G -- UC06
 | --- | --- | --- | --- | --- |
 | UC01 | Gestor autorizado | Informar oportunidade; validar campos; salvar/publicar | Campos faltantes; edição ou encerramento | Oportunidade cadastrada/publicada ou arquivada |
 | UC02 | Nenhuma para consulta pública proposta | Consultar lista; filtrar; abrir detalhes | Nenhum resultado | Exibição de prazo, requisitos e documentos |
-| UC03 | Estudante identificado; oportunidade aberta | Escolher oportunidade; solicitar manifestação; confirmar | Prazo encerrado; manifestação duplicada (regra ainda a definir) | Manifestação registrada; aviso de que não é inscrição |
+| UC03 | Estudante identificado; oportunidade aberta | Escolher oportunidade; solicitar manifestação; confirmar | Prazo encerrado; manifestação ativa duplicada (RN07; mostrar registro existente) | Manifestação registrada; aviso de que não é inscrição |
 | UC04 | Estudante identificado | Abrir meus interesses; listar situação | Sem interesses | Exibição apenas dos registros próprios |
 | UC05 | Gestor autorizado | Consultar manifestações; selecionar registro; atualizar situação (Registrado, Em acompanhamento, Encerrado) | Registro inexistente ou acesso negado | Situação e histórico atualizados |
 | UC06 | Usuário inicia sessão no protótipo | Selecionar perfil de estudante/gestor para demonstrar o fluxo autorizado | Perfil não selecionado; operação vedada | Área correspondente exibida |
@@ -84,7 +84,7 @@ G -- UC06
 ## 7. Verificações antes de aprovação
 - [ ] Confirmar o papel de gestor e quais campos são exigidos.
 - [ ] Validar os estados propostos de oportunidade e manifestação e a regra de duplicidade.
-- [ ] Conferir fluxos com responsáveis reais ou obter anuência do professor para a simulação.
+- [ ] Conferir fluxos com responsáveis reais, quando necessário; o grupo informou que a entrega acadêmica usará simulação.
 - [ ] Gerar imagem UML a partir do PlantUML, caso a entrega exija arquivo gráfico.
 
 [RF](../02-Requisitos/01-Requisitos-Funcionais.md) · [RN](../02-Requisitos/03-Regras-de-Negocio.md) · [Visão](../01-Elicitacao/01-Visao-da-Demanda.md)
