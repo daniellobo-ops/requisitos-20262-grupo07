@@ -1,41 +1,88 @@
-# Gestão de Oportunidades Internacionais — Grupo 7
+# 🌍 Gestão de Oportunidades Internacionais — Unifor
 
-Projeto acadêmico da disciplina **Requisitos e Modelagem de Sistemas**, Universidade de Fortaleza (Unifor), semestre 2026.2.
+Repositório do **Grupo 7** da disciplina **Requisitos e Modelagem de Sistemas** (Semestre 2026.2), Universidade de Fortaleza (Unifor). Projeto acadêmico voltado à internacionalização e à organização de oportunidades de mobilidade estudantil.
 
-**Escopo:** exclusivamente a **Proposta 3 — Gestão de Oportunidades Internacionais**, conforme orientação de reconstrução do grupo. O objetivo é facilitar a divulgação e a consulta de editais, bolsas, requisitos, prazos e documentos, além do registro e acompanhamento de **manifestações de interesse**. O registro de interesse **não é inscrição formal** e não representa seleção ou concessão de bolsa.
+## 👥 Integrantes
 
-## Entrega 1 — Documentação de requisitos e modelagem inicial
+| Nome | Matrícula |
+| :--- | :--- |
+| Daniel Willian Moura Lobo | 2612716 |
+| Arthur Cavalcante Melo Teixeira | 2612652 |
+| Andre Eisler Comar | 2612709 |
 
-| Área | Artefato | Estado |
-| --- | --- | --- |
-| Elicitação | [Visão da Demanda](01-Elicitacao/01-Visao-da-Demanda.md) | Rascunho |
-| Elicitação | [Stakeholders](01-Elicitacao/02-Stakeholders.md) | Rascunho |
-| Elicitação | [Roteiro e resultados de entrevistas simuladas](01-Elicitacao/03-Entrevistas-Simuladas.md) | Simulação didática |
-| Requisitos | [Requisitos funcionais (RF01–RF06)](02-Requisitos/01-Requisitos-Funcionais.md) | Rascunho |
-| Requisitos | [Requisitos não funcionais (RNF01–RNF07)](02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Rascunho |
-| Requisitos | [Regras de negócio (RN01–RN06)](02-Requisitos/03-Regras-de-Negocio.md) | Rascunho |
-| Gestão | [Backlog priorizado](GestaoConfiguracao/01-Backlog-Priorizado.md) | Proposta de priorização |
-| UML | [Diagrama de casos de uso](03-UML/01-Casos-de-Uso.md) | Proposta |
-| UML | [Diagrama de componentes](03-UML/02-Componentes.md) | Proposta |
-| UML | [Diagrama de implantação](03-UML/03-Implantacao.md) | Proposta |
+---
 
-Os diagramas possuem prévias em Mermaid e **código PlantUML para gerar as imagens na notação UML apropriada**. As imagens exportadas ainda não foram produzidas.
+## 🎯 Sobre o projeto
 
-## Entregas posteriores
-- **Entrega 2 — Prototipação:** telas e navegação baseadas nos requisitos aprovados.
-- **Entrega 3 — Pitch:** apresentação final do problema, proposta e benefícios.
+Especificação de um sistema web responsivo para a **gestão de oportunidades internacionais**, tomando como base **exclusivamente a Proposta 3 — Gestão de Oportunidades Internacionais** do material da disciplina. A solução proposta busca tornar mais acessível e organizado o acompanhamento de **editais, bolsas e oportunidades de mobilidade**, incluindo informações sobre requisitos, prazos e documentação necessária.
 
-Não confundir esta entrega com software desenvolvido ou sistema implantado.
+**Problema investigado:** como tornar mais acessível e organizado o acompanhamento de editais, bolsas e oportunidades de mobilidade?
 
-## Evidências e validação
-**Nenhuma entrevista presencial ou remota foi realizada para esta reconstrução.** O roteiro e os resultados são **inteiramente simulados**, com personagens fictícios e hipóteses. Não constituem pesquisa com usuários nem validação institucional. É necessário verificar com o professor se a simulação atende ao critério de avaliação e revisar as hipóteses, regras e metas antes de qualquer declaração de aprovação.
+**Proposta de origem:** *3 — Gestão de Oportunidades Internacionais*. As funcionalidades das propostas 1 (*Conecta Intercâmbio*) e 4 (*Portal de Internacionalização*) não fazem parte deste recorte.
 
-## Referência metodológica
-- [LAPIS — repositório do professor](https://github.com/marcelobezerra-dotcom/Lapis-unifor)
-- [Templates de engenharia de requisitos](https://github.com/marcelobezerra-dotcom/Lapis-unifor/tree/main/Requisitos/Artefatos/Templates)
+### Produto mínimo (MVP)
 
-## Convenções
-- RF = requisito funcional; RNF = requisito não funcional; RN = regra de negócio.
-- UC = caso de uso; US = história de usuário; NEC = necessidade; AT = ator.
-- Prioridades e critérios de verificação são propostas acadêmicas pendentes de revisão.
-- As versões anteriores permanecem preservadas no histórico da branch `main` e na branch `docs/adaptacao-modelo-lapis`. Esta branch é a reconstrução e deve passar por revisão antes de integração.
+Cadastro, edição e divulgação de oportunidades por um responsável autorizado; consulta e filtragem de editais e bolsas; visualização de requisitos, prazos e documentos; registro de **manifestação de interesse** pelo estudante e acompanhamento da situação desse registro (RF01 a RF06).
+
+A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. Papéis institucionais e regras detalhadas ainda exigem validação.
+
+### Fora do escopo desta especificação
+
+Rede social de intercambistas, relatos e troca de idiomas; portal institucional amplo; autoavaliação automática de elegibilidade; envio e avaliação de candidaturas formais; seleção e concessão de bolsas; integrações institucionais não confirmadas. A prototipação e o pitch são entregas posteriores à documentação da primeira etapa.
+
+---
+
+## 📦 Entregáveis
+
+### 1ª entrega — Elicitação, definição de requisitos e modelagem UML inicial
+
+| # | Documento | Conteúdo | Status |
+| :-: | :--- | :--- | :--- |
+| 01 | [Documento de Visão](01-Elicitacao/01-Visao-da-Demanda.md) | Problema, objetivos, escopo, usuários, necessidades e pendências | ✅ Rascunho elaborado |
+| 02 | [Identificação de Stakeholders](01-Elicitacao/02-Stakeholders.md) | Interessados, papéis, influência e plano de levantamento | ✅ Rascunho elaborado |
+| 03 | [Roteiro e resultados de entrevistas](01-Elicitacao/03-Entrevistas-Simuladas.md) | Perguntas e respostas **simuladas**, sem entrevistas reais | 🟡 Simulação produzida; aceite do professor a confirmar |
+| 04 | [Requisitos Funcionais](02-Requisitos/01-Requisitos-Funcionais.md) | RF01–RF06, prioridades e critérios de aceitação | ✅ Rascunho elaborado |
+| 05 | [Requisitos Não Funcionais](02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Qualidade, segurança, desempenho, acessibilidade e verificações propostas | ✅ Rascunho elaborado |
+| 06 | [Regras de Negócio](02-Requisitos/03-Regras-de-Negocio.md) | RN01–RN06 e vínculos com os requisitos | ✅ Rascunho elaborado |
+| 07 | [Backlog Priorizado](GestaoConfiguracao/01-Backlog-Priorizado.md) | Histórias de usuário e priorização MoSCoW proposta | ✅ Rascunho elaborado |
+| 08 | [UML — Casos de Uso](03-UML/01-Casos-de-Uso.md) | Atores, funcionalidades e fluxos iniciais | 🟡 Fonte PlantUML pronta; revisar/exportar |
+| 09 | [UML — Componentes](03-UML/02-Componentes.md) | Componentes lógicos e dependências propostas | 🟡 Fonte PlantUML pronta; revisar/exportar |
+| 10 | [UML — Implantação](03-UML/03-Implantacao.md) | Nós e ambiente de implantação hipotético | 🟡 Fonte PlantUML pronta; revisar/exportar |
+
+### Entregas seguintes
+
+- **2ª entrega — Prototipação:** elaboração das telas e do fluxo de navegação com base nos requisitos revisados.
+- **3ª entrega — Pitch:** apresentação do problema, da proposta de solução e dos benefícios esperados.
+
+---
+
+## ✅ Cobertura dos critérios de avaliação
+
+Os **pesos abaixo foram mantidos como referência do README antigo**; precisam ser conferidos com as orientações atuais do professor. A primeira entrega foi definida pelos dez artefatos obrigatórios listados acima.
+
+| Critério | Peso (referência anterior) | Onde está | Situação |
+| :--- | :-: | :--- | :--- |
+| Especificação (completude e clareza) | 30% | 01, 04–07 | 🟡 Rascunhos prontos; revisão e validação pendentes |
+| Modelagem UML | 25% | 08–10 | 🟡 Diagramas descritos em Mermaid/PlantUML; revisão e exportação pendentes |
+| Elicitação (entrevistas e questionários) | 20% | 02–03 | 🟡 **Entrevistas simuladas**, não pesquisa de campo |
+| Protótipos (qualidade e usabilidade) | 15% | 2ª entrega | ⬜ Ainda não iniciada |
+| Apresentação (defesa e comunicação) | 10% | 3ª entrega | ⬜ Ainda não iniciada |
+
+---
+
+## 🧩 Convenções do repositório
+
+* **Idioma:** português do Brasil em todos os documentos.
+* **Identificadores:** `RF` requisito funcional, `RNF` requisito não funcional, `RN` regra de negócio, `US` história de usuário, `UC` caso de uso, `NEC` necessidade e `AT` ator.
+* **Hipótese x confirmado:** informações não verificadas são identificadas como **hipóteses**, **propostas** ou **pendências**. As entrevistas são **inteiramente simuladas** e não representam validação pela Unifor.
+* **Diagramas:** prévias em [Mermaid](https://mermaid.js.org/) para visualização no GitHub e fontes em PlantUML para exportação em notação UML.
+* **Numeração dos arquivos:** `NN-Nome-do-Documento.md`, organizados por área na raiz do repositório.
+* **Organização do trabalho:** [Issues da primeira entrega](https://github.com/daniellobo-ops/requisitos-20262-grupo07/issues) registram a revisão dos artefatos.
+
+## 📚 Fontes
+
+* Material didático da disciplina *Requisitos e Modelagem de Sistemas*, Unifor 2026.2: **Proposta 3 — Gestão de Oportunidades Internacionais**.
+* [LAPIS — Engenharia de Requisitos (repositório de referência do professor)](https://github.com/marcelobezerra-dotcom/Lapis-unifor).
+* [Templates de requisitos do LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/tree/main/Requisitos/Artefatos/Templates).
+
+**Nota:** os roteiros e resultados de entrevistas deste repositório são construções fictícias para o exercício acadêmico. Sua aceitação como substitutos de entrevistas reais ainda precisa ser confirmada com o professor.
