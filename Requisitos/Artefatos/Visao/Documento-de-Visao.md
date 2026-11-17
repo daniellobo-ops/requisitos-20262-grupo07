@@ -5,7 +5,7 @@
 | 0.1 | — | Grupo 7 | Primeira versão |
 | 0.2 | 2026-11-03 | Grupo 7 | Padronização em pt-BR, objetivos e indicadores, escopo (MVP e fora de escopo), premissas e restrições |
 
-> **Status:** rascunho para validação com o NEI. Informações ainda não confirmadas estão marcadas como **hipótese** ou **TBC** (ver [`09-Premissas-Decisoes-e-Fontes.md`](09-Premissas-Decisoes-e-Fontes.md)).
+> **Status:** rascunho para validação com o NEI. Informações ainda não confirmadas estão marcadas como **hipótese** ou **TBC** (ver [`09-Premissas-Decisoes-e-Fontes.md`](../Premissas-Decisoes-e-Fontes.md)).
 
 ---
 
@@ -18,7 +18,7 @@ Este documento define a visão geral, os objetivos, o público-alvo, os problema
 O sistema abrange a pesquisa de convênios com instituições parceiras, a autoavaliação de elegibilidade, a central de preparação dos candidatos (idiomas, cultura e planejamento financeiro), a gestão de candidaturas e bolsas pelo NEI e, em etapas posteriores, funcionalidades colaborativas e de pós-intercâmbio (relatos, mentoria, Tandem e aproveitamento de créditos). O recorte do que entra no produto mínimo está na seção 6.
 
 ### 1.3 Documentos relacionados
-[`03-Especificacao-SRS.md`](03-Especificacao-SRS.md) · [`04-Modelagem-UML.md`](04-Modelagem-UML.md) · [`07-Glossario.md`](07-Glossario.md) · [`09-Premissas-Decisoes-e-Fontes.md`](09-Premissas-Decisoes-e-Fontes.md)
+[`03-Especificacao-SRS.md`](../../Especificacao/SRS.md) · [`04-Modelagem-UML.md`](../../Especificacao-de-Casos-de-Uso/Modelagem-UML.md) · [`07-Glossario.md`](../Glossario/Glossario.md) · [`09-Premissas-Decisoes-e-Fontes.md`](../Premissas-Decisoes-e-Fontes.md)
 
 ---
 
@@ -68,7 +68,7 @@ As informações sobre editais, requisitos e instituições parceiras estão dis
 * **Coordenador de curso:** acompanha alunos em mobilidade e valida a equivalência de disciplinas e o aproveitamento de créditos.
 * **Aluno estrangeiro (incoming):** usuário do módulo colaborativo (Tandem); suas necessidades de integração são investigadas, mas ele não participa do MVP.
 
-O mapa completo de stakeholders está em [`02-Stakeholders-e-Entrevistas.md`](02-Stakeholders-e-Entrevistas.md).
+O mapa completo de stakeholders está em [`02-Stakeholders-e-Entrevistas.md`](../../Elicitacao/Stakeholders-e-Entrevistas.md).
 
 ### 5.2 Critérios de elegibilidade do estudante (fonte: apresentação do projeto; confirmar com o NEI)
 Matrícula ativa, entre 30% e 70% do curso concluído, média global igual ou superior a 7,0 e ausência de reprovações (**TBC-01**: período considerado).
@@ -106,4 +106,4 @@ Fórum de dúvidas e agenda de eventos (RF16), integração com agências de via
 ### 7.2 Premissas e dependências
 * A origem dos dados acadêmicos usados na elegibilidade (média, percentual concluído, reprovações) ainda não está definida (**TBC-02**). O sistema depende de integração, importação ou comprovação documental.
 * As integrações com plataformas institucionais e o uso de dados pessoais dependem de autorização e da observância da LGPD, conforme o material de apoio da disciplina.
-* A lista completa de premissas está em [`09-Premissas-Decisoes-e-Fontes.md`](09-Premissas-Decisoes-e-Fontes.md).
+* A lista completa de premissas está em [`09-Premissas-Decisoes-e-Fontes.md`](../Premissas-Decisoes-e-Fontes.md).
