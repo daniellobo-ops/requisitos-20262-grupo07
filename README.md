@@ -14,11 +14,11 @@ Repositório do **Grupo 7** da disciplina **Requisitos e Modelagem de Sistemas**
 
 ## 🎯 Sobre o projeto
 
-Especificação de um sistema web responsivo para a **gestão de oportunidades internacionais**, tomando como base **exclusivamente a Proposta 3 — Gestão de Oportunidades Internacionais** do material da disciplina. A solução proposta busca tornar mais acessível e organizado o acompanhamento de **editais, bolsas e oportunidades de mobilidade**, incluindo informações sobre requisitos, prazos e documentação necessária.
+Especificação de um sistema web responsivo para a **gestão de oportunidades internacionais**, desenvolvido com base na **Proposta 3 — Gestão de Oportunidades Internacionais** do material da disciplina. A solução proposta busca tornar mais acessível e organizado o acompanhamento de **editais, bolsas e oportunidades de mobilidade**, incluindo informações sobre requisitos, prazos e documentação necessária.
 
 **Problema investigado:** como tornar mais acessível e organizado o acompanhamento de editais, bolsas e oportunidades de mobilidade?
 
-**Proposta de origem:** *3 — Gestão de Oportunidades Internacionais*. As funcionalidades das propostas 1 (*Conecta Intercâmbio*) e 4 (*Portal de Internacionalização*) não fazem parte deste recorte.
+**Proposta de origem:** O projeto tem como base a **Proposta 3 — Gestão de Oportunidades Internacionais**, apresentada no material da disciplina de Requisitos e Modelagem de Sistemas da Unifor. A solução busca facilitar a divulgação, a consulta e o acompanhamento de editais, bolsas e oportunidades de mobilidade acadêmica internacional.
 
 ### Produto mínimo (MVP)
 
@@ -28,7 +28,7 @@ A manifestação de interesse **não substitui inscrição formal**, seleção o
 
 ### Fora do escopo desta especificação
 
-Rede social de intercambistas, relatos e troca de idiomas; portal institucional amplo; autoavaliação automática de elegibilidade; envio e avaliação de candidaturas formais; seleção e concessão de bolsas; integrações institucionais não confirmadas. A prototipação e o pitch são entregas posteriores à documentação da primeira etapa.
+Processos de inscrição e avaliação formal de candidaturas, classificação e seleção de estudantes, concessão de bolsas, verificação automática de elegibilidade e integrações com sistemas institucionais que ainda não tenham sido confirmadas. A prototipação e o pitch são entregas posteriores à documentação da primeira etapa.
 
 ---
 
