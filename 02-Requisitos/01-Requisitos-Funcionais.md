@@ -14,8 +14,11 @@ Cadastro e divulgação de editais/oportunidades de mobilidade e bolsas, consult
 | RF04 | O estudante autenticado deve consultar suas próprias manifestações e a situação de cada uma. | Should | Proposta 3 / H05 (simulação) | Usuário vê apenas seus registros e respectivos estados. |
 | RF05 | O gestor autorizado deve consultar manifestações de interesse e atualizar sua situação com registro de responsável e data. | Should | Proposta 3 / H10 (simulação) | Atualização altera o estado e preserva histórico mínimo, sem decidir seleção ou concessão de bolsa. |
 | RF06 | O gestor autorizado deve editar, encerrar ou arquivar oportunidades, mantendo o registro de manifestações existentes. | Should | Proposta 3 / H07–H09 (simulação) | Oportunidade encerrada não recebe novo interesse; registros anteriores permanecem disponíveis a usuários autorizados. |
+| RF07 | O sistema deve permitir que estudantes e gestores acessem seus fluxos mediante identificação simulada por perfil no protótipo; a implementação real do login permanece a definir. | Must (apoio aos fluxos) | Pré-condições de RF01/RF03/RF04/RF05 | Um estudante não vê operações do gestor; gestor não acessa interesses como estudante sem sessão adequada. |
 
-**Nota de escopo:** autenticação é pré-condição dos fluxos com dados pessoais. Forma de login institucional/conta local **a definir**, sem presumir integração institucional.
+**Nota de escopo:** autenticação é pré-condição dos fluxos com dados pessoais. Para o **protótipo**, a entrada por perfil pode ser simulada (sem credenciais reais). A forma de login de um sistema implantado — institucional ou local — permanece **a definir** e não pressupõe integração institucional.
+
+**Estados e limites propostos para o protótipo:** oportunidade: **Rascunho → Publicada → Encerrada/Arquivada**; manifestação: **Registrado → Em acompanhamento → Encerrado**. O estudante pode manter **uma manifestação ativa por oportunidade**; tentar registrar novamente exibe o interesse já existente. “Em acompanhamento” significa apenas acompanhamento de interesse, nunca deferimento, seleção ou concessão de bolsa. Não são regras institucionais confirmadas.
 
 ## 3. Regras de qualidade e negócio
 [RNF](02-Requisitos-Nao-Funcionais.md) · [RN](03-Regras-de-Negocio.md) · [Visão](../01-Elicitacao/01-Visao-da-Demanda.md).
@@ -29,9 +32,11 @@ Cadastro e divulgação de editais/oportunidades de mobilidade e bolsas, consult
 | RF04 | NEC03 | UC04 | H05 |
 | RF05 | NEC03 | UC05 | H10 |
 | RF06 | NEC02 | UC01 | H07–H09 |
+| RF07 | NEC02/NEC03 | UC06 | Pré-condição de perfil |
 
 ## 5. Pendências
 - [ ] Confirmar se manifestação de interesse é registrada pelo sistema e sua relação com inscrições formais.
-- [ ] Confirmar os papéis e permissões institucionais.
+- [ ] Confirmar os papéis, permissões institucionais e tecnologia de autenticação real.
+- [ ] Validar os estados e a regra proposta de uma manifestação ativa por oportunidade.
 - [ ] Confirmar campos obrigatórios, categorias e regras de prazo.
 - [ ] Revisar requisitos com professor e/ou responsáveis reais.
