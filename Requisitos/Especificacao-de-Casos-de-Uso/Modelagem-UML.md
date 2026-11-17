@@ -16,7 +16,7 @@ Os diagramas usam [Mermaid](https://mermaid.js.org/) e são renderizados diretam
 ---
 
 ## 1. Introdução
-Os modelos representam os atores, os fluxos de casos de uso, a estrutura de dados, o comportamento do processo seletivo e a arquitetura sugerida da solução. Eles derivam dos requisitos da [SRS](03-Especificacao-SRS.md) e podem ser rastreados na [matriz de rastreabilidade](08-Rastreabilidade.md).
+Os modelos representam os atores, os fluxos de casos de uso, a estrutura de dados, o comportamento do processo seletivo e a arquitetura sugerida da solução. Eles derivam dos requisitos da [SRS](../Especificacao/SRS.md) e podem ser rastreados na [matriz de rastreabilidade](../Validacao/Rastreabilidade.md).
 
 ---
 
