@@ -6,6 +6,8 @@ Esta pasta organiza os artefatos do grupo por etapa e tipo, tomando como referê
 - [Visão da demanda](Artefatos/Visao/Documento-de-Visao.md)
 - [Stakeholders e entrevistas](Elicitacao/Stakeholders-e-Entrevistas.md)
 - [Especificação de requisitos (SRS)](Especificacao/SRS.md)
+- [Requisitos não funcionais (RNF)](Requisitos-Nao-Funcionais/Requisitos-Nao-Funcionais.md)
+- [Regras de negócio (RN)](Regras-de-Negocio/Regras-de-Negocio.md)
 - [Modelagem UML](Especificacao-de-Casos-de-Uso/Modelagem-UML.md)
 - [Protótipos e wireframes](Prototipos/Prototipos-e-Wireframes.md)
 - [Glossário](Artefatos/Glossario/Glossario.md)
