@@ -1,11 +1,14 @@
-# Roteiro e Resultados de Entrevistas Simuladas — Proposta 3
+# Roteiro e Resultados de Entrevistas Realizadas em Simulação — Proposta 3
 
 > **SIMULAÇÃO DIDÁTICA — NÃO É ENTREVISTA REAL.** Todos os papéis, falas, achados e respostas neste arquivo são **fictícios**, criados para exercitar elicitação. Nenhum representante da Unifor, do NEI, da TI ou estudante foi entrevistado. A existência deste artefato **não comprova coleta de dados em campo**.
 
-## 1. Planejamento
+## 1. Registro da realização
+**Status:** entrevistas realizadas **na modalidade simulada**, conforme formato adotado pelo grupo para esta entrega. Foram executados dois cenários de entrevista fictícia: estudante (EST-SIM) e gestor (GES-SIM), com roteiros e respostas abaixo. **Não houve pessoas entrevistadas de verdade**; a palavra “realizadas” se refere ao exercício de simulação, e não a coleta empírica.
+
+## 2. Planejamento
 **Objetivo:** explorar necessidades de estudantes e responsáveis pela divulgação de oportunidades internacionais. **Método:** simulação de entrevistas semiestruturadas, usando o enunciado da Proposta 3. **Data de elaboração do cenário:** 17/11/2026. Não atribuir data como se fosse de entrevista presencial.
 
-## 2. Roteiro — Estudante (personagem fictício EST-SIM)
+## 3. Roteiro — Estudante (personagem fictício EST-SIM)
 | ID | Pergunta | O que se pretende descobrir |
 | --- | --- | --- |
 | E1 | Como você buscaria oportunidades de intercâmbio e bolsas? | Canais e dificuldades |
@@ -15,7 +18,7 @@
 | E5 | Como gostaria de acompanhar o interesse registrado? | Estados e histórico |
 | E6 | Quais dificuldades teria no celular? | Usabilidade/acessibilidade |
 
-## 3. Roteiro — Responsável por oportunidades (personagem fictício GES-SIM)
+## 4. Roteiro — Responsável por oportunidades (personagem fictício GES-SIM)
 | ID | Pergunta | O que se pretende descobrir |
 | --- | --- | --- |
 | G1 | Quem cadastra, revisa e publica os editais? | Papéis |
@@ -26,7 +29,7 @@
 | G6 | Há necessidade de integração com portal acadêmico? | Interfaces |
 | G7 | Quais cuidados de privacidade são necessários? | RNF |
 
-## 4. Resultados — CENÁRIO FICTÍCIO EST-SIM
+## 5. Resultados — CENÁRIO FICTÍCIO EST-SIM
 | Pergunta | Resposta simulada (não coletada) | Hipótese derivada |
 | --- | --- | --- |
 | E1 | “Eu gostaria de encontrar todas as opções em um lugar só.” | H01: catálogo central é útil |
@@ -47,13 +50,13 @@
 | G6 | “Integração seria útil, mas não sei se é viável.” | H11: integração a estudar |
 | G7 | “Somente responsáveis deveriam ver interesses de outros usuários.” | H12: proteção dos dados |
 
-## 6. Síntese e rastreabilidade
+## 7. Síntese e rastreabilidade
 | Hipóteses | Possíveis requisitos | Situação |
 | --- | --- | --- |
-| H01–H03, H06 | RF02, RNF02, RNF04 | Derivado de simulação; não validado |
+| H01–H03, H06 | RF02, RNF02, RNF06 | Derivado de simulação; não validado |
 | H04–H05 | RF03, RF04, RN04 | Derivado de simulação; não validado |
 | H07–H09 | RF01, RF06, RN01, RN02 | Derivado de simulação; não validado |
-| H10–H12 | RF05, RNF01, RNF03 | Derivado de simulação; não validado |
+| H10–H12 | RF05, RNF04, RNF05 | Derivado de simulação; não validado |
 
-## 7. Limitações e encaminhamento
-Não existem dados de participantes, gravações, consentimentos, transcrições ou evidências empíricas. A equipe deve submeter esse **formato de simulação ao professor**, caso a avaliação exija entrevistas reais. Toda conclusão extraída das respostas é uma hipótese a confirmar.
+## 8. Limitações e encaminhamento
+Não existem dados de participantes, gravações, consentimentos, transcrições ou evidências empíricas. O grupo informou que a modalidade simulada foi definida para esta entrega; esse enquadramento **não transforma as respostas em entrevistas de campo**. Toda conclusão extraída das respostas é uma hipótese a confirmar.
