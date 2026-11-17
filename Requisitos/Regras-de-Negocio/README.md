@@ -1,7 +1,17 @@
 # Regras de Negócio
 
-As regras de negócio (RN) estão registradas atualmente na [SRS, seção 3.4](../Especificacao/SRS.md), junto aos requisitos funcionais e não funcionais.
+## Regras existentes individualizadas
+- [RN01](RN01.md)
+- [RN02](RN02.md)
+- [RN03](RN03.md)
+- [RN04](RN04.md)
+- [RN05](RN05.md)
+- [RN06](RN06.md)
+- [RN07](RN07.md)
+- [RN08](RN08.md)
 
-**Próxima etapa:** desmembrar e revisar cada regra segundo o [template LAPIS de regras de negócio](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-rn-regra-negocio.md), preservando identificadores e pendências de validação.
+- [Quadro consolidado original das regras](Regras-de-Negocio.md)
+- [SRS](../Especificacao/SRS.md)
+- [Modelo do professor](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-rn-regra-negocio.md)
 
-Não considerar essas regras validadas pelo NEI sem evidências.
+**Situação:** RN01–RN08 extraídas do material existente. Regras marcadas como hipótese continuam pendentes de confirmação. Necessário revisar atomicidade, testabilidade e vínculos com casos de uso.
