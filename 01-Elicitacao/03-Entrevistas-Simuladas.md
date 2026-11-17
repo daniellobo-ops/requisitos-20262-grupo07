@@ -39,7 +39,7 @@
 | E5 | “Queria ver se meu interesse ainda está registrado.” | H05: acompanhamento básico |
 | E6 | “Usaria o celular para consultar oportunidades.” | H06: interface responsiva |
 
-## 5. Resultados — CENÁRIO FICTÍCIO GES-SIM
+## 6. Resultados — CENÁRIO FICTÍCIO GES-SIM
 | Pergunta | Resposta simulada (não coletada) | Hipótese derivada |
 | --- | --- | --- |
 | G1 | “Haveria pessoas autorizadas a publicar e atualizar editais.” | H07: perfil gestor |
