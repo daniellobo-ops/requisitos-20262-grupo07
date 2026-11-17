@@ -8,16 +8,16 @@ Projeto acadêmico da disciplina **Requisitos e Modelagem de Sistemas**, Univers
 
 | Área | Artefato | Estado |
 | --- | --- | --- |
-| Elicitação | [Visão da Demanda](Requisitos/01-Elicitacao/01-Visao-da-Demanda.md) | Rascunho |
-| Elicitação | [Stakeholders](Requisitos/01-Elicitacao/02-Stakeholders.md) | Rascunho |
-| Elicitação | [Roteiro e resultados de entrevistas simuladas](Requisitos/01-Elicitacao/03-Entrevistas-Simuladas.md) | Simulação didática |
-| Requisitos | [Requisitos funcionais (RF01–RF06)](Requisitos/02-Requisitos/01-Requisitos-Funcionais.md) | Rascunho |
-| Requisitos | [Requisitos não funcionais (RNF01–RNF07)](Requisitos/02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Rascunho |
-| Requisitos | [Regras de negócio (RN01–RN06)](Requisitos/02-Requisitos/03-Regras-de-Negocio.md) | Rascunho |
+| Elicitação | [Visão da Demanda](01-Elicitacao/01-Visao-da-Demanda.md) | Rascunho |
+| Elicitação | [Stakeholders](01-Elicitacao/02-Stakeholders.md) | Rascunho |
+| Elicitação | [Roteiro e resultados de entrevistas simuladas](01-Elicitacao/03-Entrevistas-Simuladas.md) | Simulação didática |
+| Requisitos | [Requisitos funcionais (RF01–RF06)](02-Requisitos/01-Requisitos-Funcionais.md) | Rascunho |
+| Requisitos | [Requisitos não funcionais (RNF01–RNF07)](02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Rascunho |
+| Requisitos | [Regras de negócio (RN01–RN06)](02-Requisitos/03-Regras-de-Negocio.md) | Rascunho |
 | Gestão | [Backlog priorizado](GestaoConfiguracao/01-Backlog-Priorizado.md) | Proposta de priorização |
-| UML | [Diagrama de casos de uso](Requisitos/03-UML/01-Casos-de-Uso.md) | Proposta |
-| UML | [Diagrama de componentes](Requisitos/03-UML/02-Componentes.md) | Proposta |
-| UML | [Diagrama de implantação](Requisitos/03-UML/03-Implantacao.md) | Proposta |
+| UML | [Diagrama de casos de uso](03-UML/01-Casos-de-Uso.md) | Proposta |
+| UML | [Diagrama de componentes](03-UML/02-Componentes.md) | Proposta |
+| UML | [Diagrama de implantação](03-UML/03-Implantacao.md) | Proposta |
 
 Os diagramas possuem prévias em Mermaid e **código PlantUML para gerar as imagens na notação UML apropriada**. As imagens exportadas ainda não foram produzidas.
 
