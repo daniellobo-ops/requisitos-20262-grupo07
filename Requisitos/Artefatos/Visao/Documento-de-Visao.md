@@ -107,3 +107,101 @@ Fórum de dúvidas e agenda de eventos (RF16), integração com agências de via
 * A origem dos dados acadêmicos usados na elegibilidade (média, percentual concluído, reprovações) ainda não está definida (**TBC-02**). O sistema depende de integração, importação ou comprovação documental.
 * As integrações com plataformas institucionais e o uso de dados pessoais dependem de autorização e da observância da LGPD, conforme o material de apoio da disciplina.
 * A lista completa de premissas está em [`09-Premissas-Decisoes-e-Fontes.md`](../Premissas-Decisoes-e-Fontes.md).
+
+---
+
+## 10. Complemento de alinhamento ao template Visão da Demanda — LAPIS
+
+> **Situação:** rascunho de alinhamento metodológico, sem validação institucional. Este complemento preserva integralmente o documento de Visão original acima. Os identificadores `NEC` e `F` abaixo são um mapeamento proposto aos `RF` existentes, não novos requisitos aprovados.
+
+### 10.1. Identificação da demanda
+
+| Campo LAPIS | Informação |
+| --- | --- |
+| Demanda | Sistema de Apoio à Internacionalização — Grupo 7 |
+| Tipo | Novo sistema (proposta acadêmica) |
+| Área demandante/contexto | Internacionalização da Unifor / NEI — papel formal a confirmar |
+| Elaboração | Grupo 7 — Requisitos e Modelagem de Sistemas 2026.2 |
+| Validação | Professor e representantes institucionais — aprovação ainda pendente |
+| Situação | Rascunho em revisão |
+| Versão deste complemento | 0.3 — 17/11/2026 |
+
+### 10.2. Necessidades e evidências
+
+| Necessidade | Descrição | Origem / situação | Atores |
+| --- | --- | --- | --- |
+| NEC-01 | Acessar oportunidades, convênios, prazos e critérios de forma unificada | Material de apoio F1/F2; problema operacional ainda a validar | AT-01, AT-02 |
+| NEC-02 | Avaliar elegibilidade e acompanhar candidaturas | Material de apoio F1/F2; regras a validar com NEI | AT-01, AT-02 |
+| NEC-03 | Administrar editais, convênios e decisões com rastreabilidade | Escopo proposto na SRS; confirmar processos com NEI | AT-02 |
+| NEC-04 | Apoiar preparação, bolsas e aproveitamento de créditos | Evolução prevista na SRS | AT-01, AT-02, AT-03 |
+| NEC-05 | Facilitar relatos e intercâmbio linguístico | Evolução opcional; hipótese a investigar | AT-01, AT-04 |
+
+### 10.3. Atores
+
+| ID | Ator | Papel |
+| --- | --- | --- |
+| AT-01 | Estudante de graduação | Consulta oportunidades e candidata-se |
+| AT-02 | Gestor do NEI | Administra editais, convênios e candidaturas |
+| AT-03 | Coordenador de curso | Avalia equivalência de disciplinas |
+| AT-04 | Estudante estrangeiro | Participa de Tandem, se a evolução for aprovada |
+| AT-05 | Sistema acadêmico institucional | Fonte externa hipotética de dados; dependência TBC-02 |
+
+### 10.4. Catálogo de funcionalidades
+
+**Correspondência:** `F-XX` é alias metodológico do requisito `RFXX`. Os identificadores RF originais continuam sendo as referências oficiais do grupo.
+
+| Funcionalidade | RF existente | Necessidade | Atores | Prioridade | Valor | Frequência | Especificação |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| F-01 Autenticação | RF01 | NEC-02 | AT-01, AT-02, AT-03 | Essencial | Alto (proposto) | A definir | SRS; UC a detalhar |
+| F-02 Consulta de oportunidades | RF02 | NEC-01 | AT-01 | Essencial | Alto (proposto) | A definir | [UC01](../../Especificacao-de-Casos-de-Uso/UC01.md) |
+| F-03 Autoavaliação | RF03 | NEC-02 | AT-01, AT-05 | Essencial | Alto (proposto) | A definir | [UC02](../../Especificacao-de-Casos-de-Uso/UC02.md) |
+| F-04 Submissão | RF04 | NEC-02 | AT-01 | Essencial | Alto (proposto) | A definir | [UC03](../../Especificacao-de-Casos-de-Uso/UC03.md) |
+| F-05 Acompanhamento | RF05 | NEC-02 | AT-01 | Essencial | Alto (proposto) | A definir | [UC04](../../Especificacao-de-Casos-de-Uso/UC04.md) |
+| F-06 Gestão de convênios | RF06 | NEC-03 | AT-02 | Essencial | Alto (proposto) | A definir | [UC06](../../Especificacao-de-Casos-de-Uso/UC06.md) |
+| F-07 Gestão de editais | RF07 | NEC-03 | AT-02 | Essencial | Alto (proposto) | A definir | [UC07](../../Especificacao-de-Casos-de-Uso/UC07.md) |
+| F-08 Triagem | RF08 | NEC-03 | AT-02 | Essencial | Alto (proposto) | A definir | [UC08](../../Especificacao-de-Casos-de-Uso/UC08.md) |
+| F-09 a F-13 | RF09–RF13 | NEC-02/03/04 | AT-01/02/03 | Importante | A definir | A definir | UC05, UC09–UC12; SRS |
+| F-14 e F-15 | RF14–RF15 | NEC-05 | AT-01, AT-02, AT-04 | Desejável | A definir | A definir | UC13–UC15; SRS |
+| F-16 e F-17 | RF16–RF17 | Fora do escopo atual | A definir | Não incluído | A definir | A definir | SRS (Won't Have) |
+
+### 10.5. Solução, interfaces e impactos
+
+- **Responsabilidades propostas:** portal de oportunidades, elegibilidade, candidaturas e gestão do NEI; ver escopo do MVP na seção 6.
+- **Integrações externas:** base acadêmica e login institucional dependem de confirmação (**TBC-02**); notificações por e-mail são evolução.
+- **Processos impactados:** consulta de editais, gestão de candidaturas e triagem pelo NEI; funcionamento real a confirmar em entrevistas.
+- **Representações visuais:** [UML](../../Especificacao-de-Casos-de-Uso/Modelagem-UML.md) e [wireframes](../../Prototipos/Prototipos-e-Wireframes.md) (protótipo navegável pendente).
+
+### 10.6. Marcos e riscos
+
+| Item | Resultado ou risco | Responsável | Situação |
+| --- | --- | --- | --- |
+| M1 | Elicitação e Visão revisadas | Grupo 7; validação NEI/professor | Prazo a confirmar |
+| M2 | SRS, regras, RNF e CDU revisados | Grupo 7 | Prazo a confirmar |
+| M3 | Protótipos, rastreabilidade e apresentação | Grupo 7 | Prazo a confirmar |
+| PQ-01 | Critérios de elegibilidade não confirmados | NEI — TBC-01 | Aberto |
+| PQ-02 | Integração e autenticação não definidas | TI/Secretaria — TBC-02 | Aberto |
+| PQ-03 | Critérios, documentos e fluxo da seleção pendentes | NEI — TBC-03/04 | Aberto |
+| PQ-04 | Métricas e privacidade exigem validação | TI/NEI — TBC-08/10 | Aberto |
+| PQ-05 | Composição das propostas de origem requer anuência docente | Professor — D01 | Aberto |
+
+### 10.7. Referências do processo
+
+- [SRS](../../Especificacao/SRS.md)
+- [Regras de negócio](../../Regras-de-Negocio/README.md)
+- [Requisitos não funcionais](../../Requisitos-Nao-Funcionais/Requisitos-Nao-Funcionais.md)
+- [Casos de uso](../../Especificacao-de-Casos-de-Uso/README.md)
+- [Glossário](../Glossario/Glossario.md)
+- [Rastreabilidade](../../Validacao/Rastreabilidade.md)
+- [Pendências e fontes](../Premissas-Decisoes-e-Fontes.md)
+
+### 10.8. Checklist de validação da Visão
+
+- [x] Objetivo, contexto, escopo e atores documentados.
+- [x] Necessidades identificadas e mapeadas aos RF.
+- [x] Funcionalidades ligadas às especificações existentes.
+- [x] Riscos e dependências documentados.
+- [ ] Evidências de elicitação coletadas e registradas.
+- [ ] Frequência, valor e critérios de sucesso confirmados.
+- [ ] Revisão pelo grupo e aceite do professor/NEI registrados.
+
+**Estado de conclusão:** rascunho adequado à estrutura-base do LAPIS; **não validado institucionalmente**.
