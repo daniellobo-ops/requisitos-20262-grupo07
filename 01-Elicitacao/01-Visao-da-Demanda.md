@@ -1,7 +1,7 @@
 # Visão da Demanda — Gestão de Oportunidades Internacionais
 
 > **Proposta 3 | Grupo 7 | Versão 0.1 | 17/11/2026 | Rascunho acadêmico.**
-> Os resultados das entrevistas deste projeto são **simulados para fins didáticos**, não evidências de pesquisa com a Unifor. O conteúdo é proposta de solução, não sistema existente ou aprovado.
+> As entrevistas **foram realizadas como simulações didáticas**, com personagens e respostas fictícios; não constituem pesquisa com representantes reais da Unifor. O conteúdo é proposta de solução, não sistema existente ou aprovado.
 
 ## Identificação e histórico
 | Campo | Informação |
@@ -61,6 +61,8 @@ Todas as métricas e metas dependem de validação, não são resultados medidos
 - Inscrição formal com upload e validação de documentos, análise de notas, seleção/classificação definitiva, concessão de bolsas ou emissão de vistos.
 - Integrações institucionais ou cálculo automático de elegibilidade, enquanto não confirmados.
 
+**Fluxos do protótipo (definições propostas):** a consulta ao catálogo pode ser pública; registrar e acompanhar interesse exige estudante identificado; cadastrar/gerir oportunidades e manifestações exige gestor identificado. Para demonstrar esses fluxos, o protótipo terá entrada por perfil (não integração institucional real). Oportunidades terão estados Rascunho, Publicada e Encerrada/Arquivada; interesses terão Registrado, Em acompanhamento e Encerrado. São regras de projeto propostas, não processos institucionais validados.
+
 ### 6.3 Evoluções futuras
 Candidatura formal, notificações, autenticação institucional e elegibilidade automática poderão ser consideradas após levantamento.
 
@@ -76,7 +78,7 @@ Candidatura formal, notificações, autenticação institucional e elegibilidade
 | --- | --- | --- | --- |
 | NEC01 | Descobrir editais/bolsas e informações de participação | Proposta 3 | AT01 |
 | NEC02 | Manter oportunidades confiáveis e publicadas | Proposta 3 | AT02 |
-| NEC03 | Manifestar interesse e ver situação registrada | Proposta 3; cenário simulado | AT01, AT02 |
+| NEC03 | Manifestar interesse e ver situação registrada | Proposta 3; entrevistas simuladas realizadas | AT01, AT02 |
 
 | Funcionalidade | Resultado | Necessidade | Atores | Prioridade proposta | Valor | Frequência | Especificação |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -105,7 +107,7 @@ Prioridade, valor e frequência são preliminares e devem ser revisados com part
 | --- | --- | --- | --- | --- | --- |
 | Q01 | Quem atualiza os editais? | Governança de dados | Confirmar papel | Instituição | Aberta |
 | Q02 | Quais critérios/documentos são obrigatórios? | Consistência | Examinar editais reais | Instituição | Aberta |
-| Q03 | O que configura uma manifestação de interesse? | RF03–RF05 | Validar fluxo | Instituição/estudantes | Aberta |
+| Q03 | O que configura uma manifestação de interesse e quais seus estados reais? | RF03–RF05 | Revisar estados propostos | Instituição/estudantes | Aberta |
 | Q04 | Há autenticação/integração institucional? | Segurança e arquitetura | Consultar TI | TI | Aberta |
 | Q05 | Qual a política de dados e retenção? | Privacidade | Analisar com responsáveis | Instituição | Aberta |
 
@@ -116,7 +118,8 @@ Prioridade, valor e frequência são preliminares e devem ser revisados com part
 - [x] Problema, objetivo, envolvidos e escopo propostos documentados.
 - [x] Necessidades e funcionalidades identificadas.
 - [x] Hipóteses e pendências registradas.
-- [ ] Evidências reais de elicitação obtidas.
+- [x] Roteiros e respostas de entrevistas **simuladas** registrados como exercício concluído.
+- [ ] Evidências reais de elicitação obtidas (não foram produzidas nesta modalidade).
 - [ ] Escopo validado com interessados e professor.
 - [ ] Critérios de qualidade e prioridades aprovados.
 
