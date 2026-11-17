@@ -1,4 +1,16 @@
-# 📖 Glossário
+# Glossário — Sistema de Apoio à Internacionalização
+
+> Documento organizado segundo o [template LAPIS de glossário](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-glossario.md). As definições originais estão preservadas. Fontes específicas devem ser verificadas pelo grupo.
+
+## Histórico de versões
+
+| Data | Versão | Descrição |
+| --- | --- | --- |
+| 17/11/2026 | 0.2 | Adequação de apresentação e rastreabilidade ao LAPIS |
+
+## Fonte e observações
+As definições abaixo refletem o vocabulário empregado na [SRS](../../Especificacao/SRS.md), no [documento de Visão](../Visao/Documento-de-Visao.md) e nos materiais acadêmicos identificados em [Fontes e Premissas](../Premissas-Decisoes-e-Fontes.md). Normas e políticas institucionais precisam de confirmação, não sendo presumidas como aprovadas.
+
 
 | Termo | Definição |
 | :--- | :--- |
