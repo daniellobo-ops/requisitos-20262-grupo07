@@ -11,13 +11,14 @@
 | US04 | Como estudante, quero consultar meus interesses registrados para saber a situação. | Should | RF04 | Dados restritos ao titular. |
 | US05 | Como gestor, quero atualizar a situação de interesses para organizar o acompanhamento. | Should | RF05 | Estado, autor e data registrados. |
 | US06 | Como gestor, quero encerrar ou corrigir uma oportunidade para manter informações atualizadas. | Should | RF06 | Não recebe interesse após prazo; preserva histórico conforme política. |
+| US07 | Como usuário, quero acessar a área correspondente ao meu perfil para executar apenas operações autorizadas. | Must (suporte) | RF07 | Seleção/identificação por perfil demonstrada no protótipo; login real a definir. |
 
 ## 2. Planejamento da primeira entrega
 | Ordem | Atividade | Entregável obrigatório | Situação |
 | --- | --- | --- | --- |
 | 1 | Visão da Demanda | Documento de Visão | Rascunho produzido |
 | 2 | Mapear interessados | Stakeholders | Rascunho produzido |
-| 3 | Roteiro + cenário simulado | Roteiro e resultados de entrevistas | Simulação didática produzida; **sem entrevista real** |
+| 3 | Roteiro + entrevistas simuladas realizadas | Roteiro e resultados de entrevistas | Exercício de simulação concluído; **sem participantes reais** |
 | 4 | Detalhar RF/RNF | Requisitos | Rascunho produzido |
 | 5 | Definir RN | Regras de Negócio | Rascunho produzido |
 | 6 | Priorizar histórias | Backlog | Rascunho produzido |
@@ -29,7 +30,7 @@
 - [x] Escopo restrito à Proposta 3.
 - [x] Entrevistas explicitamente simuladas.
 - [ ] Revisão dos documentos por colegas e professor.
-- [ ] Confirmação de que simulação atende ao critério da disciplina.
+- [x] Modalidade simulada informada pelo grupo como definida para a entrega; **não implica pesquisa de campo**.
 - [ ] Definição de marcos/Sprints acadêmicos conforme cronograma real.
 - [ ] Entregas no formato final requisitado pela disciplina, se PDF ou imagens UML forem exigidos.
 

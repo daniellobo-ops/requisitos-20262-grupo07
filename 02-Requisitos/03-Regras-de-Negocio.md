@@ -39,6 +39,24 @@
 - **Resultado:** preservação controlada dos registros conforme política a definir.
 - **Origem:** proposta de consistência de dados; RF06. **A confirmar.**
 
+### RN07 — Evitar manifestação ativa duplicada
+- **Descrição:** um estudante mantém apenas uma manifestação ativa por oportunidade; ao tentar uma segunda vez, vê o registro já existente.
+- **Condição:** tentativa de novo registro para mesma oportunidade e estudante.
+- **Resultado:** duplicidade bloqueada; possibilidade de nova manifestação após encerramento ainda a definir.
+- **Origem:** decisão de prototipação proposta; RF03. **Não validada institucionalmente.**
+
+### RN08 — Estados da oportunidade
+- **Descrição:** oportunidade nasce em **Rascunho**, pode ficar **Publicada** e depois **Encerrada/Arquivada**. Somente Publicada e dentro do prazo aceita interesse.
+- **Condição:** ações de gestor ou término de prazo.
+- **Resultado:** a consulta lista publicadas; o histórico fica sujeito à política de retenção.
+- **Origem:** decisão proposta para coerência das telas; RF01/RF06. **A validar.**
+
+### RN09 — Estados de manifestação
+- **Descrição:** manifestação passa por **Registrado**, **Em acompanhamento** e **Encerrado**; não representa candidatura formal, deferimento ou concessão de bolsa.
+- **Condição:** criação e atualização por gestor autorizado.
+- **Resultado:** estudante vê estado atual e histórico mínimo.
+- **Origem:** decisão proposta para coerência das telas; RF03–RF05. **A validar.**
+
 ## 2. Checklist de validação LAPIS
 - [x] Identificador e descrição registrados em cada RN.
 - [x] Condições e resultados previstos descritos.
@@ -55,5 +73,8 @@
 | RN04 | RF03 | UC03 |
 | RN05 | RF04, RF05 | UC04, UC05 |
 | RN06 | RF06 | UC01 |
+| RN07 | RF03 | UC03 |
+| RN08 | RF01, RF03, RF06 | UC01, UC03 |
+| RN09 | RF03, RF04, RF05 | UC03, UC04, UC05 |
 
 [Visão](../01-Elicitacao/01-Visao-da-Demanda.md) · [Casos de uso](../03-UML/01-Casos-de-Uso.md)
