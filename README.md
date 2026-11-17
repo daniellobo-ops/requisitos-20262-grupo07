@@ -30,6 +30,27 @@ Integração com agências de viagem e hospedagem, gestão da produção cientí
 
 ---
 
+## 🗂️ Navegação por áreas — organização LAPIS (em revisão)
+
+Os artefatos foram classificados por área sem excluir os nove documentos originais. Use os links abaixo para acessar a nova estrutura:
+
+| Área | Conteúdo |
+| :--- | :--- |
+| [Visão](Requisitos/Artefatos/Visao/Documento-de-Visao.md) | Problema, objetivos e escopo |
+| [Elicitação](Requisitos/Elicitacao/Stakeholders-e-Entrevistas.md) | Stakeholders, roteiros e entrevistas |
+| [Especificação SRS](Requisitos/Especificacao/SRS.md) | Requisitos gerais e critérios |
+| [Casos de uso e UML](Requisitos/Especificacao-de-Casos-de-Uso/README.md) | Casos de uso, diagramas e modelagem |
+| [Regras de negócio](Requisitos/Regras-de-Negocio/Regras-de-Negocio.md) | Regras RN extraídas da SRS |
+| [Requisitos não funcionais](Requisitos/Requisitos-Nao-Funcionais/Requisitos-Nao-Funcionais.md) | RNF extraídos da SRS |
+| [Protótipos](Requisitos/Prototipos/Prototipos-e-Wireframes.md) | Wireframes e navegação |
+| [Validação](Requisitos/Validacao/README.md) | Rastreabilidade e evidências pendentes |
+| [Gestão de configuração](GestaoConfiguracao/README.md) | Backlog, Issues e Sprints (a configurar) |
+| [Índice completo](Requisitos/README.md) | Todos os artefatos por categoria |
+
+> **Importante:** esta estrutura é uma proposta em branch de revisão; os documentos antigos permanecem abaixo como referência. Ainda há templates a aplicar e links internos a revisar.
+
+---
+
 ## 📦 Entregáveis (`/Requisitos`)
 
 | # | Documento | Conteúdo | Status |
