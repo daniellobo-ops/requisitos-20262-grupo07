@@ -15,16 +15,16 @@ Estrutura inspirada no padrão IEEE 830, conforme indicado na metodologia da dis
 Detalhar os requisitos funcionais, não funcionais e as regras de negócio do **Sistema de Apoio à Internacionalização** da Unifor, que orientarão o desenvolvimento da solução web e mobile.
 
 ### 1.2 Escopo
-O sistema cobre o ciclo de mobilidade acadêmica: busca de instituições parceiras, verificação de elegibilidade, candidatura, triagem pelo NEI, preparação do candidato e acompanhamento pós-intercâmbio. O recorte do MVP está em [`01-Documento-de-Visao.md`](01-Documento-de-Visao.md#6-escopo-do-produto).
+O sistema cobre o ciclo de mobilidade acadêmica: busca de instituições parceiras, verificação de elegibilidade, candidatura, triagem pelo NEI, preparação do candidato e acompanhamento pós-intercâmbio. O recorte do MVP está em [`01-Documento-de-Visao.md`](../Artefatos/Visao/Documento-de-Visao.md#6-escopo-do-produto).
 
 ### 1.3 Definições, siglas e abreviações
-Ver [`07-Glossario.md`](07-Glossario.md).
+Ver [`07-Glossario.md`](../Artefatos/Glossario/Glossario.md).
 
 ### 1.4 Referências
-Ver [`09-Premissas-Decisoes-e-Fontes.md`](09-Premissas-Decisoes-e-Fontes.md).
+Ver [`09-Premissas-Decisoes-e-Fontes.md`](../Artefatos/Premissas-Decisoes-e-Fontes.md).
 
 ### 1.5 Visão geral do documento
-A seção 2 descreve o contexto do produto; a seção 3 traz os requisitos específicos; a rastreabilidade completa está em [`08-Rastreabilidade.md`](08-Rastreabilidade.md).
+A seção 2 descreve o contexto do produto; a seção 3 traz os requisitos específicos; a rastreabilidade completa está em [`08-Rastreabilidade.md`](../Validacao/Rastreabilidade.md).
 
 ---
 
@@ -40,7 +40,7 @@ Estudante de graduação, Gestor do NEI e Coordenador de curso. O Aluno estrange
 LGPD; acesso por navegadores e dispositivos móveis; escopo compatível com o cronograma da disciplina.
 
 ### 2.4 Premissas e dependências
-Ver [`09-Premissas-Decisoes-e-Fontes.md`](09-Premissas-Decisoes-e-Fontes.md). As principais são a origem dos dados acadêmicos e a definição dos documentos exigidos por edital.
+Ver [`09-Premissas-Decisoes-e-Fontes.md`](../Artefatos/Premissas-Decisoes-e-Fontes.md). As principais são a origem dos dados acadêmicos e a definição dos documentos exigidos por edital.
 
 ---
 
@@ -129,4 +129,4 @@ A coluna **Situação** indica se a regra vem de documento institucional ou aind
 ---
 
 ## 4. Rastreabilidade
-A matriz completa RF ↔ US ↔ UC ↔ RN ↔ Tela está em [`08-Rastreabilidade.md`](08-Rastreabilidade.md).
+A matriz completa RF ↔ US ↔ UC ↔ RN ↔ Tela está em [`08-Rastreabilidade.md`](../Validacao/Rastreabilidade.md).
