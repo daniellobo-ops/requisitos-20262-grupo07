@@ -36,4 +36,4 @@
 ## 4. Convenções
 Manter identificadores `NEC`, `RF`, `RNF`, `RN`, `UC`, `US`. Commits descrevem artefatos alterados. Não marcar Issue concluída sem verificação.
 
-[Requisitos](../Requisitos/02-Requisitos/01-Requisitos-Funcionais.md) · [UML](../Requisitos/03-UML/01-Casos-de-Uso.md)
+[Requisitos](../02-Requisitos/01-Requisitos-Funcionais.md) · [UML](../03-UML/01-Casos-de-Uso.md)
