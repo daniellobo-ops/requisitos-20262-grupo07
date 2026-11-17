@@ -38,7 +38,7 @@ Integração com serviços acadêmicos não confirmada; fora do escopo inicial.
 Não se aplica requisito específico identificado nesta fase; reavaliar conforme risco.
 
 ### 1.10 Adequação funcional
-Os RF01–RF06 definem as capacidades previstas, com critérios de aceitação por cenário.
+Os RF01–RF07 definem as capacidades previstas, com critérios de aceitação por cenário. RF07 é suporte à identificação e distinção de perfis no protótipo, não aprovação de tecnologia de login.
 
 ## 2. Requisitos externos
 **Legislativo:** observância da LGPD quando houver tratamento de dados pessoais. Procedimento e base legal dependem de confirmação; não presumir que consentimento é sempre a base aplicável.
