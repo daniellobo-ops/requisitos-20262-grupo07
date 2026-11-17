@@ -11,7 +11,7 @@ Registro exigido pelo material de apoio da disciplina: premissas, restrições, 
 | F1 | Apresentação *Projeto de Extensão: Internacionalização* (Requisitos e Modelagem de Sistemas, Unifor) | Objetivos, módulos, entregáveis, metodologia, critérios de elegibilidade, cronograma e avaliação |
 | F2 | *Propostas de Projetos de Sistemas: Internacionalização e ENADE* (material didático Unifor 2026.2) | Propostas de origem, questões para levantamento, orientações às equipes |
 | F3 | Site da Unifor e documentos públicos do NEI | **A consultar**: editais anteriores, lista de convênios, regulamentos |
-| F4 | Entrevistas com o NEI, coordenadores, TI e questionário com estudantes | **A realizar**: ver [`02-Stakeholders-e-Entrevistas.md`](02-Stakeholders-e-Entrevistas.md) |
+| F4 | Entrevistas com o NEI, coordenadores, TI e questionário com estudantes | **A realizar**: ver [`02-Stakeholders-e-Entrevistas.md`](../Elicitacao/Stakeholders-e-Entrevistas.md) |
 
 ---
 
@@ -68,4 +68,4 @@ Registro exigido pelo material de apoio da disciplina: premissas, restrições, 
 
 ## 6. Hipóteses x confirmado
 
-Hipóteses do grupo: [`02-Stakeholders-e-Entrevistas.md`](02-Stakeholders-e-Entrevistas.md#5-hipóteses-iniciais-a-validar). Regras de negócio com situação individual: [`03-Especificacao-SRS.md`](03-Especificacao-SRS.md#34-regras-de-negócio-rn).
+Hipóteses do grupo: [`02-Stakeholders-e-Entrevistas.md`](../Elicitacao/Stakeholders-e-Entrevistas.md#5-hipóteses-iniciais-a-validar). Regras de negócio com situação individual: [`03-Especificacao-SRS.md`](../Especificacao/SRS.md#34-regras-de-negócio-rn).
