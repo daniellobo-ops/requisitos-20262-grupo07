@@ -1,6 +1,6 @@
 # Modelagem UML inicial — Implantação
 
-> **Proposta 3 | v0.1 | Hipótese de ambiente técnico.** O desenho é um **cenário proposto**, não infraestrutura existente, contratada ou autorizada na Unifor.
+> **Proposta 3 | v0.1 | Modelo conceitual de implantação.**
 
 ## 1. Objetivo
 Representar uma implantação web mínima capaz de apresentar oportunidades e registrar manifestações de interesse.
