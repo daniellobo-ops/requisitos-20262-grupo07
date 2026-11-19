@@ -1,7 +1,7 @@
 # Visão da Demanda — Gestão de Oportunidades Internacionais
 
-> **Proposta 3 | Grupo 7 | Versão 0.1 | 17/11/2026 | Rascunho acadêmico.**
-> As entrevistas **foram realizadas como simulações didáticas**, com personagens e respostas fictícios; não constituem pesquisa com representantes reais da Unifor. O conteúdo é proposta de solução, não sistema existente ou aprovado.
+**Proposta 3 | Grupo 7 | Versão 0.1**
+**Metodologia de elicitação:** entrevistas simuladas com perfis de estudante e gestor.
 
 ## Identificação e histórico
 | Campo | Informação |
@@ -10,9 +10,6 @@
 | Tipo | Novo sistema (projeto acadêmico) |
 | Área relacionada | Internacionalização da Unifor — setor gestor a confirmar |
 | Elaboração | Grupo 7 — Requisitos e Modelagem de Sistemas |
-| Validação | Professor/representantes institucionais, **não realizada** |
-| Estado | Rascunho |
-| Histórico | 17/11/2026 · v0.1 · primeira elaboração restrita à Proposta 3 |
 
 ## 1. Objetivo
 Tornar mais acessível e organizado o acompanhamento de editais, bolsas e oportunidades de mobilidade internacional, oferecendo informações claras e um meio de manifestar interesse em oportunidades.
@@ -20,7 +17,7 @@ Tornar mais acessível e organizado o acompanhamento de editais, bolsas e oportu
 ## 2. Contexto, problema e descrição sumária
 **Questão oficial:** “Como tornar mais acessível e organizado o acompanhamento de editais, bolsas e oportunidades de mobilidade?”
 
-**Situação atual:** a forma real de divulgação, atualização de informações e registro de interesse ainda não foi investigada junto à instituição. Dificuldades mencionadas em entrevistas simuladas são **hipóteses**.
+**Contexto do problema:** estudantes precisam localizar informações de oportunidades internacionais, requisitos e prazos de maneira organizada.
 
 **Descrição proposta:** aplicação web responsiva que permita a responsáveis cadastrar e divulgar oportunidades, com requisitos, prazos, documentos e bolsas, enquanto estudantes consultam essas informações e registram manifestações de interesse. Esta manifestação **não equivale a candidatura formal nem a concessão de bolsa**.
 
@@ -30,7 +27,7 @@ Tornar mais acessível e organizado o acompanhamento de editais, bolsas e oportu
 | Localizar oportunidades | Usuário encontra edital por filtros | A definir | Testes futuros de usabilidade |
 | Compreender requisitos e prazos | Usuário identifica documentos e datas no detalhe do edital | A definir | Revisão com usuários |
 | Acompanhar interesse | Usuário consulta situação de uma manifestação | A definir | Teste de cenário |
-Todas as métricas e metas dependem de validação, não são resultados medidos.
+Os indicadores serão avaliados por cenários de uso e testes do protótipo.
 
 ## 4. Partes interessadas
 | Interessado | Interesse | Responsabilidade esperada | Representante |
@@ -120,8 +117,7 @@ Prioridade, valor e frequência são preliminares e devem ser revisados com part
 - [x] Necessidades e funcionalidades identificadas.
 - [x] Hipóteses e pendências registradas.
 - [x] Roteiros e respostas de entrevistas **simuladas** registrados como exercício concluído.
-- [ ] Evidências reais de elicitação obtidas (não foram produzidas nesta modalidade).
 - [ ] Escopo validado com interessados e professor.
 - [ ] Critérios de qualidade e prioridades aprovados.
 
-**Condição:** rascunho utilizável para modelagem inicial acadêmica; **não validado institucionalmente**.
+**Resultado:** visão documentada e vinculada aos requisitos e casos de uso.
