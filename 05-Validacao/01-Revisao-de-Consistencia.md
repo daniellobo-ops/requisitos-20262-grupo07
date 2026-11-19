@@ -1,7 +1,6 @@
 # Revisão de Consistência — Sprint 2 (M2)
 
-> **Versão 0.1 — 19/11/2026 | Revisão documental inicial — Issue #7.**
-> Verificação feita sobre os documentos acadêmicos; não constitui validação institucional ou aprovação do grupo/professor.
+> **Versão 0.1 | Revisão de consistência — Issue #7.**
 
 ## 1. Objetivo e documentos revisados
 
@@ -21,7 +20,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | NEC02 | RF06 | UC01 | US06 | RN01, RN03, RN06, RN08 | Gestor edita/encerra oportunidades |
 | NEC02/NEC03 | RF07 | UC06 | US07 | RN01, RN05 | Estudante e gestor entram por perfil |
 
-**Resultado:** 7/7 RF estão associados a casos de uso e histórias; os 6 UC existentes têm RF e as 9 RN aparecem na especificação. Essa contagem demonstra **rastreabilidade documental inicial**, não execução ou aprovação de testes.
+**Resultado:** 7/7 RF estão associados a casos de uso e histórias; os 6 UC existentes têm RF e as 9 RN aparecem na especificação. Essa contagem demonstra **rastreabilidade documental inicial**, não execução dos testes.
 
 ## 3. Comparação entre SRS e UML
 
@@ -48,7 +47,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | C01 | Consulta pública da SRS sem ator Visitante no diagrama | Divergência de representação | Incluir Visitante em UC02 e explicitar consulta sem identificação, preservando estudante | **Corrigido no diagrama** |
 | C02 | RN08 usa estado final “Encerrada/Arquivada”; versão inicial da SRS separava dois estados | Ambiguidade conceitual | SRS ajustada para usar “Encerrada/Arquivada” como condição final conjunta, sem transição adicional | **Corrigido na SRS** |
 | C03 | RF05/RN09 não definem integralmente transições de situação | Regra incompleta | Demonstrar Registrado → Em acompanhamento → Encerrado e a alternativa Registrado → Encerrado somente como fluxo proposto; não permitir reabertura sem definição | **Aberto — validar** |
-| C04 | Identificação simulada não garante autenticação/segurança | Restrição de escopo | Rotular seleção de perfil como **simulação**; produção exige autenticação/autorização real | **Contornado no protótipo, não validado para produção** |
+| C04 | Identificação simulada não garante autenticação/segurança | Restrição de escopo | Rotular seleção de perfil como **simulação**; produção exige autenticação/autorização real | **Definido para demonstração** |
 | C05 | RN07 não determina se é possível novo interesse após encerramento do anterior | Lacuna | Bloquear duplicidade ativa; não oferecer reabertura automática na demonstração | **Aberto** |
 | C06 | RNF01, RNF02 e RNF06 possuem metas sem homologação | Critérios não validados | Manter metas como propostas e não afirmar conformidade testada | **Aberto** |
 | C07 | Fontes da elicitação são entrevistas didáticas simuladas | Limite de evidência | Manter origem fictícia identificada, não alegar validação com usuários reais | **Documentado** |
