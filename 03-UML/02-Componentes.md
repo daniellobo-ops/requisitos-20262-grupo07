@@ -1,6 +1,6 @@
 # Modelagem UML inicial — Componentes
 
-> **Proposta 3 | v0.1 | Arquitetura conceitual sugerida**, não implementação nem arquitetura aprovada pela Unifor. Tecnologias, interfaces e separação interna podem mudar após validação.
+> **Proposta 3 | v0.1 | Arquitetura conceitual do sistema.**
 
 ## 1. Objetivo
 Mostrar as responsabilidades lógicas da solução e suas dependências, sem incluir serviços de candidatura formal ou programas das Propostas 1 e 4.
