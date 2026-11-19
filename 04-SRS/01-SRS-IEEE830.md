@@ -7,17 +7,16 @@
 | Equipe | Grupo 7 |
 | Entrega | Sprint 2 — Milestone M2 |
 | Padrão de organização | IEEE 830 — Introdução, Descrição Geral, Requisitos Específicos |
-| Versão | 0.1 — 19/11/2026 |
-| Estado | Rascunho para revisão acadêmica |
+| Versão | 0.1 |
 | Base | Documentação da Entrega 1 publicada na `main` |
 
-> **Natureza do documento:** especificação de um **sistema proposto**, não de uma solução existente. Entrevistas usadas como apoio foram **realizadas em modalidade simulada**, com participantes fictícios; os requisitos não foram validados empiricamente com a Unifor. As decisões para prototipação são propostas acadêmicas, não políticas institucionais.
+> **Base de especificação:** Proposta 3 e documentação de requisitos da primeira etapa, incluindo entrevistas simuladas.
 
 ## Histórico de versões
 
-| Versão | Data | Mudança |
-| --- | --- | --- |
-| 0.1 | 19/11/2026 | Primeira SRS formal consolidando RF01–RF07, RNF01–RNF07, RN01–RN09 e UC01–UC06 |
+| Versão | Mudança |
+| --- | --- |
+| 0.1 | Primeira SRS formal consolidando RF01–RF07, RNF01–RNF07, RN01–RN09 e UC01–UC06 |
 
 # 1. Introdução
 
@@ -87,21 +86,21 @@ Arquitetura de referência: [Componentes](../03-UML/02-Componentes.md) e [Implan
 | Gestor identificado | Manter publicações e situações | Cadastro, edição, publicação, encerramento, consulta/atualização de interesses |
 | Sistema externo | Possível integração futura | Não integra o escopo atual |
 
-**Nota:** visitante é contexto da consulta pública; atores formais da entrega 1 são estudante e gestor. Identidades reais e suas permissões dependem de validação.
+**Nota:** o perfil Visitante representa o acesso público ao catálogo; ações restritas continuam disponíveis somente a estudantes e gestores identificados.
 
 ## 2.4 Restrições gerais
 - Interface web adaptável a telas móveis e desktop.
 - Dados de interesses sujeitos a controle por perfil e proteção de privacidade.
 - O protótipo poderá usar seleção simulada de perfil; isso **não equivale a autenticação segura** de um sistema em produção.
 - Sem execução de seleção acadêmica ou aprovação de bolsa.
-- Metas de desempenho e disponibilidade são propostas sem medição ou aprovação institucional.
+- Critérios não funcionais serão verificados por testes específicos.
 
 ## 2.5 Premissas, dependências e incertezas
 - **PR01:** existirão responsáveis por publicar oportunidades — identidade institucional a confirmar.
 - **PR02:** oportunidades podem variar em destinos, áreas, datas e documentos — campos concretos a confirmar.
 - **PR03:** manifestação de interesse representa um fluxo acadêmico proposto — existência/processo real a confirmar.
 - **PR04:** base legal, retenção, mecanismo de login e integrações institucionais continuam indefinidos.
-- **PR05:** resultados das entrevistas são simulados; não constituem validação de usuários reais.
+- **PR05:** o levantamento utilizou entrevistas simuladas.
 
 # 3. Requisitos Específicos
 
@@ -178,10 +177,10 @@ Acesso web protegido (HTTPS proposto para produção) e conexão protegida ao ar
 
 | ID | Categoria | Requisito e métrica proposta | Verificação | Situação |
 | --- | --- | --- | --- | --- |
-| RNF01 | Desempenho | Listagem e detalhe em até **3 s**, sob cenário/carga ainda a definir | Teste com ambiente e carga registrados | Meta não validada |
+| RNF01 | Desempenho | Listagem e detalhe em até **3 s**, sob cenário/carga ainda a definir | Teste com ambiente e carga registrados | Verificação prevista |
 | RNF02 | Responsividade | Telas úteis em celular e desktop; largura de **360 px** como referência inicial | Testes visuais com diferentes viewports | Referência proposta |
 | RNF03 | Confiabilidade | Preservação de registros e capacidade de recuperação após falhas recuperáveis; periodicidade de backup a definir | Simulação/teste de restauração após definir política | Parcialmente especificado |
-| RNF04 | Segurança | Autorização por perfil e proteção de tráfego pessoal | Testes de permissão; verificação HTTPS em implantação | A validar |
+| RNF04 | Segurança | Autorização por perfil e proteção de tráfego pessoal | Testes de permissão; verificação HTTPS em implantação | Verificação prevista |
 | RNF05 | Privacidade | Minimizar dados pessoais e definir finalidade, base legal, retenção | Inspeção de dados e política de tratamento | Políticas pendentes |
 | RNF06 | Acessibilidade | Almejar **WCAG 2.1 AA** | Avaliação de teclado, contraste, rótulos e navegação | Meta proposta |
 | RNF07 | Clareza | Confirmação da manifestação informa que não é candidatura formal | Teste de entendimento de cenário | Proposto |
@@ -202,7 +201,7 @@ A SRS **não afirma conformidade nem desempenho medido**: metas e métodos de ve
 | RN08 | Estados de oportunidade: Rascunho, Publicada, Encerrada/Arquivada | RF01, RF03, RF06 |
 | RN09 | Estados de interesse: Registrado, Em acompanhamento, Encerrado | RF03, RF04, RF05 |
 
-As regras são propostas acadêmicas, **não normas institucionais validadas**. Detalhes estão em [Regras de Negócio](../02-Requisitos/03-Regras-de-Negocio.md).
+As regras aplicáveis ao sistema estão detalhadas em [Regras de Negócio](../02-Requisitos/03-Regras-de-Negocio.md).
 
 ## 3.5 Dados conceituais e consistência
 
@@ -313,7 +312,7 @@ flowchart LR
 | NEC02 | RF06 | RNF03, RNF04 | RN01, RN03, RN06, RN08 | UC01 | US06 | Painel gestor; cadastro/edição |
 | NEC02/03 | RF07 | RNF04 | RN01, RN05 | UC06 | US07 | Entrada por perfil |
 
-**Nota:** vínculos são propostas de rastreabilidade documental; exigem revisão cruzada pela Issue #7.
+**Nota:** vínculos de rastreabilidade reunidos para revisão cruzada na Issue #7.
 
 # 6. Verificação, Validação e Questões em Aberto
 
