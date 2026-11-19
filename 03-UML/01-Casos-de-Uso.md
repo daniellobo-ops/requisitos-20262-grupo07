@@ -8,7 +8,8 @@
 ## 2. Atores
 | Ator | Descrição | Situação |
 | --- | --- | --- |
-| Visitante | Consulta catálogo e detalhes sem identificação | Ator de consulta pública proposto |\n| Estudante | Consulta oportunidades e registra/acompanha manifestações | Proposto |
+| Visitante | Consulta catálogo e detalhes sem identificação | Ator de consulta pública proposto | 
+| Estudante | Consulta oportunidades e registra/acompanha manifestações | Proposto |
 | Gestor de oportunidades | Cadastra, publica, edita e encerra oportunidades; acompanha interesses | Papel institucional real a confirmar |
 
 ## 3. Catálogo de casos de uso
@@ -24,7 +25,8 @@
 ## 4. Representação visual no GitHub
 ```mermaid
 flowchart LR
-    V["👤 Visitante"]\n    E["👤 Estudante"]
+    V["👤 Visitante"]
+    E["👤 Estudante"]
     G["👤 Gestor de oportunidades"]
     subgraph SYS["Sistema de Gestão de Oportunidades Internacionais"]
       U1(["UC01 Gerenciar oportunidades"])
@@ -34,7 +36,8 @@ flowchart LR
       U5(["UC05 Atualizar situação de interesse"])
       U6(["UC06 Acessar por perfil"])
     end
-    V --- U2\n    E --- U2
+    V --- U2
+    E --- U2
     E --- U3
     E --- U4
     G --- U1
@@ -49,7 +52,8 @@ Copiar para um renderizador PlantUML para obter a notação UML com atores e cas
 ```plantuml
 @startuml
 left to right direction
-actor "Visitante" as V\nactor "Estudante" as E
+actor "Visitante" as V
+actor "Estudante" as E
 actor "Gestor de oportunidades" as G
 rectangle "Gestão de Oportunidades Internacionais" {
   usecase "UC01\nGerenciar oportunidades" as UC01
@@ -59,7 +63,8 @@ rectangle "Gestão de Oportunidades Internacionais" {
   usecase "UC05\nAtualizar situação do interesse" as UC05
   usecase "UC06\nAcessar área por perfil" as UC06
 }
-V -- UC02\nE -- UC02
+V -- UC02
+E -- UC02
 E -- UC03
 E -- UC04
 G -- UC01
@@ -79,7 +84,9 @@ G -- UC06
 | UC05 | Gestor autorizado | Consultar manifestações; selecionar registro; atualizar situação (Registrado, Em acompanhamento, Encerrado) | Registro inexistente ou acesso negado | Situação e histórico atualizados |
 | UC06 | Usuário inicia sessão no protótipo | Selecionar perfil de estudante/gestor para demonstrar o fluxo autorizado | Perfil não selecionado; operação vedada | Área correspondente exibida |
 
-**Nota de consistência (Sprint 2):** o ator *Visitante* foi explicitado em UC02 para representar a consulta pública já prevista em RF02 e na SRS. Isso não cria funcionalidade adicional nem concede permissão de manifestar interesse.\n\n**Decisões propostas para as telas:** em UC01 oportunidades possuem estados Rascunho, Publicada e Encerrada/Arquivada; em UC03 só pode existir uma manifestação ativa por estudante e oportunidade, sendo exibida a existente em tentativas repetidas. A identificação por perfil é simulada no protótipo; não presume autenticação da Unifor.
+**Nota de consistência (Sprint 2):** o ator *Visitante* foi explicitado em UC02 para representar a consulta pública já prevista em RF02 e na SRS. Isso não cria funcionalidade adicional nem concede permissão de manifestar interesse.
+
+**Decisões propostas para as telas:** em UC01 oportunidades possuem estados Rascunho, Publicada e Encerrada/Arquivada; em UC03 só pode existir uma manifestação ativa por estudante e oportunidade, sendo exibida a existente em tentativas repetidas. A identificação por perfil é simulada no protótipo; não presume autenticação da Unifor.
 
 ## 7. Verificações antes de aprovação
 - [ ] Confirmar o papel de gestor e quais campos são exigidos.
