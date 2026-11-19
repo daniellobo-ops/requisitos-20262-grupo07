@@ -49,8 +49,8 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | C03 | RF05/RN09 não definem integralmente transições de situação | Regra incompleta | Demonstrar Registrado → Em acompanhamento → Encerrado e a alternativa Registrado → Encerrado somente como fluxo proposto; não permitir reabertura sem definição | **Aberto — validar** |
 | C04 | Identificação simulada não garante autenticação/segurança | Restrição de escopo | Rotular seleção de perfil como **simulação**; produção exige autenticação/autorização real | **Definido para demonstração** |
 | C05 | RN07 não determina se é possível novo interesse após encerramento do anterior | Lacuna | Bloquear duplicidade ativa; não oferecer reabertura automática na demonstração | **Aberto** |
-| C06 | RNF01, RNF02 e RNF06 possuem metas sem homologação | Critérios não validados | Manter metas como propostas e não afirmar conformidade testada | **Aberto** |
-| C07 | Fontes da elicitação são entrevistas didáticas simuladas | Limite de evidência | Manter origem fictícia identificada, não alegar validação com usuários reais | **Documentado** |
+| C06 | RNF01, RNF02 e RNF06 precisam de cenários de verificação | Critérios de teste | Definir condições e executar testes de desempenho, responsividade e acessibilidade | **Aberto** |
+| C07 | Entrevistas simuladas utilizadas na elicitação | Metodologia | Identificar a modalidade de entrevista nos artefatos | **Documentado** |
 | C08 | Fontes UML são PlantUML e visualizações Mermaid, sem arquivos gráficos UML finais | Formato pendente | Renderizar/exportar diagramas e conferir notação final antes de encerrar a Issue | **Aberto** |
 
 ## 5. Critérios de consistência para protótipos
