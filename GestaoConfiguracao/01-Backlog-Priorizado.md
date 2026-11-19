@@ -1,6 +1,6 @@
 # Backlog Priorizado — Proposta 3
 
-> **Grupo 7 · v0.1 · 17/11/2026.** Priorização inicial **proposta**, sem aprovação por stakeholders. Separar backlog da **solução** e **Issues da entrega acadêmica**.
+> **Grupo 7 | Versão 0.1.** Backlog priorizado pelo método MoSCoW, separado das Issues da entrega acadêmica.
 
 ## 1. Backlog do produto (MoSCoW)
 | ID | História de usuário | Prioridade | RF | Aceitação (resumo) |
