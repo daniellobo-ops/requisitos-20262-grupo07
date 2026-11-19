@@ -1,6 +1,6 @@
 # Modelagem UML inicial — Casos de Uso
 
-> **Proposta 3 | v0.2 | Revisado documentalmente em 19/11/2026, não validado institucionalmente.** Atores e relações são hipóteses de análise. O gráfico Mermaid abaixo é uma **representação visual de atores e casos de uso**, não notação UML rigorosa (não usa atores stick-figure nem elipses padronizadas). O código PlantUML no final permite gerar um diagrama UML de casos de uso propriamente dito.
+> **Proposta 3 | v0.2 | Revisão de consistência.** O gráfico Mermaid abaixo é uma **representação visual de atores e casos de uso**, não notação UML rigorosa (não usa atores stick-figure nem elipses padronizadas). O código PlantUML no final permite gerar um diagrama UML de casos de uso propriamente dito.
 
 ## 1. Limite do sistema
 **Sistema:** Gestão de Oportunidades Internacionais. Não abrange candidaturas formais, seleção, atribuição de bolsa, cálculo de elegibilidade ou funções colaborativas de outras propostas.
@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | Visitante | Consulta catálogo e detalhes sem identificação | Ator de consulta pública proposto | 
 | Estudante | Consulta oportunidades e registra/acompanha manifestações | Proposto |
-| Gestor de oportunidades | Cadastra, publica, edita e encerra oportunidades; acompanha interesses | Papel institucional real a confirmar |
+| Gestor de oportunidades | Cadastra, publica, edita e encerra oportunidades; acompanha interesses | Responsável pelas funções de gestão |
 
 ## 3. Catálogo de casos de uso
 | Caso | Nome | Ator principal | Requisitos |
