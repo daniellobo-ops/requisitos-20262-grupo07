@@ -1,6 +1,6 @@
 # Requisitos Funcionais — Gestão de Oportunidades Internacionais
 
-> **Proposta 3 | v0.1 | 17/11/2026 | Rascunho não validado.** RF derivam do enunciado oficial e de cenários de entrevistas **simuladas**. Não representam necessidades comprovadas de usuários reais.
+> **Proposta 3 | v0.1.** Requisitos organizados a partir do enunciado e dos cenários de entrevistas simuladas.
 
 ## 1. Escopo
 Cadastro e divulgação de editais/oportunidades de mobilidade e bolsas, consulta de requisitos, prazos e documentação, registro e acompanhamento de **manifestações de interesse**. Não se realiza inscrição formal, seleção, avaliação acadêmica ou concessão de bolsas.
