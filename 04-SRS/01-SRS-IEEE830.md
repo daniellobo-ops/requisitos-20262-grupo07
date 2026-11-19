@@ -337,4 +337,4 @@ flowchart LR
 | P05 | Infraestrutura | Hospedagem, backup, autenticação e capacidade | RNF01, RNF03–RNF04 |
 | P06 | Aceite | Revisão formal das hipóteses e protótipo por equipe/professor | Entrega M2 |
 
-**Situação final:** **SRS v0.1 produzida para revisão**, não aprovada ou homologada.
+**Situação:** SRS v0.1 estruturada; revisão de consistência e conferência dos protótipos em andamento.
