@@ -3,9 +3,9 @@
 > **v0.1 | Rascunho.** Classificação conforme categorias do [template LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-requisitosNaoFuncionais.md). Metas não foram aprovadas nem testadas.
 
 ## Histórico
-| Data | Versão | Descrição |
-| --- | --- | --- |
-| 17/11/2026 | 0.1 | RNF propostos para o escopo reduzido |
+| Versão | Descrição |
+| --- | --- |
+| 0.1 | Requisitos de qualidade para o escopo definido |
 
 ## 1. Requisitos de Produto
 ### 1.1 Eficiência de desempenho
@@ -50,9 +50,9 @@ Os RF01–RF07 definem as capacidades previstas, com critérios de aceitação p
 ## 4. Checklist de validação
 - [x] Categorias do LAPIS utilizadas onde aplicáveis.
 - [x] Itens com identificadores, critérios de verificação e pendências.
-- [ ] Metas de desempenho e acessibilidade confirmadas.
+- [ ] Executar testes de desempenho e acessibilidade.
 - [ ] Segurança, política de dados e recuperação definidas institucionalmente.
-- [ ] Revisão por pares e validação documentadas.
+- [ ] Concluir revisão por pares e registrar os resultados.
 
 ## Referências
 [Visão](../01-Elicitacao/01-Visao-da-Demanda.md) · [RF](01-Requisitos-Funcionais.md) · [RN](03-Regras-de-Negocio.md).
