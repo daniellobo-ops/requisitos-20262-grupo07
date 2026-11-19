@@ -46,7 +46,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | ID | Achado | Avaliação | Decisão/encaminhamento | Estado |
 | --- | --- | --- | --- | --- |
 | C01 | Consulta pública da SRS sem ator Visitante no diagrama | Divergência de representação | Incluir Visitante em UC02 e explicitar consulta sem identificação, preservando estudante | **Corrigido no diagrama** |
-| C02 | RN08 usa estado final “Encerrada/Arquivada”; SRS apresenta Encerrada e Arquivada em sequência | Ambiguidade conceitual | No protótipo, apresentar condição final como Encerrada/Arquivada, sem presumir transição distinta até decisão do grupo | **Aberto — harmonizar SRS** |
+| C02 | RN08 usa estado final “Encerrada/Arquivada”; versão inicial da SRS separava dois estados | Ambiguidade conceitual | SRS ajustada para usar “Encerrada/Arquivada” como condição final conjunta, sem transição adicional | **Corrigido na SRS** |
 | C03 | RF05/RN09 não definem integralmente transições de situação | Regra incompleta | Demonstrar Registrado → Em acompanhamento → Encerrado e a alternativa Registrado → Encerrado somente como fluxo proposto; não permitir reabertura sem definição | **Aberto — validar** |
 | C04 | Identificação simulada não garante autenticação/segurança | Restrição de escopo | Rotular seleção de perfil como **simulação**; produção exige autenticação/autorização real | **Contornado no protótipo, não validado para produção** |
 | C05 | RN07 não determina se é possível novo interesse após encerramento do anterior | Lacuna | Bloquear duplicidade ativa; não oferecer reabertura automática na demonstração | **Aberto** |
@@ -71,7 +71,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 - [x] Matriz RF ↔ UC ↔ US ↔ RN criada.
 - [x] Divergência sobre ator Visitante corrigida no diagrama de casos de uso.
 - [x] Lacunas e decisões pendentes identificadas.
-- [ ] Harmonizar descrição dos estados de oportunidades na SRS e UML.
+- [x] Harmonizar descrição dos estados de oportunidades na SRS e UML (RN08).
 - [ ] Revisar a notação dos diagramas UML renderizados e disponibilizar artefatos gráficos finais.
 - [ ] Verificar wireframes e protótipo contra a matriz de rastreabilidade.
 - [ ] Revisão por pares e aprovação acadêmica registradas.
