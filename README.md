@@ -24,7 +24,7 @@ Especificação de um sistema web responsivo para a **gestão de oportunidades i
 
 Cadastro, edição e divulgação de oportunidades por um responsável autorizado; consulta e filtragem de editais e bolsas; visualização de requisitos, prazos e documentos; registro de **manifestação de interesse** pelo estudante e acompanhamento da situação desse registro (RF01 a RF07).
 
-A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. O protótipo adotará fluxos propostos de identificação por perfil, cadastro de oportunidades e acompanhamento de interesse; seus detalhes permanecem decisões acadêmicas, não regras institucionais confirmadas.
+A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. O protótipo contemplará entrada demonstrativa por perfil, cadastro de oportunidades e acompanhamento de interesses.
 
 ### Fora do escopo desta especificação
 
@@ -51,7 +51,7 @@ Processos de inscrição e avaliação formal de candidaturas, classificação e
 
 ### Entregas seguintes
 
-- **2ª entrega — Prototipação:** elaboração das telas e do fluxo de navegação com base nos requisitos revisados.
+- **2ª entrega — SRS e Prototipação:** especificação formal, revisão de consistência, wireframes e protótipo navegável.
 - **3ª entrega — Pitch:** apresentação do problema, da proposta de solução e dos benefícios esperados.
 
 ---
@@ -74,7 +74,7 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 
 * **Idioma:** português do Brasil em todos os documentos.
 * **Identificadores:** `RF` requisito funcional, `RNF` requisito não funcional, `RN` regra de negócio, `US` história de usuário, `UC` caso de uso, `NEC` necessidade e `AT` ator.
-* **Hipótese x confirmado:** informações não verificadas são identificadas como **hipóteses**, **propostas** ou **pendências**. As entrevistas são **inteiramente simuladas** e não representam validação pela Unifor.
+* **Metodologia:** o levantamento inclui entrevistas simuladas, identificadas nos artefatos.
 * **Diagramas:** prévias em [Mermaid](https://mermaid.js.org/) para visualização no GitHub e fontes em PlantUML para exportação em notação UML.
 * **Numeração dos arquivos:** `NN-Nome-do-Documento.md`, organizados por área na raiz do repositório.
 * **Organização do trabalho:** [Issues da primeira entrega](https://github.com/daniellobo-ops/requisitos-20262-grupo07/issues) registram a revisão dos artefatos.
@@ -85,4 +85,4 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 * [LAPIS — Engenharia de Requisitos (repositório de referência do professor)](https://github.com/marcelobezerra-dotcom/Lapis-unifor).
 * [Templates de requisitos do LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/tree/main/Requisitos/Artefatos/Templates).
 
-**Nota:** os roteiros e resultados de entrevistas deste repositório são construções fictícias para o exercício acadêmico. A modalidade simulada foi informada pelo grupo como definida para esta entrega; isso não transforma as respostas em dados obtidos de participantes reais.
+**Nota metodológica:** as entrevistas apresentadas foram simuladas para o exercício acadêmico.
