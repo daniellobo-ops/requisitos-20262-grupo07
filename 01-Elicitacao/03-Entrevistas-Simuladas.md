@@ -6,7 +6,7 @@
 **Status:** entrevistas realizadas **na modalidade simulada**, conforme formato adotado pelo grupo para esta entrega. Foram executados dois cenários de entrevista fictícia: estudante (EST-SIM) e gestor (GES-SIM), com roteiros e respostas abaixo. **Não houve pessoas entrevistadas de verdade**; a palavra “realizadas” se refere ao exercício de simulação, e não a coleta empírica.
 
 ## 2. Planejamento
-**Objetivo:** explorar necessidades de estudantes e responsáveis pela divulgação de oportunidades internacionais. **Método:** simulação de entrevistas semiestruturadas, usando o enunciado da Proposta 3. **Data de elaboração do cenário:** 17/11/2026. Não atribuir data como se fosse de entrevista presencial.
+**Objetivo:** explorar necessidades de estudantes e responsáveis pela divulgação de oportunidades internacionais. **Método:** simulação de entrevistas semiestruturadas, usando o enunciado da Proposta 3. Não atribuir data como se fosse de entrevista presencial.
 
 ## 3. Roteiro — Estudante (personagem fictício EST-SIM)
 | ID | Pergunta | O que se pretende descobrir |
@@ -53,10 +53,10 @@
 ## 7. Síntese e rastreabilidade
 | Hipóteses | Possíveis requisitos | Situação |
 | --- | --- | --- |
-| H01–H03, H06 | RF02, RNF02, RNF06 | Derivado de simulação; não validado |
-| H04–H05 | RF03, RF04, RN04 | Derivado de simulação; não validado |
-| H07–H09 | RF01, RF06, RN01, RN02 | Derivado de simulação; não validado |
-| H10–H12 | RF05, RNF04, RNF05 | Derivado de simulação; não validado |
+| H01–H03, H06 | RF02, RNF02, RNF06 | Resultado de simulação |
+| H04–H05 | RF03, RF04, RN04 | Resultado de simulação |
+| H07–H09 | RF01, RF06, RN01, RN02 | Resultado de simulação |
+| H10–H12 | RF05, RNF04, RNF05 | Resultado de simulação |
 
 ## 8. Limitações e encaminhamento
 Não existem dados de participantes, gravações, consentimentos, transcrições ou evidências empíricas. O grupo informou que a modalidade simulada foi definida para esta entrega; esse enquadramento **não transforma as respostas em entrevistas de campo**. Toda conclusão extraída das respostas é uma hipótese a confirmar.
