@@ -222,8 +222,7 @@ As regras são propostas acadêmicas, **não normas institucionais validadas**. 
 ```mermaid
 flowchart LR
   R[Rascunho] --> P[Publicada]
-  P --> E[Encerrada]
-  E --> A[Arquivada]
+  P --> E["Encerrada/Arquivada"]
 ```
 
 ```mermaid
@@ -233,7 +232,7 @@ flowchart LR
   M --> X
 ```
 
-**Importante:** a entrega 1 registra “Encerrada/Arquivada” como condição final conjunta. O diagrama separa esses rótulos somente para facilitar as telas; a distinção operacional deverá ser revista com o grupo antes de ser considerada obrigatória.
+**Importante:** esta versão mantém “Encerrada/Arquivada” como condição final conjunta, conforme a RN08 da entrega 1. Uma eventual separação em estados distintos é decisão futura do grupo; não se presume uma transição adicional.
 
 # 4. Especificação Detalhada dos Casos de Uso
 
