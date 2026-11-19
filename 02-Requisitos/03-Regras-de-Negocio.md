@@ -1,6 +1,6 @@
 # Regras de Negócio — Gestão de Oportunidades Internacionais
 
-> **v0.1 | Rascunho.** Regras propostas a partir do escopo e de entrevistas **simuladas**, salvo restrições legais gerais. Ainda não são políticas da Unifor confirmadas. Estrutura baseada no [template LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-rn-regra-negocio.md).
+**Versão 0.1.** Regras definidas para o escopo do projeto, com apoio de entrevistas simuladas. Estrutura baseada no [template LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-rn-regra-negocio.md).
 
 ## 1. Catálogo de regras
 ### RN01 — Gestor autorizado publica oportunidades
@@ -43,7 +43,7 @@
 - **Descrição:** um estudante mantém apenas uma manifestação ativa por oportunidade; ao tentar uma segunda vez, vê o registro já existente.
 - **Condição:** tentativa de novo registro para mesma oportunidade e estudante.
 - **Resultado:** duplicidade bloqueada; possibilidade de nova manifestação após encerramento ainda a definir.
-- **Origem:** decisão de prototipação proposta; RF03. **Não validada institucionalmente.**
+- **Origem:** decisão de prototipação proposta; RF03.
 
 ### RN08 — Estados da oportunidade
 - **Descrição:** oportunidade nasce em **Rascunho**, pode ficar **Publicada** e depois **Encerrada/Arquivada**. Somente Publicada e dentro do prazo aceita interesse.
@@ -60,9 +60,9 @@
 ## 2. Checklist de validação LAPIS
 - [x] Identificador e descrição registrados em cada RN.
 - [x] Condições e resultados previstos descritos.
-- [ ] Fontes e regras institucionais reais confirmadas.
+- [ ] Revisar regras e exceções com a equipe.
 - [ ] Verificação de conflitos e rastreabilidade pelo grupo.
-- [ ] Aprovação institucional e revisão por pares.
+- [ ] Concluir revisão por pares.
 
 ## 3. Rastreabilidade
 | RN | RF relacionado | UC |
