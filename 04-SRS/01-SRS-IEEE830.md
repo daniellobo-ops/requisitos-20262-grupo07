@@ -7,7 +7,7 @@
 | Equipe | Grupo 7 |
 | Entrega | Sprint 2 — Milestone M2 |
 | Padrão de organização | IEEE 830 — Introdução, Descrição Geral, Requisitos Específicos |
-| Versão | 0.1 |
+| Versão | 0.2 |
 | Base | Documentação da Entrega 1 publicada na `main` |
 
 > **Base de especificação:** Proposta 3 e documentação de requisitos da primeira etapa, incluindo entrevistas simuladas.
@@ -16,7 +16,8 @@
 
 | Versão | Mudança |
 | --- | --- |
-| 0.1 | Primeira SRS formal consolidando RF01–RF07, RNF01–RNF07, RN01–RN09 e UC01–UC06 |
+| 0.1 | Primeira consolidação de RF01–RF07, RNF01–RNF07, RN01–RN09 e UC01–UC06 |
+| 0.2 | Revisão de consistência com UML, wireframes e protótipo navegável |
 
 # 1. Introdução
 
@@ -74,7 +75,7 @@ Arquitetura de referência: [Componentes](../03-UML/02-Componentes.md) e [Implan
 - **F03 / RF03:** registrar manifestação de interesse.
 - **F04 / RF04:** consultar os próprios interesses.
 - **F05 / RF05:** acompanhar e atualizar situação de interesses pelo gestor.
-- **F06 / RF06:** editar, encerrar e arquivar oportunidades.
+- **F06 / RF06:** editar, encerrar, arquivar e desarquivar oportunidades.
 - **F07 / RF07:** distinguir perfis e proteger operações restritas.
 
 ## 2.3 Características dos usuários
@@ -83,7 +84,7 @@ Arquitetura de referência: [Componentes](../03-UML/02-Componentes.md) e [Implan
 | --- | --- | --- |
 | Visitante | Descobrir oportunidades | Consultar catálogo público e detalhes |
 | Estudante identificado | Registrar e acompanhar interesses | Consulta pública, registro e visualização apenas dos próprios interesses |
-| Gestor identificado | Manter publicações e situações | Cadastro, edição, publicação, encerramento, consulta/atualização de interesses |
+| Gestor identificado | Manter publicações e situações | Cadastro, edição, publicação, encerramento, arquivamento, desarquivamento e atualização de interesses |
 | Sistema externo | Possível integração futura | Não integra o escopo atual |
 
 **Nota:** o perfil Visitante representa o acesso público ao catálogo; ações restritas continuam disponíveis somente a estudantes e gestores identificados.
@@ -130,7 +131,7 @@ Acesso web protegido (HTTPS proposto para produção) e conexão protegida ao ar
 
 **RF02 — Consultar oportunidades**
 - **Ator:** estudante/visitante; **Prioridade:** Must.
-- **Entrada:** busca e filtros disponíveis por destino, área e tipo.
+- **Entrada:** busca textual e filtros independentes por destino, área e tipo.
 - **Processamento:** retornar somente oportunidades publicadas de acordo com os filtros; ao selecionar uma, apresentar requisitos, prazo e documentos.
 - **Saída:** lista e página de detalhes; aviso de “nenhuma oportunidade encontrada” quando aplicável.
 - **UC:** UC02; **US:** US02.
@@ -159,12 +160,12 @@ Acesso web protegido (HTTPS proposto para produção) e conexão protegida ao ar
 - **Regras:** RN05, RN09; **UC:** UC05; **US:** US05.
 - **Aceitação:** mudança autorizada é refletida na consulta; ação não representa seleção ou bolsa concedida.
 
-**RF06 — Editar, encerrar e arquivar oportunidades**
+**RF06 — Editar, encerrar, arquivar e desarquivar oportunidades**
 - **Ator:** gestor identificado; **Prioridade:** Should.
 - **Processamento:** editar dados, encerrar oportunidades publicadas, arquivar oportunidades encerradas e desarquivar, retornando ao estado Encerrada; impedir novo interesse em oportunidade encerrada ou fora do prazo; preservar histórico conforme política de retenção a definir.
 - **Saída:** oportunidade com estado atualizado; interesses já existentes mantidos conforme política.
 - **Regras:** RN01, RN03, RN06, RN08; **UC:** UC01; **US:** US06.
-- **Aceitação:** oportunidades encerradas não aceitam novos interesses; não há exclusão automática de interesse por simples encerramento.
+- **Aceitação:** (1) encerrar uma oportunidade publicada bloqueia novos interesses; (2) arquivar uma oportunidade encerrada move seu registro ao arquivo administrativo; (3) desarquivar devolve a oportunidade ao estado Encerrada, sem republicação; (4) manifestações existentes permanecem acessíveis aos perfis autorizados.
 
 **RF07 — Identificação e autorização por perfil**
 - **Atores:** estudante e gestor; **Prioridade:** Must (suporte).
@@ -185,7 +186,7 @@ Acesso web protegido (HTTPS proposto para produção) e conexão protegida ao ar
 | RNF06 | Acessibilidade | Almejar **WCAG 2.1 AA** | Avaliação de teclado, contraste, rótulos e navegação | Meta proposta |
 | RNF07 | Clareza | Confirmação da manifestação informa que não é candidatura formal | Teste de entendimento de cenário | Proposto |
 
-A SRS **não afirma conformidade nem desempenho medido**: metas e métodos de verificação ainda dependem do contexto técnico e do responsável.
+**Escopo de verificação:** o protótipo demonstra navegação, filtros, formulários, estados e avisos de interface. As metas RNF01 (desempenho), RNF03 (persistência/recuperação), RNF04 (segurança efetiva), RNF05 (tratamento de dados) e RNF06 (acessibilidade) exigem implementação ou testes específicos do sistema completo; não são comprovadas pela demonstração HTML. A RNF02 pode ser inspecionada visualmente em diferentes larguras de tela, enquanto a RNF07 pode ser observada na confirmação de interesse. A seleção de perfil no protótipo não substitui autenticação real.
 
 ## 3.4 Regras de negócio aplicáveis
 
@@ -241,12 +242,12 @@ flowchart LR
 - **Ator principal:** gestor.
 - **Requisitos:** RF01, RF06; **RN:** RN01, RN02, RN03, RN06, RN08.
 - **Pré-condições:** usuário identificado como gestor.
-- **Gatilho:** gestor escolhe criar, editar, publicar ou encerrar oportunidade.
+- **Gatilho:** gestor escolhe criar, editar, publicar, encerrar, arquivar ou desarquivar oportunidade.
 - **Fluxo principal:** (1) abrir área administrativa; (2) escolher cadastrar; (3) preencher informações da oportunidade; (4) validar os campos; (5) salvar rascunho; (6) publicar quando estiver completo; (7) exibir confirmação e disponibilizar no catálogo.
 - **Alternativas:** (A1) editar oportunidade existente e salvar alterações; (A2) encerrar publicação, impedindo novos interesses; (A3) arquivar oportunidade encerrada, preservando o histórico e retirando-a da lista de gestão ativa; (A4) desarquivar, retornando à lista de gestão no estado Encerrada.
 - **Exceções:** (E1) dados obrigatórios ausentes bloqueiam publicação; (E2) perfil sem permissão não acessa a operação.
 - **Pós-condições:** oportunidade criada/atualizada com estado correspondente; manifestações existentes preservadas conforme política.
-- **Teste sugerido:** tentar publicar sem prazo, corrigir e publicar; depois encerrar e tentar novo interesse.
+- **Testes sugeridos:** publicar sem prazo (bloquear), corrigir e publicar (listar no catálogo), encerrar (bloquear novo interesse), arquivar (mover ao arquivo do gestor) e desarquivar (retornar a Encerrada, sem republicar nem apagar manifestações).
 
 ## UC02 — Consultar oportunidades
 - **Ator principal:** estudante ou visitante.
@@ -257,7 +258,7 @@ flowchart LR
 - **Alternativas:** (A1) limpar filtros; (A2) retornar ao catálogo.
 - **Exceções:** (E1) nenhum resultado exibe mensagem clara; (E2) oportunidade não disponível exibe aviso e permite voltar.
 - **Pós-condições:** informações consultadas, sem alteração dos dados.
-- **Teste sugerido:** filtrar por tipo/destino e conferir detalhe; testar lista vazia.
+- **Teste sugerido:** filtrar separadamente por tipo, destino e área; combinar filtros, consultar detalhes e testar lista vazia.
 
 ## UC03 — Registrar manifestação de interesse
 - **Ator principal:** estudante identificado.
@@ -279,7 +280,7 @@ flowchart LR
 - **Alternativas:** (A1) nenhuma manifestação, exibir estado vazio.
 - **Exceções:** (E1) tentativa de abrir registro de outro estudante é negada.
 - **Pós-condições:** dados não são modificados.
-- **Teste sugerido:** simular dois estudantes com dados distintos e conferir isolamento.
+- **Teste sugerido:** sob perfil Estudante, visualizar somente os interesses associados ao estudante demonstrativo; sob Visitante/Gestor, conferir que a tela 'Meus interesses' não é exibida. O isolamento entre contas reais depende da implementação de autenticação.
 
 ## UC05 — Atualizar situação de interesse
 - **Ator principal:** gestor identificado.
@@ -323,10 +324,10 @@ flowchart LR
 - [x] Requisitos funcionais, não funcionais e regras da primeira entrega consolidados sem perder identificadores.
 - [x] Casos de uso UC01–UC06 descritos com pré-condições, fluxos, alternativas e pós-condições.
 - [x] Rastreabilidade inicial elaborada.
-- [ ] Revisão cruzada formal com diagramas UML (Issue #7).
-- [ ] Wireframes e protótipo navegável rastreados (Issues #8 e #9).
+- [x] Consistência documental revisada com diagramas UML e seus catálogos (Issue #7).
+- [x] Wireframes e protótipo navegável vinculados aos RF/UC (Issues #8 e #9).
 - [ ] Revisão final da equipe e avaliação docente.
-- [ ] Critérios não definidos institucionalmente verificados ou mantidos explicitamente como hipóteses.
+- [ ] Executar testes de aceitação, responsividade e acessibilidade com o grupo.
 
 ## 6.2 Pendências relevantes
 
@@ -339,4 +340,4 @@ flowchart LR
 | P05 | Infraestrutura | Hospedagem, backup, autenticação e capacidade | RNF01, RNF03–RNF04 |
 | P06 | Aceite | Revisão formal das hipóteses e protótipo por equipe/professor | Entrega M2 |
 
-**Situação:** SRS v0.1 estruturada; revisão de consistência e conferência dos protótipos em andamento.
+**Situação:** SRS v0.2 consolidada e alinhada documentalmente aos artefatos da Sprint 2; testes finais de execução e revisão da equipe pendentes.
