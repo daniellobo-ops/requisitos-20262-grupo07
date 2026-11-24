@@ -22,7 +22,13 @@
 | UC05 | Atualizar situação de interesse | Gestor | RF05 |
 | UC06 | Acessar área identificada por perfil | Estudante/Gestor | RF07 |
 
-## 4. Representação visual no GitHub
+## 4. Diagrama UML revisado
+
+![Diagrama UML de casos de uso — UC01 a UC06](04-Diagrama-Casos-de-Uso.svg)
+
+[Visualizar o SVG em tamanho completo](04-Diagrama-Casos-de-Uso.svg).
+
+## 4.1 Representação visual no GitHub
 ```mermaid
 flowchart LR
     V["👤 Visitante"]
@@ -92,6 +98,6 @@ G -- UC06
 - [ ] Confirmar o papel de gestor e quais campos são exigidos.
 - [ ] Validar os estados propostos de oportunidade e manifestação e a regra de duplicidade.
 - [ ] Conferir fluxos com responsáveis reais, quando necessário; o grupo informou que a entrega acadêmica usará simulação.
-- [ ] Gerar imagem UML a partir do PlantUML, caso a entrega exija arquivo gráfico.
+- [x] Incluir diagrama UML em SVG com atores e casos de uso. A fonte PlantUML permanece disponível para edição.
 
 [SRS](../04-SRS/01-SRS-IEEE830.md) · [Revisão de consistência](../05-Validacao/01-Revisao-de-Consistencia.md) · [RF](../02-Requisitos/01-Requisitos-Funcionais.md) · [RN](../02-Requisitos/03-Regras-de-Negocio.md) · [Visão](../01-Elicitacao/01-Visao-da-Demanda.md)
