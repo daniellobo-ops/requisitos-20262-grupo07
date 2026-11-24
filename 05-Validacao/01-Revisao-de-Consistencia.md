@@ -17,7 +17,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | NEC03 | RF03 | UC03 | US03 | RN03, RN04, RN07, RN08, RN09 | Estudante registra interesse |
 | NEC03 | RF04 | UC04 | US04 | RN05, RN09 | Estudante consulta seus interesses |
 | NEC03 | RF05 | UC05 | US05 | RN05, RN09 | Gestor atualiza situação |
-| NEC02 | RF06 | UC01 | US06 | RN01, RN03, RN06, RN08 | Gestor edita/encerra oportunidades |
+| NEC02 | RF06 | UC01 | US06 | RN01, RN03, RN06, RN08 | Gestor edita, encerra, arquiva e desarquiva oportunidades |
 | NEC02/NEC03 | RF07 | UC06 | US07 | RN01, RN05 | Estudante e gestor entram por perfil |
 
 **Resultado:** 7/7 RF estão associados a casos de uso e histórias; os 6 UC existentes têm RF e as 9 RN aparecem na especificação. Essa contagem demonstra **rastreabilidade documental inicial**, não execução dos testes.
@@ -60,7 +60,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | Catálogo e detalhes | RF02 / UC02 | Consulta pública; informações essenciais e estado sem resultados |
 | Manifestar interesse | RF03 / UC03 | Perfil estudante, prazo aberto, sem duplicidade ativa, aviso de não candidatura |
 | Meus interesses | RF04 / UC04 | Apenas manifestações do estudante identificado; mostrar situação |
-| Painel de oportunidades | RF01, RF06 / UC01 | Gestor; validação de publicação, estados e encerramento |
+| Painel de oportunidades | RF01, RF06 / UC01 | Gestor; validação de publicação, edição, encerramento, arquivamento e desarquivamento |
 | Gerir manifestações | RF05 / UC05 | Gestor; registro de novo estado, responsável e data |
 | Acesso por perfil | RF07 / UC06 | Entrada demonstrativa explicitamente simulada |
 
@@ -72,7 +72,8 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 - [x] Lacunas e decisões pendentes identificadas.
 - [x] Harmonizar descrição dos estados de oportunidades na SRS e UML (RN08).
 - [ ] Revisar a notação dos diagramas UML renderizados e disponibilizar artefatos gráficos finais.
-- [ ] Verificar wireframes e protótipo contra a matriz de rastreabilidade.
+- [x] Conferir documentalmente wireframes e protótipo contra a matriz RF/UC, incluindo filtro por área e ações de arquivar/desarquivar.
+- [ ] Executar teste de navegação completo em navegador, incluindo dispositivos móveis.
 - [ ] Revisão por pares e aprovação acadêmica registradas.
 
-**Conclusão preliminar:** a documentação está **majoritariamente coerente** com o escopo. A revisão está em andamento; **Issue #7 permanece aberta** até resolver/registrar decisões pendentes e concluir a conferência final.
+**Conclusão da conferência documental:** os requisitos funcionais, a SRS, os casos de uso e os wireframes estão alinhados com os fluxos representados no protótipo. Persistem testes de execução e revisão final do grupo. A revisão está em andamento; **Issue #7 permanece aberta** até resolver/registrar decisões pendentes e concluir a conferência final.
