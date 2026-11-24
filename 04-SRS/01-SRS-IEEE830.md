@@ -161,7 +161,7 @@ Acesso web protegido (HTTPS proposto para produção) e conexão protegida ao ar
 
 **RF06 — Editar, encerrar e arquivar oportunidades**
 - **Ator:** gestor identificado; **Prioridade:** Should.
-- **Processamento:** editar dados, encerrar oportunidades publicadas e arquivar oportunidades encerradas; impedir novo interesse em oportunidade encerrada ou fora do prazo; preservar histórico conforme política de retenção a definir.
+- **Processamento:** editar dados, encerrar oportunidades publicadas, arquivar oportunidades encerradas e desarquivar, retornando ao estado Encerrada; impedir novo interesse em oportunidade encerrada ou fora do prazo; preservar histórico conforme política de retenção a definir.
 - **Saída:** oportunidade com estado atualizado; interesses já existentes mantidos conforme política.
 - **Regras:** RN01, RN03, RN06, RN08; **UC:** UC01; **US:** US06.
 - **Aceitação:** oportunidades encerradas não aceitam novos interesses; não há exclusão automática de interesse por simples encerramento.
@@ -223,6 +223,7 @@ flowchart LR
   R[Rascunho] --> P[Publicada]
   P --> E[Encerrada]
   E --> A[Arquivada]
+  A -->|Desarquivar| E
 ```
 
 ```mermaid
@@ -232,7 +233,7 @@ flowchart LR
   M --> X
 ```
 
-**Operações do gestor:** Encerrar interrompe novas manifestações; Arquivar transfere a oportunidade encerrada para consulta no arquivo administrativo, preservando as manifestações já registradas.
+**Operações do gestor:** Encerrar interrompe novas manifestações; Arquivar transfere a oportunidade encerrada para o arquivo administrativo. Desarquivar devolve o registro ao estado Encerrada, sem republicação ou reabertura de manifestações. O histórico é preservado.
 
 # 4. Especificação Detalhada dos Casos de Uso
 
@@ -242,7 +243,7 @@ flowchart LR
 - **Pré-condições:** usuário identificado como gestor.
 - **Gatilho:** gestor escolhe criar, editar, publicar ou encerrar oportunidade.
 - **Fluxo principal:** (1) abrir área administrativa; (2) escolher cadastrar; (3) preencher informações da oportunidade; (4) validar os campos; (5) salvar rascunho; (6) publicar quando estiver completo; (7) exibir confirmação e disponibilizar no catálogo.
-- **Alternativas:** (A1) editar oportunidade existente e salvar alterações; (A2) encerrar publicação, impedindo novos interesses; (A3) arquivar oportunidade encerrada, preservando o histórico e retirando-a da lista de gestão ativa.
+- **Alternativas:** (A1) editar oportunidade existente e salvar alterações; (A2) encerrar publicação, impedindo novos interesses; (A3) arquivar oportunidade encerrada, preservando o histórico e retirando-a da lista de gestão ativa; (A4) desarquivar, retornando à lista de gestão no estado Encerrada.
 - **Exceções:** (E1) dados obrigatórios ausentes bloqueiam publicação; (E2) perfil sem permissão não acessa a operação.
 - **Pós-condições:** oportunidade criada/atualizada com estado correspondente; manifestações existentes preservadas conforme política.
 - **Teste sugerido:** tentar publicar sem prazo, corrigir e publicar; depois encerrar e tentar novo interesse.
