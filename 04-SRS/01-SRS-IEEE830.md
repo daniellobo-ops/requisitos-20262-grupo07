@@ -340,4 +340,4 @@ flowchart LR
 | P05 | Infraestrutura | Hospedagem, backup, autenticação e capacidade | RNF01, RNF03–RNF04 |
 | P06 | Aceite | Revisão formal das hipóteses e protótipo por equipe/professor | Entrega M2 |
 
-**Situação:** SRS v0.2 consolidada e alinhada documentalmente aos artefatos da Sprint 2; testes finais de execução e revisão da equipe pendentes.
+**Situação:** SRS v0.2 consolidada e alinhada aos artefatos da Sprint 2, com [verificação programática registrada](../05-Validacao/02-Relatorio-de-Verificacao.md). Conferência visual e revisão final do grupo permanecem como etapas complementares.
