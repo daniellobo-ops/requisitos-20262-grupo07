@@ -4,6 +4,8 @@
 
 Wireframes de baixa fidelidade das oito telas principais do sistema. Os arquivos SVG podem ser visualizados diretamente no GitHub ou abertos no navegador; representam a estrutura e o conteúdo das telas, **não** o protótipo navegável (Issue #9).
 
+**Referência visual do protótipo implementado:** [Design System](04-Design-System.md). Os wireframes são deliberadamente de baixa fidelidade; o HTML navegável aplica a identidade visual final sem modificar os fluxos documentados.
+
 ## Pranchas visuais
 
 - [Wireframes do Estudante — SVG](01-Wireframes-Estudante.svg) — W01 a W04.
