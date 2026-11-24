@@ -234,22 +234,88 @@ function profile(){
  +'<div class="profile-role-card"><div class="role-symbol" aria-hidden="true">G</div><div><div class="eyebrow">ADMINISTRAÇÃO</div><h2>Gestor de oportunidades</h2><p>Cadastre, publique, encerre, arquive e acompanhe manifestações de interesse.</p></div><button class="btn primary" data-role="gestor">Entrar como gestor</button></div>'
  +'<button class="btn profile-public" data-role="visitante">Continuar como visitante</button></section></div>';
 }
-function my(){if(state.role!=="estudante")return denied();const records=own();return '<div class="sectionhead"><div><h1>Meus interesses</h1><p>Registros associados ao estudante demonstrativo.</p></div><button class="btn" data-go="catalog">Explorar oportunidades</button></div>'+(records.length?'<div class="rows">'+records.map(i=>{const o=state.opps.find(x=>x.id===i.oppId);return '<div class="item"><div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Registro: '+fmt(i.date)+'</p><p>'+status(i.status)+'</p><details><summary>Histórico</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div><button class="btn" data-open="'+i.oppId+'">Ver oportunidade</button></div>'}).join("")+'</div>':'<div class="empty"><h3>Nenhuma manifestação registrada</h3><p>Explore o catálogo e manifeste interesse em uma oportunidade aberta.</p></div>')}
+function my(){
+ if(state.role!=="estudante")return denied();
+ const records=own();
+ return '<div class="page-overline">ÁREA DO ESTUDANTE</div><div class="sectionhead sectionhead-wide"><div><h1>Meus interesses</h1><p>Acompanhe todas as manifestações registradas neste perfil demonstrativo.</p></div><button class="btn primary" data-go="catalog">Encontrar oportunidades</button></div>'
+ +'<div class="workspace-layout"><aside class="workspace-aside"><div class="panel summary-panel"><div class="eyebrow">ACOMPANHAMENTO</div><div class="summary-count">'+records.length+'</div><strong>interesse(s) registrado(s)</strong><p>Os registros ficam disponíveis para consulta do estudante demonstrativo.</p>'
+ +'<div class="summary-break"><span>Em acompanhamento</span><strong>'+records.filter(x=>x.status==="Em acompanhamento").length+'</strong></div>'
+ +'<div class="summary-break"><span>Encerrados</span><strong>'+records.filter(x=>x.status==="Encerrado").length+'</strong></div></div></aside>'
+ +'<section class="workspace-main"><div class="workspace-title"><h2>Histórico de interesses</h2><span>'+records.length+' registros</span></div>'
+ +(records.length?'<div class="rows">'+records.map(i=>{const o=state.opps.find(x=>x.id===i.oppId);
+ return '<article class="item interest-row"><div class="interest-row-main"><div class="eyebrow">MANIFESTAÇÃO</div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Registrado em '+fmt(i.date)+'</p><details><summary>Ver histórico de movimentações</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div><div class="interest-row-side">'+status(i.status)+'<button class="btn" data-open="'+i.oppId+'">Ver oportunidade</button></div></article>'}).join("")+'</div>'
+ :'<div class="empty"><h3>Você ainda não possui manifestações</h3><p>Encontre uma oportunidade publicada e registre seu interesse para acompanhar por aqui.</p><div class="actions" style="justify-content:center"><button class="btn primary" data-go="catalog">Explorar catálogo</button></div></div>')
+ +'</section></div>';
+}
 function denied(){return '<div class="empty"><h2>Acesso restrito por perfil</h2><p>Selecione o perfil correspondente para entrar nesta área.</p><button class="btn primary" data-go="profile">Selecionar perfil</button></div>'}
 function dashboard(){
  if(state.role!=="gestor")return denied();
  const current=state.opps.filter(o=>o.state!=="Arquivada");
  const archived=state.opps.filter(o=>o.state==="Arquivada");
- const row=o=>'<div class="item"><div><h3>'+esc(o.title)+'</h3><p>'+esc(o.country)+' • '+fmt(o.deadline)+' • '+esc(o.type)+'</p>'+status(o.state)+'</div><div class="actions"><button class="btn" data-edit="'+o.id+'">Editar</button>'+(o.state==="Publicada"?'<button class="btn danger" data-close="'+o.id+'">Encerrar</button>':"")+(o.state==="Encerrada"?'<button class="btn dark" data-archive="'+o.id+'">Arquivar</button>':"")+'</div></div>';
- const archiveRow=o=>'<div class="item"><div><h3>'+esc(o.title)+'</h3><p>'+esc(o.country)+' • '+fmt(o.deadline)+' • '+esc(o.type)+'</p>'+status(o.state)+'</div><div class="actions"><button class="btn" data-unarchive="'+o.id+'">Desarquivar</button></div></div>';
- return '<div class="sectionhead"><div><h1>Painel do gestor</h1><p>Gerencie publicações, encerramentos e arquivamento de oportunidades.</p></div><button class="btn primary" id="newOpp">+ Nova oportunidade</button></div>'
- +'<div class="two"><div class="panel"><div class="eyebrow">Publicadas</div><div class="stat">'+state.opps.filter(o=>o.state==="Publicada").length+'</div></div><div class="panel"><div class="eyebrow">Manifestações registradas</div><div class="stat">'+state.interests.length+'</div></div></div>'
- +'<h2 style="margin-top:28px">Oportunidades em gestão</h2><div class="rows">'+(current.length?current.map(row).join(""):'<div class="empty">Nenhuma oportunidade em gestão.</div>')+'</div>'
- +'<h2 style="margin-top:32px">Arquivo de oportunidades ('+archived.length+')</h2><p class="muted">Oportunidades arquivadas ficam fora do catálogo. Use Desarquivar para retorná-las à gestão no estado Encerrada.</p><div class="rows">'+(archived.length?archived.map(archiveRow).join(""):'<div class="empty">Nenhuma oportunidade arquivada.</div>')+'</div>'
- +'<div class="actions"><button class="btn primary" data-go="manage">Gerenciar manifestações</button></div>';
+ const published=state.opps.filter(o=>o.state==="Publicada").length;
+ const closed=state.opps.filter(o=>o.state==="Encerrada").length;
+ const row=o=>'<article class="item management-row"><div class="management-main"><h3>'+esc(o.title)+'</h3><p>'+esc(o.type)+' • '+esc(o.country||"Destino não informado")+' • Prazo: '+fmt(o.deadline)+'</p></div><div class="management-status">'+status(o.state)+'</div>'
+ +'<div class="actions management-actions"><button class="btn mini" data-edit="'+o.id+'">Editar</button>'
+ +(o.state==="Publicada"?'<button class="btn danger mini" data-close="'+o.id+'">Encerrar</button>':"")
+ +(o.state==="Encerrada"?'<button class="btn dark mini" data-archive="'+o.id+'">Arquivar</button>':"")+'</div></article>';
+ const archiveRow=o=>'<article class="item management-row"><div class="management-main"><h3>'+esc(o.title)+'</h3><p>'+esc(o.type)+' • '+esc(o.country||"Destino não informado")+' • Prazo: '+fmt(o.deadline)+'</p></div><div class="management-status">'+status(o.state)+'</div><div class="actions management-actions"><button class="btn mini" data-unarchive="'+o.id+'">Desarquivar</button></div></article>';
+ return '<div class="page-overline">ADMINISTRAÇÃO</div><div class="sectionhead sectionhead-wide"><div><h1>Painel do gestor</h1><p>Uma visão completa das oportunidades e das manifestações de interesse.</p></div><button class="btn primary" id="newOpp">+ Nova oportunidade</button></div>'
+ +'<div class="dashboard-layout"><aside class="workspace-sidebar"><div class="sidebar-heading">ESPAÇO DE GESTÃO</div><button class="sidebar-link selected" data-go="dashboard">Visão geral</button><button class="sidebar-link" data-go="manage">Manifestações <span>'+state.interests.length+'</span></button><button class="sidebar-link" data-go="catalog">Ver catálogo público</button><div class="sidebar-divider"></div><div class="sidebar-note"><strong>Publicações organizadas</strong><p>Encerre, arquive e desarquive sem perder o histórico de interesses.</p></div></aside>'
+ +'<div class="dashboard-main"><div class="stat-grid">'
+ +'<div class="panel kpi-card"><div class="kpi-icon">01</div><div class="eyebrow">PUBLICADAS</div><div class="stat">'+published+'</div><p>Oportunidades no catálogo</p></div>'
+ +'<div class="panel kpi-card"><div class="kpi-icon">02</div><div class="eyebrow">ENCERRADAS</div><div class="stat">'+closed+'</div><p>Disponíveis para arquivar</p></div>'
+ +'<div class="panel kpi-card"><div class="kpi-icon">03</div><div class="eyebrow">ARQUIVADAS</div><div class="stat">'+archived.length+'</div><p>Registros preservados</p></div>'
+ +'<div class="panel kpi-card"><div class="kpi-icon">04</div><div class="eyebrow">INTERESSES</div><div class="stat">'+state.interests.length+'</div><p>Manifestações recebidas</p></div></div>'
+ +'<section class="management-section"><div class="workspace-title"><div><h2>Oportunidades em gestão</h2><p>Edite, publique ou encerre oportunidades conforme seu estado.</p></div><span>'+current.length+' registros</span></div>'
+ +'<div class="rows">'+(current.length?current.map(row).join(""):'<div class="empty">Nenhuma oportunidade em gestão.</div>')+'</div></section>'
+ +'<section class="management-section"><div class="workspace-title"><div><h2>Arquivo de oportunidades</h2><p>Use Desarquivar para retornar à gestão no estado Encerrada.</p></div><span>'+archived.length+' arquivadas</span></div>'
+ +'<div class="rows">'+(archived.length?archived.map(archiveRow).join(""):'<div class="empty">Nenhuma oportunidade arquivada.</div>')+'</div></section>'
+ +'</div></div>';
 }
-function form(){if(state.role!=="gestor")return denied();const o=state.opps.find(x=>x.id===state.editing)||{};if(o.state==="Arquivada")return '<div class="empty"><h2>Oportunidade arquivada</h2><p>Este registro está disponível somente para consulta no painel do gestor.</p><button class="btn" data-go="dashboard">Voltar ao painel</button></div>';const val=k=>esc(o[k]||"");return '<a class="back" href="#dashboard" data-go="dashboard">← Voltar ao painel</a><div class="panel"><h1>'+(o.id?"Editar oportunidade":"Nova oportunidade")+'</h1><p class="muted">Preencha os dados. A publicação exige os campos essenciais.</p><form id="oppForm" class="fieldgrid"><label>Título *<input name="title" maxlength="120" value="'+val("title")+'"></label><label>Tipo *<select name="type"><option value="">Selecione</option>'+["Bolsa","Edital"].map(t=>'<option '+(o.type===t?"selected":"")+'>'+t+'</option>').join("")+'</select></label><label>Destino<input name="country" placeholder="Quando aplicável" value="'+val("country")+'"></label><label>Área<input name="area" placeholder="Área de estudo" value="'+val("area")+'"></label><label>Prazo *<input type="date" name="deadline" value="'+val("deadline")+'"></label><label class="wide">Descrição *<textarea name="description">'+val("description")+'</textarea></label><label>Requisitos *<textarea name="requirements">'+val("requirements")+'</textarea></label><label>Documentos *<textarea name="documents">'+val("documents")+'</textarea><span class="helper">Se não houver, informe “Não se aplica”.</span></label><div class="wide notice" id="formMessage" hidden></div><div class="wide actions"><button type="button" class="btn" id="saveDraft">'+(o.state==="Publicada"||o.state==="Encerrada"?"Salvar alterações":"Salvar rascunho")+'</button>'+((o.state==="Encerrada"||o.state==="Arquivada")?"":'<button type="submit" class="btn primary">'+(o.state==="Publicada"?"Salvar e manter publicada":"Publicar oportunidade")+"</button>")+'</div></form></div>'}
-function manage(){if(state.role!=="gestor")return denied();return '<div class="sectionhead"><div><h1>Gestão de manifestações</h1><p>Atualize a situação de interesse e acompanhe o histórico.</p></div><button class="btn" data-go="dashboard">Painel do gestor</button></div>'+(state.interests.length?'<div class="rows">'+state.interests.map(i=>{const o=state.opps.find(x=>x.id===i.oppId),options=(i.status==="Registrado"?["Registrado","Em acompanhamento","Encerrado"]:i.status==="Em acompanhamento"?["Em acompanhamento","Encerrado"]:["Encerrado"]);return '<div class="item"><div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Estudante: '+esc(i.student)+' • Registrado em '+fmt(i.date)+'</p>'+status(i.status)+'<details><summary>Histórico</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div><div><label>Atualizar situação<select id="s'+i.id+'">'+options.map(t=>'<option '+(t===i.status?"selected":"")+'>'+t+'</option>').join("")+'</select></label><button class="btn primary mini" style="margin-top:9px" data-update="'+i.id+'">Salvar alteração</button></div></div>'}).join("")+'</div>':'<div class="empty">Ainda não há manifestações registradas. Entre como estudante para criar uma demonstração.</div>')}
+function form(){
+ if(state.role!=="gestor")return denied();
+ const o=state.opps.find(x=>x.id===state.editing)||{};
+ if(o.state==="Arquivada")return '<div class="empty"><h2>Oportunidade arquivada</h2><p>Este registro está disponível somente para consulta no painel do gestor.</p><button class="btn" data-go="dashboard">Voltar ao painel</button></div>';
+ const val=k=>esc(o[k]||"");
+ return '<a class="back" href="#dashboard" data-go="dashboard">← Voltar ao painel do gestor</a><div class="page-overline">GERENCIAR OPORTUNIDADE</div>'
+ +'<div class="sectionhead sectionhead-wide"><div><h1>'+(o.id?"Editar oportunidade":"Nova oportunidade")+'</h1><p>Organize os dados e publique somente quando estiverem completos.</p></div>'+(o.state?status(o.state):'<span class="chip">Nova</span>')+'</div>'
+ +'<div class="editor-layout"><section class="panel editor-main"><div class="editor-section-heading"><span class="section-index">01</span><div><h2>Informações da oportunidade</h2><p>Dados principais da publicação.</p></div></div>'
+ +'<form id="oppForm" class="editor-form"><div class="fieldgrid">'
+ +'<label>Título *<input name="title" maxlength="120" value="'+val("title")+'" placeholder="Ex.: Bolsa de intercâmbio internacional"></label>'
+ +'<label>Tipo *<select name="type"><option value="">Selecione</option>'+["Bolsa","Edital"].map(t=>'<option '+(o.type===t?"selected":"")+'>'+t+'</option>').join("")+'</select></label>'
+ +'<label>Destino<input name="country" placeholder="País ou região, quando aplicável" value="'+val("country")+'"></label>'
+ +'<label>Área<input name="area" placeholder="Área de estudo" value="'+val("area")+'"></label>'
+ +'<label>Prazo *<input type="date" name="deadline" value="'+val("deadline")+'"></label>'
+ +'<label class="wide">Descrição *<textarea name="description" placeholder="Apresente a oportunidade e seus objetivos">'+val("description")+'</textarea></label>'
+ +'<label>Requisitos *<textarea name="requirements" placeholder="Liste os critérios para participação">'+val("requirements")+'</textarea></label>'
+ +'<label>Documentos *<textarea name="documents" placeholder="Informe documentos ou não se aplica">'+val("documents")+'</textarea><span class="helper">Se não houver, informe “Não se aplica”.</span></label>'
+ +'</div><div class="notice warn" id="formMessage" hidden></div>'
+ +'<div class="editor-footer"><span class="helper">* Campos essenciais para publicação.</span><div class="actions"><button type="button" class="btn" id="saveDraft">'+(o.state==="Publicada"||o.state==="Encerrada"?"Salvar alterações":"Salvar rascunho")+'</button>'
+ +((o.state==="Encerrada"||o.state==="Arquivada")?"":'<button type="submit" class="btn primary">'+(o.state==="Publicada"?"Salvar e manter publicada":"Publicar oportunidade")+"</button>")+'</div></div></form></section>'
+ +'<aside class="editor-aside"><div class="panel editor-guide"><div class="eyebrow">RESUMO DA EDIÇÃO</div><h3>Publicação responsável</h3><p>Preencha as informações para que o estudante compreenda os requisitos, os documentos e os prazos.</p>'
+ +'<div class="editor-guide-line"><strong>Rascunho</strong><span>Salva sem exibir no catálogo</span></div>'
+ +'<div class="editor-guide-line"><strong>Publicada</strong><span>Visível para consulta pública</span></div>'
+ +'<div class="editor-guide-line"><strong>Encerrada</strong><span>Não aceita novos interesses</span></div>'
+ +'<div class="editor-guide-line"><strong>Arquivada</strong><span>Preservada no arquivo do gestor</span></div></div>'
+ +'<div class="notice editor-info">Para encerrar, arquivar ou desarquivar, utilize as ações disponíveis no <strong>Painel do gestor</strong>.</div></aside></div>';
+}
+function manage(){
+ if(state.role!=="gestor")return denied();
+ const count=state.interests.length;
+ const activeCount=state.interests.filter(x=>x.status==="Em acompanhamento").length;
+ return '<div class="page-overline">ADMINISTRAÇÃO</div><div class="sectionhead sectionhead-wide"><div><h1>Gestão de manifestações</h1><p>Atualize as situações e acompanhe o histórico de cada interesse.</p></div><button class="btn" data-go="dashboard">Voltar ao painel</button></div>'
+ +'<div class="dashboard-layout"><aside class="workspace-sidebar"><div class="sidebar-heading">ESPAÇO DE GESTÃO</div><button class="sidebar-link" data-go="dashboard">Visão geral</button><button class="sidebar-link selected" data-go="manage">Manifestações <span>'+count+'</span></button><div class="sidebar-divider"></div>'
+ +'<div class="sidebar-note"><strong>'+activeCount+' em acompanhamento</strong><p>Registre as mudanças de situação para manter o estudante informado.</p></div></aside>'
+ +'<section class="dashboard-main"><div class="workspace-title"><h2>Registros de interesse</h2><span>'+count+' registros</span></div>'
+ +(count?'<div class="rows">'+state.interests.map(i=>{const o=state.opps.find(x=>x.id===i.oppId);
+ const options=(i.status==="Registrado"?["Registrado","Em acompanhamento","Encerrado"]:i.status==="Em acompanhamento"?["Em acompanhamento","Encerrado"]:["Encerrado"]);
+ return '<article class="item manifestation-row"><div class="manifestation-main"><div class="eyebrow">INTERESSE DO ESTUDANTE</div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Estudante: '+esc(i.student)+' • Registro: '+fmt(i.date)+'</p>'
+ +'<div class="manifestation-state">'+status(i.status)+'</div><details><summary>Ver histórico de atualizações</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div>'
+ +'<div class="manifestation-control"><label>Atualizar situação<select id="s'+i.id+'">'+options.map(t=>'<option '+(t===i.status?"selected":"")+'>'+t+'</option>').join("")+'</select></label>'
+ +'<button class="btn primary" data-update="'+i.id+'">Salvar alteração</button></div></article>'
+ }).join("")+'</div>':'<div class="empty"><h3>Não há manifestações registradas</h3><p>Utilize o perfil Estudante para gerar um registro de demonstração.</p><div class="actions" style="justify-content:center"><button class="btn" data-go="profile">Escolher perfil</button></div></div>')
+ +'</section></div>';
+}
 const views={home,catalog,detail,profile,my,dashboard,form,manage};
 function render(){menu();$("#app").innerHTML=(views[state.page]||home)();$("#app").focus({preventScroll:true})}
 function getForm(){const d=Object.fromEntries(new FormData($("#oppForm")).entries());return Object.fromEntries(Object.entries(d).map(([k,v])=>[k,String(v).trim()]))}
