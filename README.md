@@ -45,9 +45,9 @@ Processos de inscrição e avaliação formal de candidaturas, classificação e
 | 05 | [Requisitos Não Funcionais](02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Qualidade, segurança, desempenho, acessibilidade e verificações propostas | ✅ Rascunho elaborado |
 | 06 | [Regras de Negócio](02-Requisitos/03-Regras-de-Negocio.md) | RN01–RN09 e vínculos com os requisitos | ✅ Rascunho elaborado |
 | 07 | [Backlog Priorizado](GestaoConfiguracao/01-Backlog-Priorizado.md) | Histórias de usuário e priorização MoSCoW proposta | ✅ Rascunho elaborado |
-| 08 | [UML — Casos de Uso](03-UML/01-Casos-de-Uso.md) | Atores, funcionalidades e fluxos iniciais | 🟡 Fonte PlantUML pronta; revisar/exportar |
-| 09 | [UML — Componentes](03-UML/02-Componentes.md) | Componentes lógicos e dependências propostas | 🟡 Fonte PlantUML pronta; revisar/exportar |
-| 10 | [UML — Implantação](03-UML/03-Implantacao.md) | Nós e ambiente de implantação hipotético | 🟡 Fonte PlantUML pronta; revisar/exportar |
+| 08 | [UML — Casos de Uso](03-UML/01-Casos-de-Uso.md) | Atores, funcionalidades, fluxos e [diagrama SVG](03-UML/04-Diagrama-Casos-de-Uso.svg) | ✅ Arquivo gráfico incluído |
+| 09 | [UML — Componentes](03-UML/02-Componentes.md) | Componentes lógicos e [diagrama SVG](03-UML/05-Diagrama-Componentes.svg) | ✅ Arquivo gráfico incluído |
+| 10 | [UML — Implantação](03-UML/03-Implantacao.md) | Nós e [diagrama SVG](03-UML/06-Diagrama-Implantacao.svg) | ✅ Arquivo gráfico incluído |
 
 ### 2ª entrega — SRS, revisão e protótipos
 
