@@ -4,7 +4,7 @@
 
 Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**, **Estudante** e **Gestor**. Implementado em HTML, CSS e JavaScript, sem dependências externas.
 
-**Identidade visual:** interface moderna de plataforma digital profissional, com marca OI, design tokens, componentes padronizados, estados de foco e layout responsivo, seguindo o [Design System](04-Design-System.md).
+**Identidade visual:** interface moderna em azul e branco, com marca OI, design tokens e layout amplo reorganizado por tarefa (filtros e informações laterais, dashboard e editor em colunas), seguindo o [Design System](04-Design-System.md).
 
 ## Como executar
 
@@ -19,7 +19,7 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 
 - Paleta azul-marinho, azul principal e teal; superfícies claras e hierarquia tipográfica uniforme.
 - Navegação e botões com estados visuais consistentes; cards de oportunidades, dashboard e formulários padronizados.
-- Layout responsivo em desktop e celular, sem dependência de fontes ou bibliotecas online.
+- Layout que aproveita melhor a largura do desktop: filtros laterais no catálogo; detalhes com resumo/ação ao lado; gestor com navegação, indicadores e linhas de gestão; formulário com guia lateral. Em tablet e celular, as colunas se reorganizam verticalmente, sem bibliotecas online.
 - Foco de teclado visível e redução de movimento conforme preferência do dispositivo.
 - A identidade visual não altera os requisitos RF01–RF07 nem as regras RN01–RN09.
 
