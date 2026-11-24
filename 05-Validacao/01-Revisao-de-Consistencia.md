@@ -76,4 +76,6 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 - [ ] Executar teste de navegação completo em navegador, incluindo dispositivos móveis.
 - [ ] Revisão por pares e aprovação acadêmica registradas.
 
+**Verificação programática:** [Relatório de verificação](02-Relatorio-de-Verificacao.md) — 27/27 verificações positivas. A execução visual em diferentes telas permanece como conferência complementar.
+
 **Conclusão da conferência documental:** os requisitos funcionais, a SRS, os casos de uso e os wireframes estão alinhados com os fluxos representados no protótipo. Persistem testes de execução e revisão final do grupo. A revisão está em andamento; **Issue #7 permanece aberta** até resolver/registrar decisões pendentes e concluir a conferência final.
