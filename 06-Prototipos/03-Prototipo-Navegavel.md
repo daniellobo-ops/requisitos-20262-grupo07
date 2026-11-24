@@ -4,6 +4,8 @@
 
 Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**, **Estudante** e **Gestor**. Implementado em HTML, CSS e JavaScript, sem dependências externas.
 
+**Identidade visual:** interface moderna de plataforma digital profissional, com marca OI, design tokens, componentes padronizados, estados de foco e layout responsivo, seguindo o [Design System](04-Design-System.md).
+
 ## Como executar
 
 1. Acesse [index.html](navegavel/index.html) e use **Download raw file** no GitHub para salvar o arquivo.
@@ -12,6 +14,14 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 4. **Importante:** a visualização de código do GitHub não executa a interface HTML. Para navegar, abra o arquivo no navegador. Um link público hospedado pode ser acrescentado posteriormente, caso o grupo habilite uma hospedagem estática.
 
 **Arquivo:** [Protótipo HTML navegável](navegavel/index.html)
+
+## Identidade visual e experiência
+
+- Paleta azul-marinho, azul principal e teal; superfícies claras e hierarquia tipográfica uniforme.
+- Navegação e botões com estados visuais consistentes; cards de oportunidades, dashboard e formulários padronizados.
+- Layout responsivo em desktop e celular, sem dependência de fontes ou bibliotecas online.
+- Foco de teclado visível e redução de movimento conforme preferência do dispositivo.
+- A identidade visual não altera os requisitos RF01–RF07 nem as regras RN01–RN09.
 
 ## Telas e navegação
 
@@ -65,6 +75,7 @@ Os dados são **fictícios**, mantidos em memória durante a sessão da página;
 ## Artefatos relacionados
 
 - [Wireframes](00-Guia-Wireframes.md)
+- [Design System](04-Design-System.md)
 - [SRS — IEEE 830](../../04-SRS/01-SRS-IEEE830.md)
 - [Revisão de consistência](../../05-Validacao/01-Revisao-de-Consistencia.md)
 
@@ -75,6 +86,7 @@ Os dados são **fictícios**, mantidos em memória durante a sessão da página;
 - [x] Interface responsiva em HTML/CSS.
 - [x] Formulário, filtros, manifestações e estados demonstrativos implementados.
 - [x] Código versionado no repositório.
+- [x] Design system definido e identidade visual moderna aplicada no HTML.
 - [ ] Revisar visualmente a execução em navegadores e telas diferentes.
 - [ ] Verificar roteiro de apresentação com o grupo.
 - [ ] Acrescentar URL hospedada, caso exigida para acesso remoto.
