@@ -406,7 +406,7 @@ function catalog(){
 function detail(){
  const o=selected();
  if(!o)return '<div class="empty">Oportunidade não encontrada. <button class="btn" data-go="catalog">Voltar</button></div>';
- const existing=own().find(x=>x.oppId===o.id&&x.status!=="Encerrado");
+ const existing=state.role==="estudante"?own().find(x=>x.oppId===o.id&&x.status!=="Encerrado"):null;
  let action="";
  if(existing)action='<button class="btn primary full-width" data-go="my">Ver meu interesse registrado</button>';
  else if(!active(o))action='<button class="btn full-width" disabled>Manifestações indisponíveis</button>';
