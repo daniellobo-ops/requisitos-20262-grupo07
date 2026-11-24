@@ -43,7 +43,8 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 4. Preencha o formulário e escolha **Salvar rascunho** ou **Publicar**.
 5. Abra **Manifestações** e altere um registro de **Registrado** para **Em acompanhamento**.
 6. Volte ao perfil Estudante para observar o estado alterado.
-7. Encerre uma oportunidade no painel e confira que ela deixa de aceitar novos interesses.
+7. Encerre uma oportunidade publicada no painel e confira que ela deixa de aceitar novos interesses.
+8. Clique em **Arquivar** na oportunidade encerrada e confira sua transferência para **Arquivo de oportunidades**, mantendo os registros de interesse no histórico.
 
 ## Regras demonstradas
 
@@ -51,8 +52,9 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 - **RN03 e RN08:** oportunidade encerrada ou com prazo vencido não aceita novo interesse.
 - **RN04:** manifestação de interesse não é inscrição formal.
 - **RN05:** estudante visualiza somente os próprios registros demonstrativos.
-- **RN06:** encerrar oportunidade não elimina manifestações existentes.
+- **RN06:** encerrar e arquivar não eliminam manifestações existentes.
 - **RN07:** bloqueio de interesse ativo duplicado.
+- **RN08:** oportunidades seguem Rascunho → Publicada → Encerrada → Arquivada, com arquivo administrativo separado.
 - **RN09:** estados Registrado, Em acompanhamento e Encerrado com histórico de alterações.
 
 ## Limites do protótipo
