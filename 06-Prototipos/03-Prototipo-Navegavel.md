@@ -45,6 +45,7 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 6. Volte ao perfil Estudante para observar o estado alterado.
 7. Encerre uma oportunidade publicada no painel e confira que ela deixa de aceitar novos interesses.
 8. Clique em **Arquivar** na oportunidade encerrada e confira sua transferência para **Arquivo de oportunidades**, mantendo os registros de interesse no histórico.
+9. No arquivo, clique em **Desarquivar** e confira que ela volta à lista de gestão como **Encerrada**, sem aceitar novos interesses.
 
 ## Regras demonstradas
 
@@ -54,7 +55,7 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 - **RN05:** estudante visualiza somente os próprios registros demonstrativos.
 - **RN06:** encerrar e arquivar não eliminam manifestações existentes.
 - **RN07:** bloqueio de interesse ativo duplicado.
-- **RN08:** oportunidades seguem Rascunho → Publicada → Encerrada → Arquivada, com arquivo administrativo separado.
+- **RN08:** oportunidades seguem Rascunho → Publicada → Encerrada ⇄ Arquivada, com retorno por Desarquivar para Encerrada e arquivo administrativo separado.
 - **RN09:** estados Registrado, Em acompanhamento e Encerrado com histórico de alterações.
 
 ## Limites do protótipo
