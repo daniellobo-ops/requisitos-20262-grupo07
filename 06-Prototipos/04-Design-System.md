@@ -52,9 +52,9 @@
 ## 4. Espaçamento e composição
 
 - Base modular de **4 px**; intervalos frequentes: 8, 12, 16, 24, 32 e 48 px.
-- Conteúdo: largura máxima **1200 px**, centralizada com margens adaptáveis.
-- Grid de oportunidades: 3 colunas em desktop, 2 em tablet e 1 em celular.
-- Formulários e painéis: 2 colunas quando houver espaço, 1 em celular.
+- Conteúdo: largura máxima **1540 px**, centralizada com margens adaptáveis e aproveitamento do espaço em desktops.
+- Grid de oportunidades: 3 colunas na vitrine inicial; no catálogo, **filtros laterais + resultados em 2 colunas** no desktop. O layout reduz progressivamente em telas menores.
+- Formulários: área principal de edição com guia lateral; painel administrativo: navegação lateral, métricas em 4 colunas e linhas de oportunidades com ações dedicadas. Em celular, tudo se reorganiza em coluna única.
 - Cantos: `--radius-sm: 10px`, `--radius-md: 16px`, `--radius-lg: 24px`.
 - Sombras sutis, com estados hover perceptíveis; evitar sobreposição de informação.
 
@@ -63,11 +63,12 @@
 | Componente | Especificação |
 | --- | --- |
 | **Barra de navegação** | Marca OI, atalhos por perfil e botão de perfil; estado ativo perceptível |
+| **Layout por tarefa** | Aproveitar a largura com filtros, resumos ou instruções laterais sem repetir informações |
 | **Hero** | Gradiente azul-marinho/azul e grafismo orbital, CTA de alta prioridade |
 | **Card de oportunidade** | Tipo e destino, título, resumo, estado, área, prazo e botão Ver detalhes |
 | **Filtros** | Pesquisa por texto e filtros de tipo, destino e área em campos com rótulo |
 | **Chips de estado** | Publicada, Rascunho, Encerrada, Arquivada; estados escritos |
-| **Painel gestor** | Métricas, registros em gestão, arquivo administrativo e ações específicas |
+| **Painel gestor** | Sidebar funcional, quatro indicadores, registros em gestão, arquivo administrativo e ações específicas |
 | **Formulário** | Rótulos fixos, indicação de obrigatório, borda/foco, mensagem de validação |
 | **Feedback** | Avisos de regra, confirmação modal e toast em região de status |
 | **Estado vazio** | Mensagem orientadora e ação de recuperação quando aplicável |
@@ -80,7 +81,18 @@
 - **Arquivar:** somente após Encerrada; **Desarquivar** retorna para Encerrada sem republicar.
 - Ações desabilitadas precisam permanecer legíveis e não devem parecer disponíveis.
 
-## 6. Acessibilidade e comportamento responsivo
+## 6. Organização das telas
+
+- **Início:** hero em duas colunas (mensagem + resumo visual), atalhos rápidos e oportunidades em destaque abaixo.
+- **Catálogo:** filtros verticais à esquerda e resultados à direita; cards organizados em duas colunas no desktop. No celular, filtros acima da lista.
+- **Detalhes:** descrição, requisitos e documentos na área principal; informações essenciais e botão de manifestação em painel lateral, reposicionado abaixo do conteúdo no celular.
+- **Perfis:** introdução à esquerda e cartões de Estudante/Gestor à direita.
+- **Meus interesses:** resumo lateral e histórico de manifestações no corpo da página.
+- **Gestor:** navegação contextual, indicadores numéricos, oportunidades ativas e arquivo com ações Encerrar, Arquivar e Desarquivar.
+- **Cadastro/edição:** formulário amplo e guia lateral dos estados.
+- **Manifestações:** registros em linhas com seletor de situação e histórico.
+
+## 7. Acessibilidade e comportamento responsivo
 
 - Foco de teclado visível em botões, links, controles e `summary`.
 - Formulários com label associada; mensagens informativas não dependem exclusivamente de cor.
@@ -89,7 +101,7 @@
 - Modal de interesse com títulos e botões identificáveis; acesso por perfil explicitamente demonstrativo.
 - Acessibilidade WCAG 2.1 AA é **meta**, não certificação atribuída ao protótipo.
 
-## 7. Regras de preservação funcional
+## 8. Regras de preservação funcional
 
 A evolução visual **não altera**:
 - RF01: cadastro, edição, rascunho e validação de publicação;
@@ -102,7 +114,7 @@ A evolução visual **não altera**:
 
 **Implementação:** tokens CSS e componentes ficam incorporados no próprio HTML, para que baixar **somente** `index.html` continue sendo suficiente para abrir a demonstração.
 
-## 8. Checklist de revisão visual
+## 9. Checklist de revisão visual
 
 - [x] Tokens, identidade, componentes, espaçamento e tipografia definidos.
 - [ ] Revisar em navegador as telas W01–W08 em desktop e celular.
