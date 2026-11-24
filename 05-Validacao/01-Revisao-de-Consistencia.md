@@ -28,17 +28,17 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 - **Compatível:** UC01 corresponde a RF01 e RF06; UC02 a RF02; UC03–UC05 a RF03–RF05; UC06 a RF07.
 - **Correção nesta sprint:** ator **Visitante** acrescentado à representação e ao catálogo de UC02 para explicitar a consulta pública já admitida pela Visão e SRS; o ator Estudante foi mantido.
 - **Limite:** visitante não pode registrar interesse ou consultar manifestações privadas.
-- **Pendente:** exportar e inspecionar graficamente a versão PlantUML em notação UML, além da visualização conceitual Mermaid.
+- **Arquivo visual disponível:** [casos de uso em SVG](../03-UML/04-Diagrama-Casos-de-Uso.svg), com atores, casos de uso e associações. Fonte PlantUML mantida para edição.
 
 ### 3.2 Componentes
 - **Compatível:** Interface Web, Controle de Acesso, Gestão de Oportunidades, Consulta de Oportunidades, Gestão de Interesse e Persistência correspondem às funções especificadas.
 - **Risco de interpretação:** setas conceituais não definem APIs, tecnologias, microsserviços nem integração com sistema institucional.
-- **Pendente:** verificar a apresentação final do diagrama UML renderizado.
+- **Arquivo visual disponível:** [componentes em SVG](../03-UML/05-Diagrama-Componentes.svg), complementando a representação Mermaid e a fonte PlantUML.
 
 ### 3.3 Implantação
 - **Compatível:** navegador, aplicação web e persistência representam cenário hipotético para o MVP.
 - **Restrições:** não há hospedagem, banco, autenticação institucional ou política de backup confirmados; HTTPS é diretriz proposta.
-- **Pendente:** renderização UML final e revisão técnica do cenário de implantação.
+- **Arquivo visual disponível:** [implantação em SVG](../03-UML/06-Diagrama-Implantacao.svg). Representa a arquitetura conceitual proposta, não a hospedagem do protótipo local.
 
 ## 4. Achados e tratamento
 
@@ -51,7 +51,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | C05 | RN07 não determina se é possível novo interesse após encerramento do anterior | Lacuna | Bloquear duplicidade ativa; não oferecer reabertura automática na demonstração | **Aberto** |
 | C06 | RNF01, RNF02 e RNF06 precisam de cenários de verificação | Critérios de teste | Definir condições e executar testes de desempenho, responsividade e acessibilidade | **Aberto** |
 | C07 | Entrevistas simuladas utilizadas na elicitação | Metodologia | Identificar a modalidade de entrevista nos artefatos | **Documentado** |
-| C08 | Fontes UML são PlantUML e visualizações Mermaid, sem arquivos gráficos UML finais | Formato pendente | Renderizar/exportar diagramas e conferir notação final antes de encerrar a Issue | **Aberto** |
+| C08 | UML disponibilizada como Mermaid e código PlantUML | Apresentação dos artefatos | Adicionar arquivos gráficos SVG de casos de uso, componentes e implantação | **Arquivos adicionados** |
 
 ## 5. Critérios de consistência para protótipos
 
@@ -71,7 +71,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 - [x] Divergência sobre ator Visitante corrigida no diagrama de casos de uso.
 - [x] Lacunas e decisões pendentes identificadas.
 - [x] Harmonizar descrição dos estados de oportunidades na SRS e UML (RN08).
-- [ ] Revisar a notação dos diagramas UML renderizados e disponibilizar artefatos gráficos finais.
+- [x] Disponibilizar SVGs de casos de uso, componentes e implantação vinculados à fonte documental.
 - [x] Conferir documentalmente wireframes e protótipo contra a matriz RF/UC, incluindo filtro por área e ações de arquivar/desarquivar.
 - [ ] Executar teste de navegação completo em navegador, incluindo dispositivos móveis.
 - [ ] Revisão por pares e aprovação acadêmica registradas.
