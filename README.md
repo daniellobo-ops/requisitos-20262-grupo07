@@ -55,6 +55,7 @@ Processos de inscrição e avaliação formal de candidaturas, classificação e
 | :--- | :--- | :--- |
 | [SRS — IEEE 830](04-SRS/01-SRS-IEEE830.md) | Especificação completa, RF/RNF, casos de uso e rastreabilidade | Elaborada e revisada |
 | [Revisão de consistência](05-Validacao/01-Revisao-de-Consistencia.md) | Matriz de rastreabilidade e conferência UML ↔ requisitos | Revisão documental realizada |
+| [Relatório de verificação](05-Validacao/02-Relatorio-de-Verificacao.md) | Resultados da regressão funcional (27/27) e conferência documental | Verificação programática concluída |
 | [Wireframes](06-Prototipos/00-Guia-Wireframes.md) | Fluxos de estudante e gestor, com pranchas SVG | Produzidos |
 | [Protótipo navegável](06-Prototipos/03-Prototipo-Navegavel.md) | Instruções e roteiro de demonstração | Implementado; teste final pendente |
 | [Design System](06-Prototipos/04-Design-System.md) | Identidade visual, tokens, componentes, tipografia e responsividade | Definido e aplicado |
