@@ -15,7 +15,13 @@ Mostrar as responsabilidades lógicas da solução e suas dependências, sem inc
 | Gestão de Interesse | Registro, consulta e atualização da situação de interesse |
 | Persistência | Dados de oportunidades, estudantes e manifestações |
 
-## 3. Diagrama renderizável (representação conceitual)
+## 3. Diagrama de componentes revisado
+
+![Diagrama de componentes](05-Diagrama-Componentes.svg)
+
+[Visualizar o SVG em tamanho completo](05-Diagrama-Componentes.svg).
+
+### Representação conceitual em Mermaid
 ```mermaid
 flowchart LR
     W["Interface Web Responsiva"]
