@@ -45,7 +45,7 @@ Conferir correspondência, integridade e ausência de contradições conhecidas 
 | ID | Achado | Avaliação | Decisão/encaminhamento | Estado |
 | --- | --- | --- | --- | --- |
 | C01 | Consulta pública da SRS sem ator Visitante no diagrama | Divergência de representação | Incluir Visitante em UC02 e explicitar consulta sem identificação, preservando estudante | **Corrigido no diagrama** |
-| C02 | Fluxo de encerramento e arquivamento exige operações distintas | Consistência funcional | Estados harmonizados em RF, RN, SRS, UML e protótipo: Rascunho → Publicada → Encerrada → Arquivada | **Corrigido** |
+| C02 | Fluxo de encerramento e arquivamento exige operações distintas | Consistência funcional | Estados harmonizados em RF, RN, SRS, UML e protótipo: Rascunho → Publicada → Encerrada ⇄ Arquivada; desarquivar retorna ao estado Encerrada | **Corrigido** |
 | C03 | RF05/RN09 não definem integralmente transições de situação | Regra incompleta | Demonstrar Registrado → Em acompanhamento → Encerrado e a alternativa Registrado → Encerrado somente como fluxo proposto; não permitir reabertura sem definição | **Aberto — validar** |
 | C04 | Identificação simulada não garante autenticação/segurança | Restrição de escopo | Rotular seleção de perfil como **simulação**; produção exige autenticação/autorização real | **Definido para demonstração** |
 | C05 | RN07 não determina se é possível novo interesse após encerramento do anterior | Lacuna | Bloquear duplicidade ativa; não oferecer reabertura automática na demonstração | **Aberto** |
