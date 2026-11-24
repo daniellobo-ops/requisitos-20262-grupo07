@@ -86,7 +86,7 @@ G -- UC06
 
 **Nota de consistência (Sprint 2):** o ator *Visitante* foi explicitado em UC02 para representar a consulta pública já prevista em RF02 e na SRS. Isso não cria funcionalidade adicional nem concede permissão de manifestar interesse.
 
-**Decisões propostas para as telas:** em UC01 oportunidades possuem estados Rascunho, Publicada, Encerrada e Arquivada; em UC03 só pode existir uma manifestação ativa por estudante e oportunidade, sendo exibida a existente em tentativas repetidas. A identificação por perfil é simulada no protótipo; não presume autenticação da Unifor.
+**Decisões propostas para as telas:** em UC01 oportunidades possuem estados Rascunho, Publicada, Encerrada e Arquivada, com retorno de Arquivada para Encerrada por desarquivamento; em UC03 só pode existir uma manifestação ativa por estudante e oportunidade, sendo exibida a existente em tentativas repetidas. A identificação por perfil é simulada no protótipo; não presume autenticação da Unifor.
 
 ## 7. Verificações antes de aprovação
 - [ ] Confirmar o papel de gestor e quais campos são exigidos.
