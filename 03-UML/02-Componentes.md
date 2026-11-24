@@ -10,7 +10,7 @@ Mostrar as responsabilidades lógicas da solução e suas dependências, sem inc
 | --- | --- |
 | Interface Web | Consulta pública e área autenticada para estudante/gestor |
 | Controle de Acesso | Identificação e autorização por perfil |
-| Gestão de Oportunidades | Cadastro, edição, publicação e encerramento de editais/bolsas |
+| Gestão de Oportunidades | Cadastro, edição, publicação, encerramento, arquivamento e desarquivamento de oportunidades, mantendo seu estado e histórico |
 | Consulta de Oportunidades | Pesquisa e detalhe de oportunidades publicadas |
 | Gestão de Interesse | Registro, consulta e atualização da situação de interesse |
 | Persistência | Dados de oportunidades, estudantes e manifestações |
