@@ -49,6 +49,18 @@ Processos de inscrição e avaliação formal de candidaturas, classificação e
 | 09 | [UML — Componentes](03-UML/02-Componentes.md) | Componentes lógicos e dependências propostas | 🟡 Fonte PlantUML pronta; revisar/exportar |
 | 10 | [UML — Implantação](03-UML/03-Implantacao.md) | Nós e ambiente de implantação hipotético | 🟡 Fonte PlantUML pronta; revisar/exportar |
 
+### 2ª entrega — SRS, revisão e protótipos
+
+| Documento | Conteúdo | Situação |
+| :--- | :--- | :--- |
+| [SRS — IEEE 830](04-SRS/01-SRS-IEEE830.md) | Especificação completa, RF/RNF, casos de uso e rastreabilidade | Elaborada e revisada |
+| [Revisão de consistência](05-Validacao/01-Revisao-de-Consistencia.md) | Matriz de rastreabilidade e conferência UML ↔ requisitos | Revisão documental realizada |
+| [Wireframes](06-Prototipos/00-Guia-Wireframes.md) | Fluxos de estudante e gestor, com pranchas SVG | Produzidos |
+| [Protótipo navegável](06-Prototipos/03-Prototipo-Navegavel.md) | Instruções e roteiro de demonstração | Implementado; teste final pendente |
+| [Abrir código HTML do protótipo](06-Prototipos/navegavel/index.html) | Interface demonstrativa para baixar e executar localmente | Versionado |
+
+**Execução:** baixe o `index.html` e abra-o no navegador. O GitHub exibe o código, não executa a aplicação nesta visualização. Os perfis e dados são simulados; a aplicação não utiliza backend nem persistência de produção.
+
 ### Entregas seguintes
 
 - **2ª entrega — SRS e Prototipação:** especificação formal, revisão de consistência, wireframes e protótipo navegável.
@@ -65,7 +77,7 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 | Especificação (completude e clareza) | 30% | 01, 04–07 | 🟡 Rascunhos prontos; revisão e validação pendentes |
 | Modelagem UML | 25% | 08–10 | 🟡 Diagramas descritos em Mermaid/PlantUML; revisão e exportação pendentes |
 | Elicitação (entrevistas e questionários) | 20% | 02–03 | ✅ Entrevistas simuladas realizadas, não pesquisa de campo |
-| Protótipos (qualidade e usabilidade) | 15% | 2ª entrega | ⬜ Ainda não iniciada |
+| Protótipos (qualidade e usabilidade) | 15% | 2ª entrega | 🟡 Wireframes e protótipo produzidos; testes finais pendentes |
 | Apresentação (defesa e comunicação) | 10% | 3ª entrega | ⬜ Ainda não iniciada |
 
 ---
