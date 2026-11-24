@@ -18,7 +18,7 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 | Tela | Função | RF / UC |
 | --- | --- | --- |
 | Início | Destaques e acesso ao catálogo | RF02 / UC02 |
-| Catálogo | Pesquisa, filtro por tipo/destino, lista vazia | RF02 / UC02 |
+| Catálogo | Pesquisa, filtros por tipo/destino/área, lista vazia | RF02 / UC02 |
 | Detalhe | Requisitos, documentos, prazo, manifestação | RF02, RF03 / UC02, UC03 |
 | Entrada por perfil | Alternância demonstrativa Estudante/Gestor/Visitante | RF07 / UC06 |
 | Meus interesses | Registros e histórico do estudante | RF04 / UC04 |
@@ -29,7 +29,7 @@ Protótipo interativo responsivo com oito telas/áreas e fluxos de **Visitante**
 ## Roteiro sugerido para a apresentação
 
 ### Fluxo 1 — Estudante
-1. Abra **Catálogo** e filtre oportunidades por tipo ou destino.
+1. Abra **Catálogo** e filtre oportunidades por tipo, destino ou área.
 2. Escolha uma oportunidade **Publicada**, com prazo aberto, e acesse os detalhes.
 3. Clique em **Manifestar interesse**; selecione **Estudante** se necessário.
 4. Confira o aviso de que interesse **não constitui candidatura formal** e confirme.
@@ -64,7 +64,7 @@ Os dados são **fictícios**, mantidos em memória durante a sessão da página;
 
 ## Artefatos relacionados
 
-- [Wireframes](../00-Guia-Wireframes.md)
+- [Wireframes](00-Guia-Wireframes.md)
 - [SRS — IEEE 830](../../04-SRS/01-SRS-IEEE830.md)
 - [Revisão de consistência](../../05-Validacao/01-Revisao-de-Consistencia.md)
 
