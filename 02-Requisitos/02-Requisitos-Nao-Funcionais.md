@@ -1,11 +1,12 @@
 # Requisitos Não Funcionais — Proposta 3 (LAPIS)
 
-> **v0.1 | Rascunho.** Classificação conforme categorias do [template LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-requisitosNaoFuncionais.md). Metas não foram aprovadas nem testadas.
+> **Versão 0.2.** Classificação conforme categorias do [template LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/blob/main/Requisitos/Artefatos/Templates/template-requisitosNaoFuncionais.md).
 
 ## Histórico
 | Versão | Descrição |
 | --- | --- |
 | 0.1 | Requisitos de qualidade para o escopo definido |
+| 0.2 | Distinção entre demonstração de interface e verificação do sistema completo |
 
 ## 1. Requisitos de Produto
 ### 1.1 Eficiência de desempenho
@@ -47,7 +48,21 @@ Os RF01–RF07 definem as capacidades previstas, com critérios de aceitação p
 - **Operacionais:** responsáveis pela publicação e atualização de editais ainda não identificados.
 - **Desenvolvimento/ambiente:** não foram impostas linguagens ou infraestrutura pelo material da Proposta 3.
 
-## 4. Checklist de validação
+## 4. Alcance da demonstração e da verificação
+
+| RNF | No protótipo navegável | Verificação no sistema completo |
+| --- | --- | --- |
+| RNF01 | Navegação local entre telas, sem carga de rede | Medir tempo de resposta em cenário, ambiente e carga definidos |
+| RNF02 | Layout responsivo implementado em CSS | Conferir navegação e legibilidade em celular (a partir de 360 px) e desktop |
+| RNF03 | Dados temporários em memória, reiniciados ao recarregar | Persistência real, backup e teste de recuperação |
+| RNF04 | Alternância de perfil demonstrativo para exibir ações correspondentes | Autenticação, autorização no servidor e transporte protegido |
+| RNF05 | Dados fictícios e campos mínimos na demonstração | Definir finalidade, minimização, retenção e base legal para dados reais |
+| RNF06 | Rótulos e controles básicos de interface | Testar teclado, foco, contraste e demais critérios da WCAG 2.1 AA |
+| RNF07 | Mensagem explícita antes da manifestação de interesse | Verificar compreensão do aviso no cenário de uso |
+
+**Nota:** uma demonstração navegável não comprova desempenho, segurança, recuperação de dados ou conformidade de acessibilidade. Os testes devem ser registrados separadamente, sem presumir resultados.
+
+## 5. Checklist de validação
 - [x] Categorias do LAPIS utilizadas onde aplicáveis.
 - [x] Itens com identificadores, critérios de verificação e pendências.
 - [ ] Executar testes de desempenho e acessibilidade.
