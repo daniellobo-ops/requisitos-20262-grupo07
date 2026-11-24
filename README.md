@@ -57,6 +57,7 @@ Processos de inscrição e avaliação formal de candidaturas, classificação e
 | [Revisão de consistência](05-Validacao/01-Revisao-de-Consistencia.md) | Matriz de rastreabilidade e conferência UML ↔ requisitos | Revisão documental realizada |
 | [Wireframes](06-Prototipos/00-Guia-Wireframes.md) | Fluxos de estudante e gestor, com pranchas SVG | Produzidos |
 | [Protótipo navegável](06-Prototipos/03-Prototipo-Navegavel.md) | Instruções e roteiro de demonstração | Implementado; teste final pendente |
+| [Design System](06-Prototipos/04-Design-System.md) | Identidade visual, tokens, componentes, tipografia e responsividade | Definido e aplicado |
 | [Abrir código HTML do protótipo](06-Prototipos/navegavel/index.html) | Interface demonstrativa para baixar e executar localmente | Versionado |
 
 **Execução:** baixe o `index.html` e abra-o no navegador. O GitHub exibe o código, não executa a aplicação nesta visualização. Os perfis e dados são simulados; a aplicação não utiliza backend nem persistência de produção.
