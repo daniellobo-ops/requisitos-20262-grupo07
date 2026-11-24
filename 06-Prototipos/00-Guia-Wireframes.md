@@ -18,8 +18,8 @@ Wireframes de baixa fidelidade das oito telas principais do sistema. Os arquivos
 | W03 — Detalhes | Exibir descrição, prazos, requisitos e documentos; iniciar manifestação | Público / estudante | RF02, RF03 / UC02, UC03 |
 | W04 — Meus interesses | Visualizar registros próprios e situação | Estudante | RF04 / UC04 |
 | W05 — Entrada por perfil | Simular a entrada como estudante ou gestor | Estudante / gestor | RF07 / UC06 |
-| W06 — Painel do gestor | Consultar e administrar oportunidades e acompanhar interesses | Gestor | RF01, RF05, RF06 / UC01, UC05 |
-| W07 — Cadastro / edição | Criar, salvar, editar, publicar e encerrar oportunidades | Gestor | RF01, RF06 / UC01 |
+| W06 — Painel do gestor | Consultar e administrar oportunidades (incluindo arquivo) e acompanhar interesses | Gestor | RF01, RF05, RF06 / UC01, UC05 |
+| W07 — Cadastro / edição | Criar, salvar, editar, publicar, encerrar, arquivar e desarquivar oportunidades | Gestor | RF01, RF06 / UC01 |
 | W08 — Gestão de manifestações | Consultar e atualizar estados dos registros de interesse | Gestor | RF05 / UC05 |
 
 ## Mapa de navegação
@@ -48,7 +48,7 @@ flowchart TD
 5. O estudante vê apenas as próprias manifestações. O gestor acessa a área de gestão pelo perfil correspondente (RN05/RF07).
 6. Na publicação, campos obrigatórios incompletos são indicados e impedem a mudança de Rascunho para Publicada (RN02).
 7. O gestor acompanha as manifestações nos estados Registrado, Em acompanhamento e Encerrado (RN09); o histórico registra responsável e data (RF05).
-8. Oportunidades encerradas não aceitam novos interesses; o gestor pode arquivá-las em uma seção separada e desarquivá-las de volta ao estado Encerrada, mantendo os registros anteriores para consulta (RN06/RN08).
+8. Oportunidades encerradas não aceitam novos interesses; o gestor pode arquivá-las em uma seção separada e desarquivá-las de volta ao estado Encerrada, mantendo os registros anteriores para consulta (RN06/RN08). Os wireframes do gestor mostram as ações de encerramento, arquivamento e desarquivamento.
 9. Campos e exemplos visuais nas pranchas são ilustrativos; a entrada por perfil será demonstrativa, sem autenticação real.
 
 ## Conferência da Sprint 2
