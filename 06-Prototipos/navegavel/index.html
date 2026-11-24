@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oportunidades Internacionais — Protótipo</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#16243b;background:#f4f7fb;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}
+a{color:inherit}.shell{max-width:1180px;margin:auto;padding:28px 22px 70px}.top{background:#fff;border-bottom:1px solid #dee6f0;position:sticky;top:0;z-index:5}
+.nav{max-width:1180px;padding:15px 22px;margin:auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{font-weight:800;color:#153b77;letter-spacing:-.5px}.logo span{color:#1674c1}.links{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.btn,.tab{border:1px solid #cbd6e5;border-radius:10px;background:#fff;padding:11px 15px;color:#233c5e;font-weight:650}
+.btn.primary{background:#1557ae;color:#fff;border-color:#1557ae}.btn.dark{background:#203650;color:#fff}.btn.danger{color:#a52c38;border-color:#f0bfca}
+.btn:hover,.tab:hover{filter:brightness(.97)}.mini{padding:8px 11px;font-size:.88rem}.active{background:#e9f2ff;color:#1557ae;border-color:#bfd6fa}
+header.hero{background:linear-gradient(115deg,#123e78,#266db8);padding:42px;color:#fff;border-radius:19px;margin-bottom:24px}
+.hero h1{font-size:clamp(2rem,4vw,3.1rem);max-width:750px;margin:0 0 13px;letter-spacing:-1px}
+.hero p{font-size:1.05rem;color:#e6efff;max-width:650px;line-height:1.6}
+.hero .btn{margin-top:10px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card,.panel{background:#fff;border:1px solid #dfe6ee;border-radius:15px;padding:23px;box-shadow:0 4px 16px #123e7810}
+.card{display:flex;flex-direction:column;gap:11px}.card h3{margin:5px 0;font-size:1.18rem}.card p{color:#596a80;line-height:1.5;margin:0;flex:1}
+.muted{color:#5d6f82}.eyebrow{font-size:.8rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:#3979b4}
+.chip{display:inline-flex;align-items:center;align-self:flex-start;padding:5px 9px;border-radius:20px;background:#eaf3ff;color:#20589c;font-weight:700;font-size:.77rem}
+.chip.dim{background:#edf0f4;color:#5d687a}.chip.good{background:#e5f7ee;color:#136744}
+h1{font-size:2rem;margin:0 0 10px}h2{margin:0 0 14px}h3{margin:4px 0 12px}
+.sectionhead{margin:20px 0 24px;display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap}.sectionhead p{color:#63768c;margin:7px 0 0}
+.toolbar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-bottom:20px}
+label{display:flex;flex-direction:column;gap:7px;font-size:.9rem;font-weight:700}
+input,select,textarea{border:1px solid #bccbdf;border-radius:9px;padding:11px 12px;background:#fff;color:#23354e;width:100%;min-height:43px}
+textarea{min-height:100px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stack{display:flex;flex-direction:column;gap:16px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.back{display:inline-block;margin:0 0 15px;color:#1557ae;font-weight:700;text-decoration:none}
+.empty{padding:52px 20px;text-align:center;background:#fff;border:1px dashed #b6c8dc;border-radius:15px;color:#5d6f82}
+.notice{padding:15px 17px;border:1px solid #bdd3f2;background:#f0f6ff;color:#244d7e;border-radius:12px;line-height:1.6}
+.notice.warn{background:#fff8ea;border-color:#f2d49a;color:#79561d}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.meta>div{background:#f4f7fb;padding:15px;border-radius:10px}
+.meta strong{display:block;margin-bottom:5px}.rows{display:grid;gap:12px}.item{padding:18px;border:1px solid #dfe6ee;border-radius:12px;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.item h3{margin:0 0 6px}.item p{margin:0;color:#66778b}.fieldgrid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.fieldgrid .wide{grid-column:1/-1}.helper{font-size:.87rem;color:#64758a}.stat{font-size:2.2rem;font-weight:800;color:#195aab}
+dialog{border:0;border-radius:17px;max-width:480px;width:calc(100% - 30px);padding:27px;box-shadow:0 25px 70px #0c244c55}
+dialog::backdrop{background:#0b1b32a1}.toast{position:fixed;bottom:22px;right:22px;max-width:380px;background:#173e73;color:#fff;padding:14px 20px;border-radius:10px;box-shadow:0 15px 35px #1234;z-index:10}
+footer{font-size:.85rem;text-align:center;color:#64758a;padding:28px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.toolbar{grid-template-columns:1fr}.meta{grid-template-columns:1fr 1fr}}
+@media(max-width:570px){.grid,.meta,.fieldgrid{grid-template-columns:1fr}.fieldgrid .wide{grid-column:auto}.shell{padding:20px 14px}.nav{padding:12px 14px}.links{margin-left:0;width:100%}.btn{padding:10px}.hero{padding:25px}.item{align-items:flex-start}}
+</style></head>
+<body>
+<div class="top"><nav class="nav" aria-label="Navegação principal">
+ <div class="logo">Oportunidades <span>Internacionais</span></div>
+ <div class="links" id="navlinks"></div>
+</nav></div>
+<main class="shell" id="app" tabindex="-1"></main>
+<footer>Protótipo acadêmico demonstrativo • Grupo 7 • Proposta 3 • Dados fictícios</footer>
+<dialog id="confirmDialog" aria-labelledby="confirmTitle"><h2 id="confirmTitle">Confirmar interesse</h2><p>Você deseja registrar uma manifestação de interesse nesta oportunidade?</p><div class="notice">Esta manifestação de interesse não constitui inscrição formal, seleção nem concessão de bolsa.</div><div class="actions"><button class="btn" id="cancelConfirm">Cancelar</button><button class="btn primary" id="acceptConfirm">Confirmar manifestação</button></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+/* Protótipo sem backend. Dados demonstrativos são armazenados apenas nesta sessão do navegador. */
+const TODAY=new Date();TODAY.setHours(0,0,0,0);
+const future=d=>{const x=new Date(TODAY);x.setDate(x.getDate()+d);return x.toISOString().slice(0,10)};
+const initial=[
+{id:1,title:"Bolsa de mobilidade acadêmica",type:"Bolsa",country:"Portugal",area:"Tecnologia",deadline:future(70),description:"Oportunidade acadêmica de mobilidade internacional com atividades e experiências em instituição parceira.",requirements:"Estar regularmente matriculado; observar os critérios do edital.",documents:"Histórico acadêmico e documentos indicados no edital.",state:"Publicada"},
+{id:2,title:"Edital de intercâmbio estudantil",type:"Edital",country:"Espanha",area:"Administração",deadline:future(42),description:"Programa demonstrativo de intercâmbio para estudantes interessados em vivência acadêmica internacional.",requirements:"Verificar os critérios acadêmicos da oportunidade.",documents:"Documento de identificação e documentação indicada.",state:"Publicada"},
+{id:3,title:"Mobilidade em universidade parceira",type:"Edital",country:"Canadá",area:"Engenharia",deadline:future(110),description:"Programa ilustrativo de mobilidade internacional em instituição de ensino superior.",requirements:"Atender às condições definidas na oportunidade.",documents:"Documentos de matrícula e demais comprovantes solicitados.",state:"Publicada"},
+{id:4,title:"Bolsa de estudos — edição anterior",type:"Bolsa",country:"Chile",area:"Tecnologia",deadline:future(-30),description:"Exemplo de oportunidade encerrada para demonstração do controle de prazo.",requirements:"Requisitos do edital encerrado.",documents:"Documentos conforme o edital.",state:"Encerrada/Arquivada"}
+];
+const clone=x=>JSON.parse(JSON.stringify(x));
+const state={page:"home",role:"visitante",selected:1,returnTo:null,editing:null,query:"",filterType:"",filterCountry:"",opps:clone(initial),interests:[],nextOpp:5,nextInterest:1,student:"estudante-demo",toastTimer:null};
+const $=s=>document.querySelector(s);
+const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
+const fmt=x=>new Date(x+"T12:00:00").toLocaleDateString("pt-BR");
+const status=(s)=>'<span class="chip '+(s==="Publicada"?"good":s==="Encerrada/Arquivada"?"dim":"")+'">'+esc(s)+'</span>';
+const active=o=>o.state==="Publicada"&&o.deadline>=future(0);
+const eligible=o=>o.state==="Publicada"&&o.deadline>=future(0);
+const selected=()=>state.opps.find(x=>x.id===state.selected);
+const own=()=>state.interests.filter(x=>x.student===state.student);
+function toast(msg){const el=$("#toast");el.innerHTML='<div class="toast">'+esc(msg)+'</div>';clearTimeout(state.toastTimer);state.toastTimer=setTimeout(()=>el.textContent="",3800)}
+function show(page){state.page=page;render();window.scrollTo(0,0)}
+function navigate(page){show(page)}
+function setRole(role){state.role=role;const back=state.returnTo;state.returnTo=null;if(role==="gestor")show("dashboard");else if(role==="estudante")show(back==="detail"?"detail":"my");else show("home");toast("Perfil demonstrativo: "+role)}
+function requireRole(role,back){if(state.role!==role){state.returnTo=back||null;show("profile");toast("Selecione o perfil "+role+" para continuar");return false}return true}
+function menu(){
+ const links=[["home","Início"],["catalog","Oportunidades"]];
+ if(state.role==="estudante")links.push(["my","Meus interesses"]);
+ if(state.role==="gestor")links.push(["dashboard","Painel gestor"],["manage","Manifestações"]);
+ const b=links.map(([id,t])=>'<button class="tab mini '+(state.page===id?"active":"")+'" data-go="'+id+'">'+t+'</button>').join("");
+ $("#navlinks").innerHTML=b+'<button class="btn mini" data-go="profile">Perfil: '+esc(state.role)+"</button>";
+}
+function card(o){return '<article class="card"><div class="eyebrow">'+esc(o.type)+' • '+esc(o.country)+'</div><h3>'+esc(o.title)+'</h3><p>'+esc(o.description)+'</p><div>'+status(o.state)+'</div><div class="helper">Área: '+esc(o.area||"Não informada")+' • Prazo: '+fmt(o.deadline)+'</div><button class="btn primary" data-open="'+o.id+'">Ver detalhes</button></article>'}
+function home(){return '<header class="hero"><div class="eyebrow" style="color:#c8e3ff">Mobilidade e oportunidades acadêmicas</div><h1>Explore oportunidades para estudar no exterior.</h1><p>Encontre editais, bolsas, requisitos e prazos em uma plataforma organizada. Demonstração dos fluxos de consulta e acompanhamento de interesse.</p><button class="btn" data-go="catalog">Explorar oportunidades</button></header><div class="sectionhead"><div><h2>Oportunidades em destaque</h2><p>Exemplos disponíveis para navegação.</p></div><button class="btn" data-go="catalog">Ver todas</button></div><div class="grid">'+state.opps.filter(eligible).slice(0,3).map(card).join("")+'</div>'}
+function catalog(){const publicOpps=state.opps.filter(o=>o.state==="Publicada");const countries=[...new Set(publicOpps.map(o=>o.country).filter(Boolean))];const found=publicOpps.filter(o=>(o.title+" "+o.description+" "+o.area+" "+o.country).toLowerCase().includes(state.query.toLowerCase())&&(!state.filterType||o.type===state.filterType)&&(!state.filterCountry||o.country===state.filterCountry));return '<div class="sectionhead"><div><h1>Catálogo de oportunidades</h1><p>Consulte editais, bolsas, destinos e requisitos.</p></div></div><div class="toolbar"><label>Pesquisar<input id="search" placeholder="Nome, país ou área" value="'+esc(state.query)+'"></label><label>Tipo<select id="typeFilter"><option value="">Todos</option>'+["Bolsa","Edital"].map(t=>'<option '+(state.filterType===t?"selected":"")+'>'+t+'</option>').join("")+'</select></label><label>Destino<select id="countryFilter"><option value="">Todos</option>'+countries.map(t=>'<option '+(state.filterCountry===t?"selected":"")+'>'+esc(t)+'</option>').join("")+'</select></label></div><p class="muted">'+found.length+' oportunidade(s) encontrada(s)</p>'+(found.length?'<div class="grid">'+found.map(card).join("")+'</div>':'<div class="empty">Nenhuma oportunidade encontrada.<div class="actions" style="justify-content:center"><button class="btn" id="clearFilters">Limpar filtros</button></div></div>')}
+function detail(){const o=selected();if(!o)return '<div class="empty">Oportunidade não encontrada. <button class="btn" data-go="catalog">Voltar</button></div>';const existing=own().find(x=>x.oppId===o.id&&x.status!=="Encerrado");let action="";
+if(existing)action='<button class="btn primary" data-go="my">Ver meu interesse registrado</button>';
+else if(!active(o))action='<button class="btn" disabled>Manifestações indisponíveis</button>';
+else action='<button class="btn primary" id="interestBtn">Manifestar interesse</button>';
+return '<a class="back" href="#catalog" data-go="catalog">← Voltar ao catálogo</a><div class="panel"><div class="eyebrow">'+esc(o.type)+' • '+esc(o.country)+'</div><div class="sectionhead"><div><h1>'+esc(o.title)+'</h1><p>'+esc(o.description)+'</p></div>'+status(o.state)+'</div><div class="meta"><div><strong>Prazo</strong>'+fmt(o.deadline)+'</div><div><strong>Destino</strong>'+esc(o.country||"Não informado")+'</div><div><strong>Área</strong>'+esc(o.area||"Não informada")+'</div></div><div class="two"><section><h3>Requisitos</h3><p class="muted">'+esc(o.requirements)+'</p></section><section><h3>Documentos necessários</h3><p class="muted">'+esc(o.documents)+'</p></section></div><div class="notice" style="margin-top:24px">Manifestar interesse não equivale a fazer uma inscrição formal no programa.</div><div class="actions">'+action+'</div></div>'}
+function profile(){return '<div class="sectionhead"><div><h1>Entrada por perfil</h1><p>Escolha um perfil para percorrer os fluxos do protótipo.</p></div></div><div class="notice">Esta entrada é uma simulação para demonstração acadêmica, sem login real.</div><div class="two" style="margin-top:20px"><div class="card"><h2>Estudante</h2><p>Registre interesse em oportunidades e acompanhe seus registros.</p><button class="btn primary" data-role="estudante">Entrar como estudante</button></div><div class="card"><h2>Gestor de oportunidades</h2><p>Cadastre, publique e encerre oportunidades. Atualize situações de interesse.</p><button class="btn primary" data-role="gestor">Entrar como gestor</button></div></div><div class="actions"><button class="btn" data-role="visitante">Continuar como visitante</button></div>'}
+function my(){if(state.role!=="estudante")return denied();const records=own();return '<div class="sectionhead"><div><h1>Meus interesses</h1><p>Registros associados ao estudante demonstrativo.</p></div><button class="btn" data-go="catalog">Explorar oportunidades</button></div>'+(records.length?'<div class="rows">'+records.map(i=>{const o=state.opps.find(x=>x.id===i.oppId);return '<div class="item"><div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Registro: '+fmt(i.date)+'</p><p>'+status(i.status)+'</p><details><summary>Histórico</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div><button class="btn" data-open="'+i.oppId+'">Ver oportunidade</button></div>'}).join("")+'</div>':'<div class="empty"><h3>Nenhuma manifestação registrada</h3><p>Explore o catálogo e manifeste interesse em uma oportunidade aberta.</p></div>')}
+function denied(){return '<div class="empty"><h2>Acesso restrito por perfil</h2><p>Selecione o perfil correspondente para entrar nesta área.</p><button class="btn primary" data-go="profile">Selecionar perfil</button></div>'}
+function dashboard(){if(state.role!=="gestor")return denied();return '<div class="sectionhead"><div><h1>Painel do gestor</h1><p>Gerencie oportunidades e manifestações de interesse.</p></div><button class="btn primary" id="newOpp">+ Nova oportunidade</button></div><div class="two"><div class="panel"><div class="eyebrow">Publicadas</div><div class="stat">'+state.opps.filter(o=>o.state==="Publicada").length+'</div></div><div class="panel"><div class="eyebrow">Manifestações registradas</div><div class="stat">'+state.interests.length+'</div></div></div><h2 style="margin-top:28px">Oportunidades cadastradas</h2><div class="rows">'+state.opps.map(o=>'<div class="item"><div><h3>'+esc(o.title)+'</h3><p>'+esc(o.country)+' • '+fmt(o.deadline)+' • '+o.type+'</p>'+status(o.state)+'</div><div class="actions"><button class="btn" data-edit="'+o.id+'">Editar</button>'+(o.state!=="Encerrada/Arquivada"?'<button class="btn danger" data-close="'+o.id+'">Encerrar</button>':"")+'</div></div>').join("")+'</div><div class="actions"><button class="btn primary" data-go="manage">Gerenciar manifestações</button></div>'}
+function form(){if(state.role!=="gestor")return denied();const o=state.opps.find(x=>x.id===state.editing)||{};const val=k=>esc(o[k]||"");return '<a class="back" href="#dashboard" data-go="dashboard">← Voltar ao painel</a><div class="panel"><h1>'+(o.id?"Editar oportunidade":"Nova oportunidade")+'</h1><p class="muted">Preencha os dados. A publicação exige os campos essenciais.</p><form id="oppForm" class="fieldgrid"><label>Título *<input name="title" maxlength="120" value="'+val("title")+'"></label><label>Tipo *<select name="type"><option value="">Selecione</option>'+["Bolsa","Edital"].map(t=>'<option '+(o.type===t?"selected":"")+'>'+t+'</option>').join("")+'</select></label><label>Destino<input name="country" placeholder="Quando aplicável" value="'+val("country")+'"></label><label>Área<input name="area" placeholder="Área de estudo" value="'+val("area")+'"></label><label>Prazo *<input type="date" name="deadline" value="'+val("deadline")+'"></label><label class="wide">Descrição *<textarea name="description">'+val("description")+'</textarea></label><label>Requisitos *<textarea name="requirements">'+val("requirements")+'</textarea></label><label>Documentos *<textarea name="documents">'+val("documents")+'</textarea><span class="helper">Se não houver, informe “Não se aplica”.</span></label><div class="wide notice" id="formMessage" hidden></div><div class="wide actions"><button type="button" class="btn" id="saveDraft">Salvar rascunho</button><button type="submit" class="btn primary">Publicar oportunidade</button></div></form></div>'}
+function manage(){if(state.role!=="gestor")return denied();return '<div class="sectionhead"><div><h1>Gestão de manifestações</h1><p>Atualize a situação de interesse e acompanhe o histórico.</p></div><button class="btn" data-go="dashboard">Painel do gestor</button></div>'+(state.interests.length?'<div class="rows">'+state.interests.map(i=>{const o=state.opps.find(x=>x.id===i.oppId),options=(i.status==="Registrado"?["Registrado","Em acompanhamento","Encerrado"]:i.status==="Em acompanhamento"?["Em acompanhamento","Encerrado"]:["Encerrado"]);return '<div class="item"><div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Estudante: '+esc(i.student)+' • Registrado em '+fmt(i.date)+'</p>'+status(i.status)+'<details><summary>Histórico</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div><div><label>Atualizar situação<select id="s'+i.id+'">'+options.map(t=>'<option '+(t===i.status?"selected":"")+'>'+t+'</option>').join("")+'</select></label><button class="btn primary mini" style="margin-top:9px" data-update="'+i.id+'">Salvar alteração</button></div></div>'}).join("")+'</div>':'<div class="empty">Ainda não há manifestações registradas. Entre como estudante para criar uma demonstração.</div>')}
+const views={home,catalog,detail,profile,my,dashboard,form,manage};
+function render(){menu();$("#app").innerHTML=(views[state.page]||home)();$("#app").focus({preventScroll:true})}
+function getForm(){const d=Object.fromEntries(new FormData($("#oppForm")).entries());return Object.fromEntries(Object.entries(d).map(([k,v])=>[k,String(v).trim()]))}
+function saveOpp(publish){const d=getForm();const missing=["title","type","deadline","description","requirements","documents"].filter(k=>!d[k]);if(publish&&missing.length){const box=$("#formMessage");box.hidden=false;box.className="wide notice warn";box.textContent="Preencha os campos obrigatórios antes de publicar: "+missing.join(", ");return}let o=state.opps.find(x=>x.id===state.editing);if(!o){o={id:state.nextOpp++};state.opps.unshift(o)}Object.assign(o,d);o.state=publish?"Publicada":"Rascunho";show("dashboard");toast(publish?"Oportunidade publicada":"Rascunho salvo")}
+document.addEventListener("click",e=>{
+const go=e.target.closest("[data-go]");if(go){e.preventDefault();navigate(go.dataset.go);return}
+const role=e.target.closest("[data-role]");if(role){setRole(role.dataset.role);return}
+const open=e.target.closest("[data-open]");if(open){state.selected=Number(open.dataset.open);show("detail");return}
+const edit=e.target.closest("[data-edit]");if(edit&&state.role==="gestor"){state.editing=Number(edit.dataset.edit);show("form");return}
+const close=e.target.closest("[data-close]");if(close&&state.role==="gestor"){const o=state.opps.find(x=>x.id===Number(close.dataset.close));if(o&&confirm("Encerrar/arquivar esta oportunidade?")){o.state="Encerrada/Arquivada";render();toast("Oportunidade encerrada, histórico preservado")}return}
+const upd=e.target.closest("[data-update]");if(upd&&state.role==="gestor"){const i=state.interests.find(x=>x.id===Number(upd.dataset.update)),next=$("#s"+i.id).value;if(next!==i.status){i.status=next;i.history.push({status:next,by:"Gestor demonstrativo",date:new Date().toLocaleString("pt-BR")});render();toast("Situação atualizada")}else toast("Nenhuma alteração realizada");return}
+if(e.target.id==="newOpp"){state.editing=null;show("form")}
+if(e.target.id==="saveDraft")saveOpp(false);
+if(e.target.id==="interestBtn"){if(!requireRole("estudante","detail"))return;const o=selected();if(!o||!active(o)){toast("Oportunidade indisponível para manifestação");return}const exists=own().find(x=>x.oppId===o.id&&x.status!=="Encerrado");if(exists){show("my");toast("Já existe manifestação ativa para esta oportunidade");return}$("#confirmDialog").showModal()}
+if(e.target.id==="clearFilters"){state.query="";state.filterType="";state.filterCountry="";render()}
+if(e.target.id==="cancelConfirm")$("#confirmDialog").close();
+if(e.target.id==="acceptConfirm"){if(state.role!=="estudante"){ $("#confirmDialog").close();return}const o=selected();if(o&&active(o)&&!own().some(x=>x.oppId===o.id&&x.status!=="Encerrado")){state.interests.push({id:state.nextInterest++,oppId:o.id,student:state.student,status:"Registrado",date:future(0),history:[{status:"Registrado",date:new Date().toLocaleString("pt-BR"),by:"Estudante demonstrativo"}]});$("#confirmDialog").close();show("my");toast("Interesse registrado com sucesso")}else{$("#confirmDialog").close();toast("Não foi possível registrar a manifestação")}}
+});
+document.addEventListener("input",e=>{if(e.target.id==="search"){state.query=e.target.value;const pos=e.target.selectionStart;const old=e.target.value;render();const inp=$("#search");inp.focus();inp.setSelectionRange(pos,pos)}});
+document.addEventListener("change",e=>{if(e.target.id==="typeFilter"){state.filterType=e.target.value;render()}if(e.target.id==="countryFilter"){state.filterCountry=e.target.value;render()}});
+document.addEventListener("submit",e=>{if(e.target.id==="oppForm"){e.preventDefault();saveOpp(true)}});
+window.addEventListener("hashchange",()=>{const target=location.hash.slice(1);if(target==="catalog")show("catalog");if(target==="dashboard")show("dashboard")});
+render();
+</script></body></html>
