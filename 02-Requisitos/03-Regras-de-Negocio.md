@@ -46,7 +46,7 @@
 - **Origem:** decisão de prototipação proposta; RF03.
 
 ### RN08 — Estados da oportunidade
-- **Descrição:** oportunidade nasce em **Rascunho**, pode ficar **Publicada**, passar a **Encerrada** e então **Arquivada**. Somente Publicada e dentro do prazo aceita interesse. Arquivada permanece no arquivo administrativo para consulta.
+- **Descrição:** oportunidade nasce em **Rascunho**, pode ficar **Publicada**, passar a **Encerrada** e então **Arquivada**. Somente Publicada e dentro do prazo aceita interesse. Arquivada permanece no arquivo administrativo; o gestor pode desarquivá-la, retornando ao estado Encerrada, sem republicar nem liberar novos interesses.
 - **Condição:** ações de gestor ou término de prazo.
 - **Resultado:** a consulta lista publicadas; o histórico fica sujeito à política de retenção.
 - **Origem:** decisão proposta para coerência das telas; RF01/RF06. **A validar.**
