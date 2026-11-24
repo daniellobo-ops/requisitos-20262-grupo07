@@ -1,6 +1,6 @@
 # Modelagem UML inicial — Casos de Uso
 
-> **Proposta 3 | v0.2 | Revisão de consistência.** O gráfico Mermaid abaixo é uma **representação visual de atores e casos de uso**, não notação UML rigorosa (não usa atores stick-figure nem elipses padronizadas). O código PlantUML no final permite gerar um diagrama UML de casos de uso propriamente dito.
+> **Proposta 3 | v0.3 | Revisão de consistência.** O gráfico Mermaid abaixo é uma **representação visual de atores e casos de uso**, não notação UML rigorosa (não usa atores stick-figure nem elipses padronizadas). O código PlantUML no final permite gerar um diagrama UML de casos de uso propriamente dito.
 
 ## 1. Limite do sistema
 **Sistema:** Gestão de Oportunidades Internacionais. Não abrange candidaturas formais, seleção, atribuição de bolsa, cálculo de elegibilidade ou funções colaborativas de outras propostas.
@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | Visitante | Consulta catálogo e detalhes sem identificação | Ator de consulta pública proposto | 
 | Estudante | Consulta oportunidades e registra/acompanha manifestações | Proposto |
-| Gestor de oportunidades | Cadastra, publica, edita e encerra oportunidades; acompanha interesses | Responsável pelas funções de gestão |
+| Gestor de oportunidades | Cadastra, publica, edita, encerra, arquiva e desarquiva oportunidades; acompanha interesses | Responsável pelas funções de gestão |
 
 ## 3. Catálogo de casos de uso
 | Caso | Nome | Ator principal | Requisitos |
@@ -77,7 +77,7 @@ G -- UC06
 ## 6. Pré-condições e resultados
 | Caso | Pré-condição | Fluxo principal resumido | Exceções/alternativas propostas | Resultado |
 | --- | --- | --- | --- | --- |
-| UC01 | Gestor autorizado | Informar oportunidade; validar campos; salvar/publicar | Campos faltantes; edição ou encerramento | Oportunidade cadastrada/publicada ou arquivada |
+| UC01 | Gestor autorizado | Cadastrar, validar e publicar oportunidade | Campos faltantes; editar; encerrar; arquivar após encerramento; desarquivar para Encerrada | Oportunidade com estado atualizado, sem perda de manifestações |
 | UC02 | Nenhuma para consulta pública proposta | Consultar lista; filtrar; abrir detalhes | Nenhum resultado | Exibição de prazo, requisitos e documentos |
 | UC03 | Estudante identificado; oportunidade aberta | Escolher oportunidade; solicitar manifestação; confirmar | Prazo encerrado; manifestação ativa duplicada (RN07; mostrar registro existente) | Manifestação registrada; aviso de que não é inscrição |
 | UC04 | Estudante identificado | Abrir meus interesses; listar situação | Sem interesses | Exibição apenas dos registros próprios |
@@ -86,7 +86,7 @@ G -- UC06
 
 **Nota de consistência (Sprint 2):** o ator *Visitante* foi explicitado em UC02 para representar a consulta pública já prevista em RF02 e na SRS. Isso não cria funcionalidade adicional nem concede permissão de manifestar interesse.
 
-**Decisões propostas para as telas:** em UC01 oportunidades possuem estados Rascunho, Publicada, Encerrada e Arquivada, com retorno de Arquivada para Encerrada por desarquivamento; em UC03 só pode existir uma manifestação ativa por estudante e oportunidade, sendo exibida a existente em tentativas repetidas. A identificação por perfil é simulada no protótipo; não presume autenticação da Unifor.
+**Estados de UC01:** Rascunho → Publicada → Encerrada ⇄ Arquivada. Arquivar é ação sobre oportunidade encerrada; desarquivar retorna a Encerrada, sem republicação e mantendo o histórico de manifestações. Em UC03 só pode existir uma manifestação ativa por estudante e oportunidade, sendo exibida a existente em tentativas repetidas. A identificação por perfil é simulada no protótipo; não presume autenticação da Unifor.
 
 ## 7. Verificações antes de aprovação
 - [ ] Confirmar o papel de gestor e quais campos são exigidos.
