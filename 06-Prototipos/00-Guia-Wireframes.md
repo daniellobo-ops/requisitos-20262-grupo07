@@ -48,7 +48,7 @@ flowchart TD
 5. O estudante vê apenas as próprias manifestações. O gestor acessa a área de gestão pelo perfil correspondente (RN05/RF07).
 6. Na publicação, campos obrigatórios incompletos são indicados e impedem a mudança de Rascunho para Publicada (RN02).
 7. O gestor acompanha as manifestações nos estados Registrado, Em acompanhamento e Encerrado (RN09); o histórico registra responsável e data (RF05).
-8. Oportunidades encerradas/arquivadas não aceitam novos interesses; seus registros anteriores permanecem preservados conforme a política de dados (RN06/RN08).
+8. Oportunidades encerradas não aceitam novos interesses; o gestor pode arquivá-las em uma seção separada, mantendo os registros anteriores para consulta (RN06/RN08).
 9. Campos e exemplos visuais nas pranchas são ilustrativos; a entrada por perfil será demonstrativa, sem autenticação real.
 
 ## Conferência da Sprint 2
