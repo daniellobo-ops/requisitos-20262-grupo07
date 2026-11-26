@@ -1,6 +1,6 @@
 # Modelagem UML inicial — Componentes
 
-> **Proposta 3 | v0.1 | Arquitetura conceitual sugerida**, não implementação nem arquitetura aprovada pela Unifor. Tecnologias, interfaces e separação interna podem mudar após validação.
+> **Proposta 3 | v0.1 | Arquitetura conceitual do sistema.**
 
 ## 1. Objetivo
 Mostrar as responsabilidades lógicas da solução e suas dependências, sem incluir serviços de candidatura formal ou programas das Propostas 1 e 4.
@@ -10,12 +10,18 @@ Mostrar as responsabilidades lógicas da solução e suas dependências, sem inc
 | --- | --- |
 | Interface Web | Consulta pública e área autenticada para estudante/gestor |
 | Controle de Acesso | Identificação e autorização por perfil |
-| Gestão de Oportunidades | Cadastro, edição, publicação e encerramento de editais/bolsas |
+| Gestão de Oportunidades | Cadastro, edição, publicação, encerramento, arquivamento e desarquivamento de oportunidades, mantendo seu estado e histórico |
 | Consulta de Oportunidades | Pesquisa e detalhe de oportunidades publicadas |
 | Gestão de Interesse | Registro, consulta e atualização da situação de interesse |
 | Persistência | Dados de oportunidades, estudantes e manifestações |
 
-## 3. Diagrama renderizável (representação conceitual)
+## 3. Diagrama de componentes revisado
+
+![Diagrama de componentes](05-Diagrama-Componentes.svg)
+
+[Visualizar o SVG em tamanho completo](05-Diagrama-Componentes.svg).
+
+### Representação conceitual em Mermaid
 ```mermaid
 flowchart LR
     W["Interface Web Responsiva"]

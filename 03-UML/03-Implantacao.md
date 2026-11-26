@@ -1,6 +1,6 @@
 # Modelagem UML inicial — Implantação
 
-> **Proposta 3 | v0.1 | Hipótese de ambiente técnico.** O desenho é um **cenário proposto**, não infraestrutura existente, contratada ou autorizada na Unifor.
+> **Proposta 3 | v0.1 | Modelo conceitual de implantação.**
 
 ## 1. Objetivo
 Representar uma implantação web mínima capaz de apresentar oportunidades e registrar manifestações de interesse.
@@ -12,7 +12,13 @@ Representar uma implantação web mínima capaz de apresentar oportunidades e re
 | Servidor de aplicação | Interface e aplicação de oportunidades | Pode ser monólito; tecnologia não definida |
 | Serviço de banco de dados | Dados de oportunidades e manifestações | Segurança e backups a definir |
 
-## 3. Diagrama renderizável (topologia conceitual)
+## 3. Diagrama de implantação revisado
+
+![Diagrama de implantação](06-Diagrama-Implantacao.svg)
+
+[Visualizar o SVG em tamanho completo](06-Diagrama-Implantacao.svg).
+
+### Topologia conceitual em Mermaid
 ```mermaid
 flowchart LR
   subgraph DEVICE["Dispositivo do Usuário"]
@@ -48,6 +54,6 @@ App --> DB : conexão protegida
 - Acesso a dados acadêmicos não é necessário no MVP proposto.
 - O uso de HTTPS e de mecanismos de controle de acesso é requisito de projeto, não evidência de implantação existente.
 - [ ] Rever viabilidade e segurança com responsável técnico.
-- [ ] Exportar imagem UML final se exigida.
+- [x] Disponibilizar a representação gráfica de implantação em SVG no repositório.
 
 [Componentes](02-Componentes.md) · [RNF](../02-Requisitos/02-Requisitos-Nao-Funcionais.md).

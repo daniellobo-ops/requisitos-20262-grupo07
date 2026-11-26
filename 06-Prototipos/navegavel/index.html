@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oportunidades Internacionais — Protótipo</title>
+<style>
+:root{
+  color-scheme:light;
+  --brand-950:#0B2344;--brand-800:#123D75;--primary-600:#1D62D0;--primary-700:#164FAE;
+  --teal-600:#0F8079;--page:#F4F7FC;--surface:#FFFFFF;--surface-soft:#F7F9FD;
+  --ink:#172B46;--ink-muted:#526781;--line:#DAE4F0;--success-ink:#12634D;
+  --warning-ink:#895C17;--danger-ink:#A12D42;
+  --radius-sm:10px;--radius-md:16px;--radius-lg:24px;
+  --shadow:0 13px 34px rgba(25,54,94,.055),0 2px 8px rgba(25,54,94,.025);
+  font:400 16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);background:var(--page);font-synthesis:none
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px;background:radial-gradient(ellipse at 8% -10%,#e8f1ff 0,transparent 42%),var(--page)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.55;box-shadow:none!important}
+button,a,input,select,textarea,summary{outline-offset:3px}
+:focus-visible{outline:3px solid #55a4f1!important;outline-offset:3px!important}
+a{color:var(--primary-700)}
+h1,h2,h3,p{overflow-wrap:break-word}
+h1,h2,h3{color:var(--brand-950);letter-spacing:-.035em;line-height:1.22}
+h1{font-size:clamp(1.8rem,3.4vw,2.45rem);font-weight:800;margin:0 0 12px}
+h2{font-size:clamp(1.35rem,2.5vw,1.8rem);font-weight:780;margin:0 0 18px}
+h3{font-size:1.1rem;font-weight:760;margin:3px 0 11px}
+.shell{width:min(100%,1244px);margin:auto;padding:35px 22px 78px;min-height:60vh}
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(16,45,80,.03);backdrop-filter:blur(14px)}
+.nav{width:min(100%,1244px);min-height:80px;padding:12px 22px;margin:auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;font-size:.94rem;font-weight:830;line-height:1.12;letter-spacing:-.035em;color:var(--brand-950)}
+.logo span{color:var(--primary-600);display:block}
+.logo-mark{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;border-radius:13px;background:linear-gradient(145deg,#174b91,var(--brand-950));color:white;font-size:1.03rem;font-weight:850;letter-spacing:-.07em;box-shadow:0 5px 14px #174b9130}
+.logo-type{white-space:nowrap}
+.links{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-left:auto}
+.btn,.tab{min-height:42px;border:1px solid #cedaec;border-radius:var(--radius-sm);background:var(--surface);padding:10px 16px;color:var(--brand-800);font-weight:690;line-height:1.3;transition:background .18s,border-color .18s,box-shadow .18s,transform .18s;white-space:normal}
+.btn:hover:not(:disabled),.tab:hover:not(:disabled){background:#eaf2ff;border-color:#a8c8f3;transform:translateY(-1px)}
+.btn:active,.tab:active{transform:translateY(0)!important}
+.btn.primary{background:var(--primary-600);border-color:var(--primary-600);color:white;box-shadow:0 5px 14px rgba(29,98,208,.16)}
+.btn.primary:hover:not(:disabled){background:var(--primary-700);border-color:var(--primary-700);box-shadow:0 7px 18px rgba(29,98,208,.23)}
+.btn.dark{background:var(--brand-950);border-color:var(--brand-950);color:#fff}
+.btn.dark:hover:not(:disabled){background:var(--brand-800);color:#fff}
+.btn.danger{background:#fff5f6;border-color:#f1ccd3;color:var(--danger-ink)}
+.btn.danger:hover:not(:disabled){background:#ffebef}
+.btn.mini,.tab.mini{min-height:36px;padding:8px 12px;font-size:.83rem}
+.tab{border-color:transparent;background:transparent;color:var(--ink-muted)}
+.tab.active,.active{background:#e9f2ff;color:var(--primary-700);border-color:#cee1fb}
+header.hero{position:relative;isolation:isolate;overflow:hidden;min-height:340px;margin-bottom:35px;padding:clamp(32px,5vw,66px);border-radius:var(--radius-lg);background:linear-gradient(112deg,var(--brand-950) 1%,#13457f 57%,#187ca3 115%);box-shadow:0 20px 47px rgba(9,51,98,.14);display:flex;align-items:center}
+header.hero:before{content:"";position:absolute;width:410px;height:410px;border:1px solid rgba(255,255,255,.15);border-radius:50%;top:-146px;right:-45px;box-shadow:0 0 0 65px rgba(255,255,255,.04),0 0 0 130px rgba(255,255,255,.025);z-index:-1}
+header.hero:after{content:"";position:absolute;width:135px;height:135px;border-radius:50%;background:#50b7cc22;right:150px;bottom:-75px;z-index:-1}
+.hero h1{font-size:clamp(2rem,4vw,3.35rem);max-width:730px;color:#fff;font-weight:820;letter-spacing:-.055em;line-height:1.09;margin:14px 0 16px}
+.hero p{font-size:1.03rem;color:#e3edfa;max-width:620px;line-height:1.75;margin:0}
+.hero .btn{margin-top:29px;background:white;border-color:white;color:var(--brand-950);box-shadow:0 8px 23px #071f4055}
+.hero .btn:hover:not(:disabled){background:#eef6ff}
+.hero .eyebrow{color:#b7e9fa!important}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card,.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:25px;box-shadow:var(--shadow)}
+.card{display:flex;flex-direction:column;gap:13px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 19px 40px rgba(25,54,94,.10);border-color:#bad2f3}
+.card h3{font-size:1.18rem;line-height:1.35;margin:3px 0}
+.card p{color:var(--ink-muted);line-height:1.67;margin:0;flex:1}
+.card .btn{width:100%;margin-top:4px}
+.muted{color:var(--ink-muted)}
+.eyebrow{font-size:.72rem;font-weight:780;letter-spacing:.115em;text-transform:uppercase;color:var(--teal-600)}
+.chip{display:inline-flex;gap:5px;align-items:center;align-self:flex-start;padding:6px 11px;border-radius:100px;background:#eaf2ff;border:1px solid #d7e7fb;color:#20589c;font-weight:760;font-size:.76rem}
+.chip.dim{background:#f0f3f7;border-color:#e3e8f0;color:#536478}
+.chip.good{background:#e5f6ed;border-color:#c8e8d7;color:var(--success-ink)}
+.sectionhead{margin:10px 0 26px;display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sectionhead p{color:var(--ink-muted);margin:7px 0 0;line-height:1.6}
+.toolbar{display:grid;grid-template-columns:1.7fr repeat(3,minmax(0,1fr));gap:13px;margin-bottom:20px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);box-shadow:var(--shadow)}
+label{display:flex;flex-direction:column;gap:8px;font-size:.87rem;font-weight:730;color:var(--ink)}
+input,select,textarea{width:100%;min-height:46px;border:1px solid #cbd7e6;border-radius:var(--radius-sm);padding:11px 14px;background:white;color:var(--ink);transition:border-color .16s,box-shadow .16s}
+input:hover,select:hover,textarea:hover{border-color:#9db9d8}
+input:focus,select:focus,textarea:focus{border-color:#3a86e3;box-shadow:0 0 0 3px #cfe4ff80}
+input::placeholder,textarea::placeholder{color:#718198}
+textarea{min-height:108px;resize:vertical}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.stack{display:flex;flex-direction:column;gap:16px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.back{display:inline-flex;align-items:center;gap:8px;margin:0 0 20px;color:var(--primary-700);font-weight:750;text-decoration:none}
+.back:hover{text-decoration:underline}
+.empty{padding:50px 24px;text-align:center;background:white;border:1.5px dashed #b6cbe2;border-radius:var(--radius-md);color:var(--ink-muted)}
+.empty h2,.empty h3{color:var(--brand-950)}
+.notice{padding:16px 18px;border:1px solid #c6dafa;background:#eff6ff;color:#234b80;border-radius:var(--radius-sm);line-height:1.7;font-size:.94rem}
+.notice.warn{background:#fff8e9;border-color:#f0d6a0;color:var(--warning-ink)}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0}
+.meta>div{background:var(--surface-soft);padding:17px;border-radius:var(--radius-sm);border:1px solid #ecf0f7}
+.meta strong{display:block;color:var(--brand-950);margin-bottom:7px;font-size:.85rem}
+.rows{display:grid;gap:12px}
+.item{padding:19px 21px;border:1px solid var(--line);border-radius:var(--radius-md);background:white;display:flex;justify-content:space-between;align-items:center;gap:17px;flex-wrap:wrap;box-shadow:0 3px 13px rgba(25,54,94,.035)}
+.item h3{margin:0 0 6px}
+.item p{margin:0;color:var(--ink-muted)}
+.item .actions{margin-top:0}
+.item .chip{margin-top:9px}
+.fieldgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.fieldgrid .wide{grid-column:1/-1}
+.helper{font-size:.83rem;color:var(--ink-muted);line-height:1.6}
+.stat{font-size:2.6rem;font-weight:830;letter-spacing:-.06em;line-height:1.18;color:var(--primary-700);margin-top:11px}
+details{font-size:.88rem;color:var(--ink-muted);margin-top:12px}
+summary{cursor:pointer;color:var(--primary-700);font-weight:700}
+dialog{border:1px solid var(--line);border-radius:var(--radius-lg);max-width:500px;width:calc(100% - 30px);padding:30px;box-shadow:0 25px 75px #0c244c55}
+dialog::backdrop{background:#071d3ca8;backdrop-filter:blur(3px)}
+dialog h2{margin-bottom:14px}
+.toast{position:fixed;bottom:24px;right:24px;max-width:min(400px,calc(100vw - 32px));background:var(--brand-950);border:1px solid #466181;color:white;padding:15px 20px;border-radius:var(--radius-sm);box-shadow:0 15px 35px #1234;z-index:20;font-weight:650}
+footer{font-size:.82rem;text-align:center;color:var(--ink-muted);padding:27px 15px 36px;border-top:1px solid var(--line)}
+@media(max-width:1050px){.toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){.nav{min-height:72px}.two{grid-template-columns:1fr}.hero{min-height:290px}.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.grid,.toolbar,.meta,.fieldgrid{grid-template-columns:1fr}.fieldgrid .wide{grid-column:auto}.shell{padding:22px 14px 55px}.nav{padding:12px 14px;gap:12px}.links{width:100%;margin-left:0;justify-content:flex-start;gap:5px}.logo-mark{width:40px;height:40px}.tab.mini,.btn.mini{font-size:.76rem;padding:8px 10px}.hero{padding:35px 25px;min-height:325px}.hero:before{right:-190px}.card,.panel{padding:20px}.toolbar{padding:15px}.item{align-items:flex-start;padding:18px}.item .actions{width:100%}.item .actions button{flex:1}.sectionhead{align-items:flex-start}}
+@media(max-width:390px){.nav{padding:10px 12px}.links{gap:3px}.tab.mini,.btn.mini{padding:7px 8px;font-size:.72rem}.hero{padding:28px 21px}.shell{padding:17px 12px 45px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Layout v2: uso de largura, colunas funcionais e hierarquia por tarefa */
+.shell{max-width:1540px;width:min(100%,1540px);padding:36px clamp(18px,3vw,50px) 85px}
+.nav{max-width:1540px;width:min(100%,1540px);padding-left:clamp(18px,3vw,50px);padding-right:clamp(18px,3vw,50px)}
+.page-overline{font-size:.74rem;letter-spacing:.15em;font-weight:800;color:var(--teal-600);margin:2px 0 11px}
+.sectionhead-wide{margin-top:0;margin-bottom:27px}
+.sectionhead-wide h1{font-size:clamp(1.9rem,3vw,2.7rem)}
+.sectionhead-wide h2{margin:8px 0}
+.hero-wide{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.75fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(36px,4.8vw,72px);min-height:420px}
+.hero-copy{max-width:820px;position:relative;z-index:1}
+.hero-wide h1{max-width:800px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+.hero-actions .btn{margin:0}
+.hero-main-btn{background:#fff!important;color:var(--brand-950)!important}
+.hero-ghost-btn{color:white!important;background:transparent!important;border-color:#ffffff80!important;box-shadow:none!important}
+.hero-ghost-btn:hover{background:#ffffff18!important}
+.hero-footnote{color:#bdd6ee;font-size:.82rem;margin-top:28px;font-weight:650}
+.hero-showcase{position:relative;z-index:1;padding:28px;border:1px solid #ffffff40;border-radius:22px;background:linear-gradient(135deg,#ffffff27,#ffffff13);backdrop-filter:blur(12px);color:#fff;box-shadow:0 18px 45px #081d3250}
+.showcase-label{letter-spacing:.12em;font-size:.67rem;font-weight:780;display:flex;gap:9px;align-items:center;color:#d9ecff}
+.live-dot{width:8px;height:8px;background:#64ddbe;border-radius:50%;box-shadow:0 0 0 4px #64ddbe29}
+.showcase-number{font-size:clamp(3.5rem,5vw,5.5rem);font-weight:850;line-height:1.2;letter-spacing:-.07em;margin:9px 0}
+.showcase-caption{font-size:.88rem;color:#e3f0ff}
+.showcase-divider{height:1px;background:#ffffff40;margin:24px 0}
+.showcase-row{display:flex;justify-content:space-between;gap:12px;margin:14px 0;font-size:.77rem}
+.showcase-check{color:#d8ffe8;font-weight:760}
+.feature-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:21px 0 46px}
+.feature-tile{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:16px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:21px;text-align:left;color:var(--ink);box-shadow:var(--shadow);transition:transform .16s,border-color .16s}
+.feature-tile:hover{transform:translateY(-3px);border-color:#a6c7f2}
+.feature-tile strong,.feature-tile small{display:block}
+.feature-tile strong{font-weight:790;font-size:.96rem;color:var(--brand-950)}
+.feature-tile small{color:var(--ink-muted);font-size:.79rem;margin-top:3px}
+.feature-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:#eaf2ff;color:var(--brand-800);font-weight:820;font-size:.8rem}
+.opportunity-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.opportunity-card{padding:0;gap:0;overflow:hidden}
+.opportunity-card>div:nth-child(2){padding:0 24px 23px;flex:1}
+.opportunity-card h3{margin:15px 0}
+.opportunity-top{padding:22px 24px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.opportunity-type{font-size:.71rem;text-transform:uppercase;letter-spacing:.08em;font-weight:820;color:var(--teal-600)}
+.opportunity-country{font-size:.8rem;background:#eff5fd;color:var(--brand-800);padding:5px 10px;border-radius:100px;font-weight:700}
+.opportunity-bottom{padding:18px 24px 22px;border-top:1px solid var(--line);background:#fcfdff}
+.opportunity-facts{display:grid;gap:5px;color:var(--ink-muted);font-size:.79rem}
+.opportunity-facts strong{color:var(--ink)}
+.opportunity-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px}
+.opportunity-actions .btn{width:auto;min-width:120px;margin:0}
+.catalog-layout{display:grid;grid-template-columns:286px minmax(0,1fr);align-items:start;gap:24px}
+.filter-panel{position:sticky;top:105px;padding:25px;box-shadow:var(--shadow)}
+.filter-heading{display:flex;align-items:center;justify-content:space-between;padding-bottom:21px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.filter-heading h2{margin:0 0 3px;font-size:1.28rem}
+.filter-heading p{color:var(--ink-muted);margin:0;font-size:.83rem}
+.filter-mark{color:var(--primary-600);font-size:1.5rem}
+.filter-fields{display:grid;gap:18px}
+.filter-reset{width:100%;margin-top:22px}
+.catalog-results{min-width:0}
+.results-heading{display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:12px;margin:6px 0 21px}
+.results-heading h2{font-size:1.35rem;margin:0 0 3px}
+.results-heading p{color:var(--ink-muted);margin:0;font-size:.86rem}
+.results-sort,.catalog-count{font-size:.78rem;font-weight:760;color:var(--brand-800);background:#e8f2ff;padding:9px 13px;border-radius:100px}
+.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.detail-header{display:flex;align-items:flex-start;justify-content:space-between;gap:25px;margin:7px 0 29px}
+.detail-header h1{margin:11px 0}
+.detail-header>span{margin-top:15px;flex-shrink:0}
+.detail-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.detail-main{display:grid;gap:20px;min-width:0}
+.detail-info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.detail-section{min-height:205px}
+.detail-section-head{display:flex;gap:13px;align-items:center;margin-bottom:22px}
+.detail-section-head h2{margin:0;font-size:1.3rem}
+.section-index{display:grid;place-items:center;flex-shrink:0;width:38px;height:38px;border-radius:12px;background:#e9f2ff;color:var(--primary-700);font-size:.8rem;font-weight:830}
+.detail-section p{color:var(--ink-muted);margin:0;line-height:1.82}
+.detail-action-panel{position:sticky;top:105px}
+.detail-info-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.detail-info-row:first-of-type{margin-top:20px}
+.detail-info-row span{color:var(--ink-muted)}
+.detail-info-row strong{text-align:right;font-weight:760}
+.detail-action{margin:21px 0 15px}
+.full-width{width:100%!important}
+.detail-disclaimer{font-size:.79rem;line-height:1.6;padding:13px}
+.profile-layout{display:grid;grid-template-columns:minmax(300px,.82fr) minmax(0,1fr);gap:clamp(24px,4vw,70px);align-items:start;max-width:1210px;margin:15px auto}
+.profile-intro{padding:40px 0}
+.profile-intro h1{font-size:clamp(2.1rem,4vw,3.5rem);max-width:570px;margin:18px 0}
+.profile-intro>p{color:var(--ink-muted);font-size:1.06rem;max-width:480px}
+.profile-highlights{margin-top:34px;display:grid;gap:15px;font-weight:830;color:var(--primary-700);font-size:.9rem}
+.profile-highlights div{display:flex;gap:18px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}
+.profile-highlights span{font-weight:550;color:var(--ink)}
+.profile-choices{display:grid;gap:16px}
+.profile-role-card{border:1px solid var(--line);background:white;border-radius:18px;padding:27px;display:grid;grid-template-columns:54px minmax(0,1fr);gap:18px;box-shadow:var(--shadow)}
+.profile-role-card h2{font-size:1.35rem;margin:8px 0}
+.profile-role-card p{color:var(--ink-muted);margin:0}
+.role-symbol{display:grid;place-items:center;width:50px;height:50px;background:#e9f2ff;color:var(--primary-700);border-radius:15px;font-size:1.2rem;font-weight:850}
+.profile-role-card .btn{grid-column:2;justify-self:start;margin-top:5px}
+.profile-public{justify-self:start}
+.workspace-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;align-items:start}
+.workspace-aside,.workspace-main,.dashboard-main{min-width:0}
+.summary-panel{position:sticky;top:105px}
+.summary-count{font-size:3.8rem;letter-spacing:-.07em;color:var(--primary-700);font-weight:850;line-height:1.3}
+.summary-panel>p{font-size:.86rem;color:var(--ink-muted);margin:13px 0 25px}
+.summary-break{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid var(--line);font-size:.85rem}
+.workspace-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:0 0 18px}
+.workspace-title h2{margin:0 0 5px;font-size:1.3rem}
+.workspace-title p{color:var(--ink-muted);font-size:.84rem;margin:0}
+.workspace-title>span{background:#eef4fc;color:var(--brand-800);font-size:.75rem;font-weight:750;padding:7px 12px;border-radius:100px;white-space:nowrap}
+.interest-row{align-items:center}
+.interest-row-side{display:flex;align-items:center;gap:17px}
+.dashboard-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:25px;align-items:start}
+.workspace-sidebar{background:var(--brand-950);color:#d9e9ff;border-radius:18px;padding:23px 15px;position:sticky;top:105px;min-height:355px;box-shadow:0 13px 35px #0b234425}
+.sidebar-heading{letter-spacing:.1em;font-size:.67rem;font-weight:770;padding:8px 14px 20px;color:#91b6e4}
+.sidebar-link{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:10px;border:0;border-radius:10px;padding:14px 15px;background:transparent;color:#d5e7ff;font-size:.87rem;font-weight:640;margin:2px 0}
+.sidebar-link:hover{background:#ffffff20}
+.sidebar-link.selected{background:#ffffff23;color:white}
+.sidebar-link span{font-size:.75rem;color:#e9f4ff;background:#ffffff2a;padding:3px 7px;border-radius:9px}
+.sidebar-divider{height:1px;background:#ffffff2c;margin:20px 12px}
+.sidebar-note{padding:8px 14px}
+.sidebar-note strong{color:white;font-size:.85rem}
+.sidebar-note p{color:#a9c4e5;font-size:.79rem;line-height:1.65}
+.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:36px}
+.kpi-card{padding:23px;position:relative;overflow:hidden}
+.kpi-icon{position:absolute;top:20px;right:18px;color:#8aafde;font-size:.76rem;font-weight:850;background:#eaf2fd;padding:8px 10px;border-radius:10px}
+.kpi-card .stat{margin:17px 0 4px}
+.kpi-card p{margin:0;color:var(--ink-muted);font-size:.77rem}
+.management-section{margin-bottom:35px}
+.management-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:20px}
+.management-main h3{margin:0 0 5px}
+.management-main p{font-size:.82rem}
+.management-actions{margin:0;justify-content:flex-end;min-width:200px}
+.editor-layout{display:grid;grid-template-columns:minmax(0,1fr) 295px;gap:25px;align-items:start}
+.editor-main{padding:30px}
+.editor-section-heading{display:flex;gap:16px;align-items:center;padding-bottom:23px;margin-bottom:25px;border-bottom:1px solid var(--line)}
+.editor-section-heading h2{font-size:1.35rem;margin:0 0 4px}
+.editor-section-heading p{margin:0;color:var(--ink-muted);font-size:.86rem}
+.editor-form{display:grid;gap:22px}
+.editor-footer{border-top:1px solid var(--line);padding-top:21px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.editor-footer .actions{margin:0}
+.editor-guide{position:sticky;top:105px}
+.editor-guide h3{margin:12px 0}
+.editor-guide>p{color:var(--ink-muted);font-size:.86rem;margin:0 0 22px}
+.editor-guide-line{border-top:1px solid var(--line);padding:12px 0;display:grid;gap:3px}
+.editor-guide-line strong{font-size:.83rem}
+.editor-guide-line span{font-size:.75rem;color:var(--ink-muted)}
+.editor-info{margin-top:16px}
+.manifestation-row{display:grid;grid-template-columns:minmax(0,1fr) 255px;align-items:center;gap:22px}
+.manifestation-main h3{margin:9px 0}
+.manifestation-main p{font-size:.83rem}
+.manifestation-state{margin-top:10px}
+.manifestation-control{display:grid;gap:10px}
+.manifestation-control .btn{width:100%}
+@media(max-width:1270px){
+ .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero-wide{grid-template-columns:minmax(0,1.4fr) minmax(255px,.75fr);gap:25px}
+ .opportunity-grid{gap:15px}
+}
+@media(max-width:1040px){
+ .catalog-layout{grid-template-columns:230px minmax(0,1fr);gap:17px}
+ .catalog-grid{grid-template-columns:1fr}
+ .detail-layout{grid-template-columns:minmax(0,1fr) 290px}
+ .detail-info-grid{grid-template-columns:1fr}
+ .editor-layout{grid-template-columns:minmax(0,1fr) 255px}
+ .dashboard-layout{grid-template-columns:195px minmax(0,1fr);gap:17px}
+ .management-row{grid-template-columns:minmax(0,1fr) auto}
+ .management-actions{grid-column:1/-1;justify-content:flex-start}
+ .hero-showcase{padding:22px}
+}
+@media(max-width:800px){
+ .hero-wide{grid-template-columns:1fr;min-height:0}
+ .hero-showcase{max-width:600px;width:100%}
+ .feature-strip{grid-template-columns:1fr}
+ .catalog-layout,.detail-layout,.profile-layout,.workspace-layout,.dashboard-layout,.editor-layout{grid-template-columns:1fr}
+ .filter-panel,.detail-action-panel,.workspace-sidebar,.summary-panel,.editor-guide{position:static}
+ .filter-fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .filter-reset{max-width:220px}
+ .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .workspace-sidebar{min-height:0}
+ .profile-intro{padding:12px 0}
+ .profile-highlights{grid-template-columns:1fr}
+ .opportunity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .detail-info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ .shell{padding:22px 14px 58px}
+ .nav{padding:12px 14px}
+ .hero-wide{padding:30px 24px}
+ .hero-wide h1{font-size:2.2rem}
+ .hero-showcase{padding:20px}
+ .feature-strip{gap:10px;margin-bottom:32px}
+ .feature-tile{padding:16px}
+ .catalog-grid,.opportunity-grid,.filter-fields,.detail-info-grid,.stat-grid{grid-template-columns:1fr}
+ .sectionhead-wide{align-items:flex-start}
+ .results-heading,.workspace-title{align-items:flex-start}
+ .detail-header{display:grid}
+ .detail-header>span{margin-top:0}
+ .profile-role-card{padding:20px;grid-template-columns:43px minmax(0,1fr);gap:12px}
+ .role-symbol{width:43px;height:43px}
+ .profile-role-card .btn{grid-column:1/-1;width:100%}
+ .management-row,.manifestation-row{grid-template-columns:1fr}
+ .management-actions{grid-column:auto;min-width:0}
+ .editor-main{padding:20px}
+ .editor-footer .actions{width:100%}
+ .interest-row-side{width:100%;justify-content:space-between}
+ .opportunity-actions{align-items:center}
+}
+
+</style></head>
+<body>
+<div class="top"><nav class="nav" aria-label="Navegação principal">
+ <div class="logo" aria-label="Oportunidades Internacionais"><span class="logo-mark" aria-hidden="true">OI</span><span class="logo-type">Oportunidades <span>Internacionais</span></span></div>
+ <div class="links" id="navlinks"></div>
+</nav></div>
+<main class="shell" id="app" tabindex="-1"></main>
+<footer>Protótipo acadêmico demonstrativo • Grupo 7 • Proposta 3 • Dados fictícios</footer>
+<dialog id="confirmDialog" aria-labelledby="confirmTitle"><h2 id="confirmTitle">Confirmar interesse</h2><p>Você deseja registrar uma manifestação de interesse nesta oportunidade?</p><div class="notice">Esta manifestação de interesse não constitui inscrição formal, seleção nem concessão de bolsa.</div><div class="actions"><button class="btn" id="cancelConfirm">Cancelar</button><button class="btn primary" id="acceptConfirm">Confirmar manifestação</button></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+/* Protótipo sem backend. Dados demonstrativos são armazenados apenas nesta sessão do navegador. */
+const TODAY=new Date();TODAY.setHours(0,0,0,0);
+const future=d=>{const x=new Date(TODAY);x.setDate(x.getDate()+d);return x.toISOString().slice(0,10)};
+const initial=[
+{id:1,title:"Bolsa de mobilidade acadêmica",type:"Bolsa",country:"Portugal",area:"Tecnologia",deadline:future(70),description:"Oportunidade acadêmica de mobilidade internacional com atividades e experiências em instituição parceira.",requirements:"Estar regularmente matriculado; observar os critérios do edital.",documents:"Histórico acadêmico e documentos indicados no edital.",state:"Publicada"},
+{id:2,title:"Edital de intercâmbio estudantil",type:"Edital",country:"Espanha",area:"Administração",deadline:future(42),description:"Programa demonstrativo de intercâmbio para estudantes interessados em vivência acadêmica internacional.",requirements:"Verificar os critérios acadêmicos da oportunidade.",documents:"Documento de identificação e documentação indicada.",state:"Publicada"},
+{id:3,title:"Mobilidade em universidade parceira",type:"Edital",country:"Canadá",area:"Engenharia",deadline:future(110),description:"Programa ilustrativo de mobilidade internacional em instituição de ensino superior.",requirements:"Atender às condições definidas na oportunidade.",documents:"Documentos de matrícula e demais comprovantes solicitados.",state:"Publicada"},
+{id:4,title:"Bolsa de estudos — edição anterior",type:"Bolsa",country:"Chile",area:"Tecnologia",deadline:future(-30),description:"Exemplo de oportunidade encerrada para demonstração do controle de prazo.",requirements:"Requisitos do edital encerrado.",documents:"Documentos conforme o edital.",state:"Encerrada"}
+];
+const clone=x=>JSON.parse(JSON.stringify(x));
+const state={page:"home",role:"visitante",selected:1,returnTo:null,editing:null,query:"",filterType:"",filterCountry:"",filterArea:"",opps:clone(initial),interests:[],nextOpp:5,nextInterest:1,student:"estudante-demo",toastTimer:null};
+const $=s=>document.querySelector(s);
+const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
+const fmt=x=>new Date(x+"T12:00:00").toLocaleDateString("pt-BR");
+const status=(s)=>'<span class="chip '+(s==="Publicada"?"good":(s==="Encerrada"||s==="Arquivada")?"dim":"")+'">'+esc(s)+'</span>';
+const active=o=>o.state==="Publicada"&&o.deadline>=future(0);
+const eligible=o=>o.state==="Publicada"&&o.deadline>=future(0);
+const selected=()=>state.opps.find(x=>x.id===state.selected);
+const own=()=>state.interests.filter(x=>x.student===state.student);
+function toast(msg){const el=$("#toast");el.innerHTML='<div class="toast">'+esc(msg)+'</div>';clearTimeout(state.toastTimer);state.toastTimer=setTimeout(()=>el.textContent="",3800)}
+function show(page){state.page=page;render();window.scrollTo(0,0)}
+function navigate(page){show(page)}
+function setRole(role){state.role=role;const back=state.returnTo;state.returnTo=null;if(role==="gestor")show("dashboard");else if(role==="estudante")show(back==="detail"?"detail":"my");else show("home");toast("Perfil demonstrativo: "+role)}
+function requireRole(role,back){if(state.role!==role){state.returnTo=back||null;show("profile");toast("Selecione o perfil "+role+" para continuar");return false}return true}
+function menu(){
+ const links=[["home","Início"],["catalog","Oportunidades"]];
+ if(state.role==="estudante")links.push(["my","Meus interesses"]);
+ if(state.role==="gestor")links.push(["dashboard","Painel gestor"],["manage","Manifestações"]);
+ const b=links.map(([id,t])=>'<button class="tab mini '+(state.page===id?"active":"")+'" data-go="'+id+'">'+t+'</button>').join("");
+ $("#navlinks").innerHTML=b+'<button class="btn mini" data-go="profile">Perfil: '+esc(state.role)+"</button>";
+}
+function card(o){
+ return '<article class="card opportunity-card">'
+ +'<div class="opportunity-top"><span class="opportunity-type">'+esc(o.type)+'</span><span class="opportunity-country">'+esc(o.country||"Destino a definir")+'</span></div>'
+ +'<div><h3>'+esc(o.title)+'</h3><p>'+esc(o.description)+'</p></div>'
+ +'<div class="opportunity-bottom"><div class="opportunity-facts"><span>Área: <strong>'+esc(o.area||"Não informada")+'</strong></span><span>Prazo: <strong>'+fmt(o.deadline)+'</strong></span></div>'
+ +'<div class="opportunity-actions">'+status(o.state)+'<button class="btn primary" data-open="'+o.id+'">Ver detalhes</button></div></div>'
+ +'</article>';
+}
+function home(){
+ const available=state.opps.filter(eligible);
+ return '<div class="home-page">'
+ +'<header class="hero hero-wide"><div class="hero-copy"><div class="eyebrow">SEU PRÓXIMO PASSO COMEÇA AQUI</div><h1>O mundo de possibilidades começa na sua universidade.</h1>'
+ +'<p>Explore editais e bolsas internacionais, consulte requisitos e acompanhe seus interesses em um único lugar.</p>'
+ +'<div class="hero-actions"><button class="btn hero-main-btn" data-go="catalog">Explorar oportunidades</button><button class="btn hero-ghost-btn" data-go="profile">Acessar minha área</button></div>'
+ +'<div class="hero-footnote">Mobilidade acadêmica • Editais • Bolsas</div></div>'
+ +'<div class="hero-showcase" aria-label="Resumo de oportunidades">'
+ +'<div class="showcase-label"><span class="live-dot"></span> PAINEL DE OPORTUNIDADES</div>'
+ +'<div class="showcase-number">'+available.length+'</div><div class="showcase-caption">oportunidades abertas para explorar</div>'
+ +'<div class="showcase-divider"></div>'
+ +'<div class="showcase-row"><span>Consulta sem cadastro</span><span class="showcase-check">Disponível</span></div>'
+ +'<div class="showcase-row"><span>Acompanhamento de interesses</span><span class="showcase-check">Estudante</span></div>'
+ +'<div class="showcase-row"><span>Gestão de editais</span><span class="showcase-check">Gestor</span></div>'
+ +'</div></header>'
+ +'<section class="feature-strip" aria-label="Principais áreas da plataforma">'
+ +'<button class="feature-tile" data-go="catalog"><span class="feature-icon" aria-hidden="true">01</span><span><strong>Oportunidades</strong><small>Pesquise e encontre editais</small></span><span aria-hidden="true">↗</span></button>'
+ +'<button class="feature-tile" data-go="my"><span class="feature-icon" aria-hidden="true">02</span><span><strong>Meus interesses</strong><small>Acompanhe suas manifestações</small></span><span aria-hidden="true">↗</span></button>'
+ +'<button class="feature-tile" data-go="profile"><span class="feature-icon" aria-hidden="true">03</span><span><strong>Área de acesso</strong><small>Escolha o perfil de demonstração</small></span><span aria-hidden="true">↗</span></button>'
+ +'</section>'
+ +'<div class="sectionhead sectionhead-wide"><div><div class="eyebrow">EXPLORE O CATÁLOGO</div><h2>Oportunidades em destaque</h2><p>Seleção de editais e bolsas disponíveis para consulta.</p></div><button class="btn" data-go="catalog">Ver catálogo completo</button></div>'
+ +'<div class="grid opportunity-grid">'+available.slice(0,3).map(card).join("")+'</div></div>';
+}
+function catalog(){
+ const published=state.opps.filter(o=>o.state==="Publicada");
+ const countries=[...new Set(published.map(o=>o.country).filter(Boolean))];
+ const areas=[...new Set(published.map(o=>o.area).filter(Boolean))];
+ const found=published.filter(o=>(o.title+" "+o.description+" "+o.area+" "+o.country).toLowerCase().includes(state.query.toLowerCase())
+ &&(!state.filterType||o.type===state.filterType)&&(!state.filterCountry||o.country===state.filterCountry)&&(!state.filterArea||o.area===state.filterArea));
+ return '<div class="page-overline">EXPLORAR</div><div class="sectionhead sectionhead-wide"><div><h1>Encontre sua próxima oportunidade</h1><p>Filtre destinos, áreas de estudo e tipos de programa.</p></div><div class="catalog-count">'+published.length+' publicações no catálogo</div></div>'
+ +'<div class="catalog-layout"><aside class="filter-panel panel" aria-label="Filtros de oportunidades">'
+ +'<div class="filter-heading"><div><h2>Filtros</h2><p>Refine sua busca</p></div><span class="filter-mark" aria-hidden="true">≡</span></div>'
+ +'<div class="filter-fields"><label>Pesquisar<input id="search" placeholder="Título, destino ou área" value="'+esc(state.query)+'"></label>'
+ +'<label>Tipo<select id="typeFilter"><option value="">Todos os tipos</option>'+["Bolsa","Edital"].map(t=>'<option '+(state.filterType===t?"selected":"")+'>'+t+'</option>').join("")+'</select></label>'
+ +'<label>Destino<select id="countryFilter"><option value="">Todos os destinos</option>'+countries.map(t=>'<option '+(state.filterCountry===t?"selected":"")+'>'+esc(t)+'</option>').join("")+'</select></label>'
+ +'<label>Área de estudo<select id="areaFilter"><option value="">Todas as áreas</option>'+areas.map(t=>'<option '+(state.filterArea===t?"selected":"")+'>'+esc(t)+'</option>').join("")+'</select></label></div>'
+ +'<button class="btn filter-reset" id="clearFilters">Limpar filtros</button></aside>'
+ +'<section class="catalog-results" aria-label="Oportunidades encontradas"><div class="results-heading"><div><h2>Resultados</h2><p>'+found.length+' oportunidade(s) encontrada(s)</p></div><span class="results-sort">Oportunidades publicadas</span></div>'
+ +(found.length?'<div class="grid catalog-grid">'+found.map(card).join("")+'</div>':'<div class="empty"><h3>Nenhum resultado encontrado</h3><p>Experimente outros filtros para encontrar oportunidades.</p><div class="actions" style="justify-content:center"><button class="btn primary" id="clearFilters">Limpar filtros</button></div></div>')
+ +'</section></div>';
+}
+function detail(){
+ const o=selected();
+ if(!o)return '<div class="empty">Oportunidade não encontrada. <button class="btn" data-go="catalog">Voltar</button></div>';
+ const existing=state.role==="estudante"?own().find(x=>x.oppId===o.id&&x.status!=="Encerrado"):null;
+ let action="";
+ if(existing)action='<button class="btn primary full-width" data-go="my">Ver meu interesse registrado</button>';
+ else if(!active(o))action='<button class="btn full-width" disabled>Manifestações indisponíveis</button>';
+ else action='<button class="btn primary full-width" id="interestBtn">Manifestar interesse</button>';
+ return '<a class="back" href="#catalog" data-go="catalog">← Voltar às oportunidades</a>'
+ +'<div class="detail-header"><div><div class="eyebrow">'+esc(o.type)+'  •  '+esc(o.country)+'</div><h1>'+esc(o.title)+'</h1><p class="muted">Veja informações, condições e prazo antes de registrar seu interesse.</p></div>'+status(o.state)+'</div>'
+ +'<div class="detail-layout"><div class="detail-main">'
+ +'<section class="panel detail-section"><div class="detail-section-head"><span class="section-index">01</span><h2>Sobre a oportunidade</h2></div><p>'+esc(o.description)+'</p></section>'
+ +'<div class="detail-info-grid"><section class="panel detail-section"><div class="detail-section-head"><span class="section-index">02</span><h2>Requisitos</h2></div><p>'+esc(o.requirements)+'</p></section>'
+ +'<section class="panel detail-section"><div class="detail-section-head"><span class="section-index">03</span><h2>Documentos necessários</h2></div><p>'+esc(o.documents)+'</p></section></div>'
+ +'</div><aside class="detail-aside"><div class="panel detail-action-panel"><div class="eyebrow">INFORMAÇÕES DA OPORTUNIDADE</div>'
+ +'<div class="detail-info-row"><span>Tipo</span><strong>'+esc(o.type)+'</strong></div>'
+ +'<div class="detail-info-row"><span>Destino</span><strong>'+esc(o.country||"Não informado")+'</strong></div>'
+ +'<div class="detail-info-row"><span>Área</span><strong>'+esc(o.area||"Não informada")+'</strong></div>'
+ +'<div class="detail-info-row"><span>Prazo</span><strong>'+fmt(o.deadline)+'</strong></div>'
+ +'<div class="detail-action">'+action+'</div>'
+ +'<div class="notice detail-disclaimer">Manifestar interesse <strong>não significa inscrição formal</strong> no programa.</div></div></aside></div>';
+}
+function profile(){
+ return '<div class="page-overline">ACESSO À PLATAFORMA</div>'
+ +'<div class="profile-layout"><aside class="profile-intro"><div class="eyebrow">UMA PLATAFORMA, DOIS FLUXOS</div><h1>Escolha como deseja navegar.</h1>'
+ +'<p>Explore as possibilidades como estudante ou gerencie oportunidades como responsável pelo programa.</p>'
+ +'<div class="profile-highlights"><div>01 <span>Catálogo público de oportunidades</span></div><div>02 <span>Interesses organizados por estudante</span></div><div>03 <span>Gestão de publicações e manifestações</span></div></div></aside>'
+ +'<section class="profile-choices"><div class="notice">Os perfis são simulados para a demonstração acadêmica. Não há login real.</div>'
+ +'<div class="profile-role-card"><div class="role-symbol" aria-hidden="true">E</div><div><div class="eyebrow">PERFIL ACADÊMICO</div><h2>Estudante</h2><p>Consulte oportunidades, manifeste interesse e acompanhe seus registros.</p></div><button class="btn primary" data-role="estudante">Entrar como estudante</button></div>'
+ +'<div class="profile-role-card"><div class="role-symbol" aria-hidden="true">G</div><div><div class="eyebrow">ADMINISTRAÇÃO</div><h2>Gestor de oportunidades</h2><p>Cadastre, publique, encerre, arquive e acompanhe manifestações de interesse.</p></div><button class="btn primary" data-role="gestor">Entrar como gestor</button></div>'
+ +'<button class="btn profile-public" data-role="visitante">Continuar como visitante</button></section></div>';
+}
+function my(){
+ if(state.role!=="estudante")return denied();
+ const records=own();
+ return '<div class="page-overline">ÁREA DO ESTUDANTE</div><div class="sectionhead sectionhead-wide"><div><h1>Meus interesses</h1><p>Acompanhe todas as manifestações registradas neste perfil demonstrativo.</p></div><button class="btn primary" data-go="catalog">Encontrar oportunidades</button></div>'
+ +'<div class="workspace-layout"><aside class="workspace-aside"><div class="panel summary-panel"><div class="eyebrow">ACOMPANHAMENTO</div><div class="summary-count">'+records.length+'</div><strong>interesse(s) registrado(s)</strong><p>Os registros ficam disponíveis para consulta do estudante demonstrativo.</p>'
+ +'<div class="summary-break"><span>Em acompanhamento</span><strong>'+records.filter(x=>x.status==="Em acompanhamento").length+'</strong></div>'
+ +'<div class="summary-break"><span>Encerrados</span><strong>'+records.filter(x=>x.status==="Encerrado").length+'</strong></div></div></aside>'
+ +'<section class="workspace-main"><div class="workspace-title"><h2>Histórico de interesses</h2><span>'+records.length+' registros</span></div>'
+ +(records.length?'<div class="rows">'+records.map(i=>{const o=state.opps.find(x=>x.id===i.oppId);
+ return '<article class="item interest-row"><div class="interest-row-main"><div class="eyebrow">MANIFESTAÇÃO</div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Registrado em '+fmt(i.date)+'</p><details><summary>Ver histórico de movimentações</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div><div class="interest-row-side">'+status(i.status)+'<button class="btn" data-open="'+i.oppId+'">Ver oportunidade</button></div></article>'}).join("")+'</div>'
+ :'<div class="empty"><h3>Você ainda não possui manifestações</h3><p>Encontre uma oportunidade publicada e registre seu interesse para acompanhar por aqui.</p><div class="actions" style="justify-content:center"><button class="btn primary" data-go="catalog">Explorar catálogo</button></div></div>')
+ +'</section></div>';
+}
+function denied(){return '<div class="empty"><h2>Acesso restrito por perfil</h2><p>Selecione o perfil correspondente para entrar nesta área.</p><button class="btn primary" data-go="profile">Selecionar perfil</button></div>'}
+function dashboard(){
+ if(state.role!=="gestor")return denied();
+ const current=state.opps.filter(o=>o.state!=="Arquivada");
+ const archived=state.opps.filter(o=>o.state==="Arquivada");
+ const published=state.opps.filter(o=>o.state==="Publicada").length;
+ const closed=state.opps.filter(o=>o.state==="Encerrada").length;
+ const row=o=>'<article class="item management-row"><div class="management-main"><h3>'+esc(o.title)+'</h3><p>'+esc(o.type)+' • '+esc(o.country||"Destino não informado")+' • Prazo: '+fmt(o.deadline)+'</p></div><div class="management-status">'+status(o.state)+'</div>'
+ +'<div class="actions management-actions"><button class="btn mini" data-edit="'+o.id+'">Editar</button>'
+ +(o.state==="Publicada"?'<button class="btn danger mini" data-close="'+o.id+'">Encerrar</button>':"")
+ +(o.state==="Encerrada"?'<button class="btn dark mini" data-archive="'+o.id+'">Arquivar</button>':"")+'</div></article>';
+ const archiveRow=o=>'<article class="item management-row"><div class="management-main"><h3>'+esc(o.title)+'</h3><p>'+esc(o.type)+' • '+esc(o.country||"Destino não informado")+' • Prazo: '+fmt(o.deadline)+'</p></div><div class="management-status">'+status(o.state)+'</div><div class="actions management-actions"><button class="btn mini" data-unarchive="'+o.id+'">Desarquivar</button></div></article>';
+ return '<div class="page-overline">ADMINISTRAÇÃO</div><div class="sectionhead sectionhead-wide"><div><h1>Painel do gestor</h1><p>Uma visão completa das oportunidades e das manifestações de interesse.</p></div><button class="btn primary" id="newOpp">+ Nova oportunidade</button></div>'
+ +'<div class="dashboard-layout"><aside class="workspace-sidebar"><div class="sidebar-heading">ESPAÇO DE GESTÃO</div><button class="sidebar-link selected" data-go="dashboard">Visão geral</button><button class="sidebar-link" data-go="manage">Manifestações <span>'+state.interests.length+'</span></button><button class="sidebar-link" data-go="catalog">Ver catálogo público</button><div class="sidebar-divider"></div><div class="sidebar-note"><strong>Publicações organizadas</strong><p>Encerre, arquive e desarquive sem perder o histórico de interesses.</p></div></aside>'
+ +'<div class="dashboard-main"><div class="stat-grid">'
+ +'<div class="panel kpi-card"><div class="kpi-icon">01</div><div class="eyebrow">PUBLICADAS</div><div class="stat">'+published+'</div><p>Oportunidades no catálogo</p></div>'
+ +'<div class="panel kpi-card"><div class="kpi-icon">02</div><div class="eyebrow">ENCERRADAS</div><div class="stat">'+closed+'</div><p>Disponíveis para arquivar</p></div>'
+ +'<div class="panel kpi-card"><div class="kpi-icon">03</div><div class="eyebrow">ARQUIVADAS</div><div class="stat">'+archived.length+'</div><p>Registros preservados</p></div>'
+ +'<div class="panel kpi-card"><div class="kpi-icon">04</div><div class="eyebrow">INTERESSES</div><div class="stat">'+state.interests.length+'</div><p>Manifestações recebidas</p></div></div>'
+ +'<section class="management-section"><div class="workspace-title"><div><h2>Oportunidades em gestão</h2><p>Edite, publique ou encerre oportunidades conforme seu estado.</p></div><span>'+current.length+' registros</span></div>'
+ +'<div class="rows">'+(current.length?current.map(row).join(""):'<div class="empty">Nenhuma oportunidade em gestão.</div>')+'</div></section>'
+ +'<section class="management-section"><div class="workspace-title"><div><h2>Arquivo de oportunidades</h2><p>Use Desarquivar para retornar à gestão no estado Encerrada.</p></div><span>'+archived.length+' arquivadas</span></div>'
+ +'<div class="rows">'+(archived.length?archived.map(archiveRow).join(""):'<div class="empty">Nenhuma oportunidade arquivada.</div>')+'</div></section>'
+ +'</div></div>';
+}
+function form(){
+ if(state.role!=="gestor")return denied();
+ const o=state.opps.find(x=>x.id===state.editing)||{};
+ if(o.state==="Arquivada")return '<div class="empty"><h2>Oportunidade arquivada</h2><p>Este registro está disponível somente para consulta no painel do gestor.</p><button class="btn" data-go="dashboard">Voltar ao painel</button></div>';
+ const val=k=>esc(o[k]||"");
+ return '<a class="back" href="#dashboard" data-go="dashboard">← Voltar ao painel do gestor</a><div class="page-overline">GERENCIAR OPORTUNIDADE</div>'
+ +'<div class="sectionhead sectionhead-wide"><div><h1>'+(o.id?"Editar oportunidade":"Nova oportunidade")+'</h1><p>Organize os dados e publique somente quando estiverem completos.</p></div>'+(o.state?status(o.state):'<span class="chip">Nova</span>')+'</div>'
+ +'<div class="editor-layout"><section class="panel editor-main"><div class="editor-section-heading"><span class="section-index">01</span><div><h2>Informações da oportunidade</h2><p>Dados principais da publicação.</p></div></div>'
+ +'<form id="oppForm" class="editor-form"><div class="fieldgrid">'
+ +'<label>Título *<input name="title" maxlength="120" value="'+val("title")+'" placeholder="Ex.: Bolsa de intercâmbio internacional"></label>'
+ +'<label>Tipo *<select name="type"><option value="">Selecione</option>'+["Bolsa","Edital"].map(t=>'<option '+(o.type===t?"selected":"")+'>'+t+'</option>').join("")+'</select></label>'
+ +'<label>Destino<input name="country" placeholder="País ou região, quando aplicável" value="'+val("country")+'"></label>'
+ +'<label>Área<input name="area" placeholder="Área de estudo" value="'+val("area")+'"></label>'
+ +'<label>Prazo *<input type="date" name="deadline" value="'+val("deadline")+'"></label>'
+ +'<label class="wide">Descrição *<textarea name="description" placeholder="Apresente a oportunidade e seus objetivos">'+val("description")+'</textarea></label>'
+ +'<label>Requisitos *<textarea name="requirements" placeholder="Liste os critérios para participação">'+val("requirements")+'</textarea></label>'
+ +'<label>Documentos *<textarea name="documents" placeholder="Informe documentos ou não se aplica">'+val("documents")+'</textarea><span class="helper">Se não houver, informe “Não se aplica”.</span></label>'
+ +'</div><div class="notice warn" id="formMessage" hidden></div>'
+ +'<div class="editor-footer"><span class="helper">* Campos essenciais para publicação.</span><div class="actions"><button type="button" class="btn" id="saveDraft">'+(o.state==="Publicada"||o.state==="Encerrada"?"Salvar alterações":"Salvar rascunho")+'</button>'
+ +((o.state==="Encerrada"||o.state==="Arquivada")?"":'<button type="submit" class="btn primary">'+(o.state==="Publicada"?"Salvar e manter publicada":"Publicar oportunidade")+"</button>")+'</div></div></form></section>'
+ +'<aside class="editor-aside"><div class="panel editor-guide"><div class="eyebrow">RESUMO DA EDIÇÃO</div><h3>Publicação responsável</h3><p>Preencha as informações para que o estudante compreenda os requisitos, os documentos e os prazos.</p>'
+ +'<div class="editor-guide-line"><strong>Rascunho</strong><span>Salva sem exibir no catálogo</span></div>'
+ +'<div class="editor-guide-line"><strong>Publicada</strong><span>Visível para consulta pública</span></div>'
+ +'<div class="editor-guide-line"><strong>Encerrada</strong><span>Não aceita novos interesses</span></div>'
+ +'<div class="editor-guide-line"><strong>Arquivada</strong><span>Preservada no arquivo do gestor</span></div></div>'
+ +'<div class="notice editor-info">Para encerrar, arquivar ou desarquivar, utilize as ações disponíveis no <strong>Painel do gestor</strong>.</div></aside></div>';
+}
+function manage(){
+ if(state.role!=="gestor")return denied();
+ const count=state.interests.length;
+ const activeCount=state.interests.filter(x=>x.status==="Em acompanhamento").length;
+ return '<div class="page-overline">ADMINISTRAÇÃO</div><div class="sectionhead sectionhead-wide"><div><h1>Gestão de manifestações</h1><p>Atualize as situações e acompanhe o histórico de cada interesse.</p></div><button class="btn" data-go="dashboard">Voltar ao painel</button></div>'
+ +'<div class="dashboard-layout"><aside class="workspace-sidebar"><div class="sidebar-heading">ESPAÇO DE GESTÃO</div><button class="sidebar-link" data-go="dashboard">Visão geral</button><button class="sidebar-link selected" data-go="manage">Manifestações <span>'+count+'</span></button><div class="sidebar-divider"></div>'
+ +'<div class="sidebar-note"><strong>'+activeCount+' em acompanhamento</strong><p>Registre as mudanças de situação para manter o estudante informado.</p></div></aside>'
+ +'<section class="dashboard-main"><div class="workspace-title"><h2>Registros de interesse</h2><span>'+count+' registros</span></div>'
+ +(count?'<div class="rows">'+state.interests.map(i=>{const o=state.opps.find(x=>x.id===i.oppId);
+ const options=(i.status==="Registrado"?["Registrado","Em acompanhamento","Encerrado"]:i.status==="Em acompanhamento"?["Em acompanhamento","Encerrado"]:["Encerrado"]);
+ return '<article class="item manifestation-row"><div class="manifestation-main"><div class="eyebrow">INTERESSE DO ESTUDANTE</div><h3>'+esc(o?.title||"Oportunidade")+'</h3><p>Estudante: '+esc(i.student)+' • Registro: '+fmt(i.date)+'</p>'
+ +'<div class="manifestation-state">'+status(i.status)+'</div><details><summary>Ver histórico de atualizações</summary><ul>'+i.history.map(h=>'<li>'+esc(h.date)+' — '+esc(h.status)+' ('+esc(h.by)+')</li>').join("")+'</ul></details></div>'
+ +'<div class="manifestation-control"><label>Atualizar situação<select id="s'+i.id+'">'+options.map(t=>'<option '+(t===i.status?"selected":"")+'>'+t+'</option>').join("")+'</select></label>'
+ +'<button class="btn primary" data-update="'+i.id+'">Salvar alteração</button></div></article>'
+ }).join("")+'</div>':'<div class="empty"><h3>Não há manifestações registradas</h3><p>Utilize o perfil Estudante para gerar um registro de demonstração.</p><div class="actions" style="justify-content:center"><button class="btn" data-go="profile">Escolher perfil</button></div></div>')
+ +'</section></div>';
+}
+const views={home,catalog,detail,profile,my,dashboard,form,manage};
+function render(){menu();$("#app").innerHTML=(views[state.page]||home)();$("#app").focus({preventScroll:true})}
+function getForm(){const d=Object.fromEntries(new FormData($("#oppForm")).entries());return Object.fromEntries(Object.entries(d).map(([k,v])=>[k,String(v).trim()]))}
+function saveOpp(publish){
+ const d=getForm(),o=state.opps.find(x=>x.id===state.editing);
+ const previousState=o?.state||"Rascunho";
+ if(previousState==="Arquivada"){toast("Oportunidades arquivadas ficam disponíveis somente para consulta");return}
+ if(previousState==="Encerrada"&&publish){toast("Oportunidades encerradas não podem ser republicadas nesta demonstração");return}
+ const willBePublic=previousState==="Publicada"||publish;
+ const missing=["title","type","deadline","description","requirements","documents"].filter(k=>!d[k]);
+ if(willBePublic&&missing.length){
+  const box=$("#formMessage");box.hidden=false;box.className="wide notice warn";
+  box.textContent="Preencha os campos obrigatórios antes de salvar uma publicação: "+missing.join(", ");return;
+ }
+ let target=o;
+ if(!target){target={id:state.nextOpp++};state.opps.unshift(target)}
+ Object.assign(target,d);
+ target.state=previousState==="Encerrada"?"Encerrada":willBePublic?"Publicada":"Rascunho";
+ show("dashboard");
+ toast(target.state==="Publicada"?"Oportunidade salva e publicada":target.state==="Encerrada"?"Alterações salvas; oportunidade permanece encerrada":"Rascunho salvo");
+}
+document.addEventListener("click",e=>{
+const go=e.target.closest("[data-go]");if(go){e.preventDefault();navigate(go.dataset.go);return}
+const role=e.target.closest("[data-role]");if(role){setRole(role.dataset.role);return}
+const open=e.target.closest("[data-open]");if(open){state.selected=Number(open.dataset.open);show("detail");return}
+const edit=e.target.closest("[data-edit]");if(edit&&state.role==="gestor"){state.editing=Number(edit.dataset.edit);show("form");return}
+const close=e.target.closest("[data-close]");if(close&&state.role==="gestor"){const o=state.opps.find(x=>x.id===Number(close.dataset.close));if(o&&o.state==="Publicada"&&confirm("Encerrar esta oportunidade? Ela deixará de aceitar novos interesses.")){o.state="Encerrada";render();toast("Oportunidade encerrada. Você pode arquivá-la no painel.")}return}
+const archive=e.target.closest("[data-archive]");if(archive&&state.role==="gestor"){const o=state.opps.find(x=>x.id===Number(archive.dataset.archive));if(o&&o.state==="Encerrada"&&confirm("Arquivar esta oportunidade encerrada? O histórico será preservado.")){o.state="Arquivada";render();toast("Oportunidade arquivada e movida para o arquivo do gestor.")}return}
+const unarchive=e.target.closest("[data-unarchive]");if(unarchive&&state.role==="gestor"){const o=state.opps.find(x=>x.id===Number(unarchive.dataset.unarchive));if(o&&o.state==="Arquivada"&&confirm("Desarquivar esta oportunidade? Ela voltará para Encerrada e continuará sem aceitar novos interesses.")){o.state="Encerrada";render();toast("Oportunidade desarquivada. Estado atual: Encerrada.")}return}
+const upd=e.target.closest("[data-update]");if(upd&&state.role==="gestor"){const i=state.interests.find(x=>x.id===Number(upd.dataset.update)),next=$("#s"+i.id).value;if(next!==i.status){i.status=next;i.history.push({status:next,by:"Gestor demonstrativo",date:new Date().toLocaleString("pt-BR")});render();toast("Situação atualizada")}else toast("Nenhuma alteração realizada");return}
+if(e.target.id==="newOpp"){state.editing=null;show("form")}
+if(e.target.id==="saveDraft")saveOpp(false);
+if(e.target.id==="interestBtn"){if(!requireRole("estudante","detail"))return;const o=selected();if(!o||!active(o)){toast("Oportunidade indisponível para manifestação");return}const exists=own().find(x=>x.oppId===o.id&&x.status!=="Encerrado");if(exists){show("my");toast("Já existe manifestação ativa para esta oportunidade");return}$("#confirmDialog").showModal()}
+if(e.target.id==="clearFilters"){state.query="";state.filterType="";state.filterCountry="";state.filterArea="";render()}
+if(e.target.id==="cancelConfirm")$("#confirmDialog").close();
+if(e.target.id==="acceptConfirm"){if(state.role!=="estudante"){ $("#confirmDialog").close();return}const o=selected();if(o&&active(o)&&!own().some(x=>x.oppId===o.id&&x.status!=="Encerrado")){state.interests.push({id:state.nextInterest++,oppId:o.id,student:state.student,status:"Registrado",date:future(0),history:[{status:"Registrado",date:new Date().toLocaleString("pt-BR"),by:"Estudante demonstrativo"}]});$("#confirmDialog").close();show("my");toast("Interesse registrado com sucesso")}else{$("#confirmDialog").close();toast("Não foi possível registrar a manifestação")}}
+});
+document.addEventListener("input",e=>{if(e.target.id==="search"){state.query=e.target.value;const pos=e.target.selectionStart;const old=e.target.value;render();const inp=$("#search");inp.focus();inp.setSelectionRange(pos,pos)}});
+document.addEventListener("change",e=>{if(e.target.id==="typeFilter"){state.filterType=e.target.value;render()}if(e.target.id==="countryFilter"){state.filterCountry=e.target.value;render()}if(e.target.id==="areaFilter"){state.filterArea=e.target.value;render()}});
+document.addEventListener("submit",e=>{if(e.target.id==="oppForm"){e.preventDefault();saveOpp(true)}});
+window.addEventListener("hashchange",()=>{const target=location.hash.slice(1);if(target==="catalog")show("catalog");if(target==="dashboard")show("dashboard")});
+render();
+</script></body></html>

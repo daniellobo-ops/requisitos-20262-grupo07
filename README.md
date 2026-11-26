@@ -24,7 +24,7 @@ Especificação de um sistema web responsivo para a **gestão de oportunidades i
 
 Cadastro, edição e divulgação de oportunidades por um responsável autorizado; consulta e filtragem de editais e bolsas; visualização de requisitos, prazos e documentos; registro de **manifestação de interesse** pelo estudante e acompanhamento da situação desse registro (RF01 a RF07).
 
-A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. O protótipo adotará fluxos propostos de identificação por perfil, cadastro de oportunidades e acompanhamento de interesse; seus detalhes permanecem decisões acadêmicas, não regras institucionais confirmadas.
+A manifestação de interesse **não substitui inscrição formal**, seleção ou concessão de bolsa. O protótipo contemplará entrada demonstrativa por perfil, cadastro de oportunidades e acompanhamento de interesses.
 
 ### Fora do escopo desta especificação
 
@@ -45,13 +45,27 @@ Processos de inscrição e avaliação formal de candidaturas, classificação e
 | 05 | [Requisitos Não Funcionais](02-Requisitos/02-Requisitos-Nao-Funcionais.md) | Qualidade, segurança, desempenho, acessibilidade e verificações propostas | ✅ Rascunho elaborado |
 | 06 | [Regras de Negócio](02-Requisitos/03-Regras-de-Negocio.md) | RN01–RN09 e vínculos com os requisitos | ✅ Rascunho elaborado |
 | 07 | [Backlog Priorizado](GestaoConfiguracao/01-Backlog-Priorizado.md) | Histórias de usuário e priorização MoSCoW proposta | ✅ Rascunho elaborado |
-| 08 | [UML — Casos de Uso](03-UML/01-Casos-de-Uso.md) | Atores, funcionalidades e fluxos iniciais | 🟡 Fonte PlantUML pronta; revisar/exportar |
-| 09 | [UML — Componentes](03-UML/02-Componentes.md) | Componentes lógicos e dependências propostas | 🟡 Fonte PlantUML pronta; revisar/exportar |
-| 10 | [UML — Implantação](03-UML/03-Implantacao.md) | Nós e ambiente de implantação hipotético | 🟡 Fonte PlantUML pronta; revisar/exportar |
+| 08 | [UML — Casos de Uso](03-UML/01-Casos-de-Uso.md) | Atores, funcionalidades, fluxos e [diagrama SVG](03-UML/04-Diagrama-Casos-de-Uso.svg) | ✅ Arquivo gráfico incluído |
+| 09 | [UML — Componentes](03-UML/02-Componentes.md) | Componentes lógicos e [diagrama SVG](03-UML/05-Diagrama-Componentes.svg) | ✅ Arquivo gráfico incluído |
+| 10 | [UML — Implantação](03-UML/03-Implantacao.md) | Nós e [diagrama SVG](03-UML/06-Diagrama-Implantacao.svg) | ✅ Arquivo gráfico incluído |
+
+### 2ª entrega — SRS, revisão e protótipos
+
+| Documento | Conteúdo | Situação |
+| :--- | :--- | :--- |
+| [SRS — IEEE 830](04-SRS/01-SRS-IEEE830.md) | Especificação completa, RF/RNF, casos de uso e rastreabilidade | Elaborada e revisada |
+| [Revisão de consistência](05-Validacao/01-Revisao-de-Consistencia.md) | Matriz de rastreabilidade e conferência UML ↔ requisitos | Revisão documental realizada |
+| [Relatório de verificação](05-Validacao/02-Relatorio-de-Verificacao.md) | Resultados da regressão funcional (27/27) e conferência documental | Verificação programática concluída |
+| [Wireframes](06-Prototipos/00-Guia-Wireframes.md) | Fluxos de estudante e gestor, com pranchas SVG | Produzidos |
+| [Protótipo navegável](06-Prototipos/03-Prototipo-Navegavel.md) | Instruções e roteiro de demonstração | Implementado; teste final pendente |
+| [Design System](06-Prototipos/04-Design-System.md) | Identidade visual, tokens, componentes, tipografia e responsividade | Definido e aplicado |
+| [Abrir código HTML do protótipo](06-Prototipos/navegavel/index.html) | Interface demonstrativa para baixar e executar localmente | Versionado |
+
+**Execução:** baixe o `index.html` e abra-o no navegador. O GitHub exibe o código, não executa a aplicação nesta visualização. Os perfis e dados são simulados; a aplicação não utiliza backend nem persistência de produção.
 
 ### Entregas seguintes
 
-- **2ª entrega — Prototipação:** elaboração das telas e do fluxo de navegação com base nos requisitos revisados.
+- **2ª entrega — SRS e Prototipação:** especificação formal, revisão de consistência, wireframes e protótipo navegável.
 - **3ª entrega — Pitch:** apresentação do problema, da proposta de solução e dos benefícios esperados.
 
 ---
@@ -65,7 +79,7 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 | Especificação (completude e clareza) | 30% | 01, 04–07 | 🟡 Rascunhos prontos; revisão e validação pendentes |
 | Modelagem UML | 25% | 08–10 | 🟡 Diagramas descritos em Mermaid/PlantUML; revisão e exportação pendentes |
 | Elicitação (entrevistas e questionários) | 20% | 02–03 | ✅ Entrevistas simuladas realizadas, não pesquisa de campo |
-| Protótipos (qualidade e usabilidade) | 15% | 2ª entrega | ⬜ Ainda não iniciada |
+| Protótipos (qualidade e usabilidade) | 15% | 2ª entrega | 🟡 Wireframes e protótipo produzidos; testes finais pendentes |
 | Apresentação (defesa e comunicação) | 10% | 3ª entrega | ⬜ Ainda não iniciada |
 
 ---
@@ -74,7 +88,7 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 
 * **Idioma:** português do Brasil em todos os documentos.
 * **Identificadores:** `RF` requisito funcional, `RNF` requisito não funcional, `RN` regra de negócio, `US` história de usuário, `UC` caso de uso, `NEC` necessidade e `AT` ator.
-* **Hipótese x confirmado:** informações não verificadas são identificadas como **hipóteses**, **propostas** ou **pendências**. As entrevistas são **inteiramente simuladas** e não representam validação pela Unifor.
+* **Metodologia:** o levantamento inclui entrevistas simuladas, identificadas nos artefatos.
 * **Diagramas:** prévias em [Mermaid](https://mermaid.js.org/) para visualização no GitHub e fontes em PlantUML para exportação em notação UML.
 * **Numeração dos arquivos:** `NN-Nome-do-Documento.md`, organizados por área na raiz do repositório.
 * **Organização do trabalho:** [Issues da primeira entrega](https://github.com/daniellobo-ops/requisitos-20262-grupo07/issues) registram a revisão dos artefatos.
@@ -85,4 +99,4 @@ Os **pesos abaixo foram mantidos como referência do README antigo**; precisam s
 * [LAPIS — Engenharia de Requisitos (repositório de referência do professor)](https://github.com/marcelobezerra-dotcom/Lapis-unifor).
 * [Templates de requisitos do LAPIS](https://github.com/marcelobezerra-dotcom/Lapis-unifor/tree/main/Requisitos/Artefatos/Templates).
 
-**Nota:** os roteiros e resultados de entrevistas deste repositório são construções fictícias para o exercício acadêmico. A modalidade simulada foi informada pelo grupo como definida para esta entrega; isso não transforma as respostas em dados obtidos de participantes reais.
+**Nota metodológica:** as entrevistas apresentadas foram simuladas para o exercício acadêmico.

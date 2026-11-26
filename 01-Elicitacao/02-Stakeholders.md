@@ -1,6 +1,6 @@
 # Identificação de Stakeholders — Proposta 3
 
-**Versão:** 0.1 — 17/11/2026. **Estado:** mapeamento preliminar, sem entrevistas reais.
+**Versão:** 0.1
 
 ## 1. Objetivo
 Identificar pessoas/grupos que usam, alimentam, mantêm ou avaliam o futuro sistema de Gestão de Oportunidades Internacionais.
@@ -12,7 +12,7 @@ Identificar pessoas/grupos que usam, alimentam, mantêm ou avaliam o futuro sist
 | S02 | Gestor responsável por oportunidades/editais | Direto | Atualização de oportunidades, prazos, bolsas e manifestações | Entrevista | Entrevista com personagem gestor realizada em simulação; cargo real a confirmar |
 | S03 | Área institucional de internacionalização | Responsável de negócio potencial | Regras e processo institucional | Reunião de validação | Não contatada |
 | S04 | TI institucional | Indireto/condicional | Controle de acesso, dados, integração e segurança | Entrevista técnica se necessário | Não contatada |
-| S05 | Professor | Avaliador | Correção da proposta e alinhamento LAPIS | Revisão acadêmica | Não há validação formal registrada |
+| S05 | Professor | Avaliador | Correção da proposta e alinhamento LAPIS | Revisão acadêmica | Revisão acadêmica prevista |
 | S06 | Grupo 7 | Equipe de projeto | Especificação, modelagem e documentação | Elaboração e revisão | Ativo |
 
 **Atenção:** S02 e S03 podem representar a mesma unidade; não pressupor estrutura organizacional do NEI sem confirmação.
@@ -29,10 +29,10 @@ Identificar pessoas/grupos que usam, alimentam, mantêm ou avaliam o futuro sist
 - **AT03:** possível sistema externo. *Sistema externo não é stakeholder humano*; depende de investigação com S04.
 
 ## 5. Plano de levantamento
-O grupo realizou **entrevistas em modalidade simulada**, documentadas em [Roteiro e Resultados Simulados](03-Entrevistas-Simuladas.md), com personagens fictícios e respostas hipotéticas. Esses registros não podem ser citados como pesquisa real nem validação pela Unifor.
+A elicitação utilizou **entrevistas simuladas**, registradas em [Roteiro e Resultados Simulados](03-Entrevistas-Simuladas.md), com os perfis de estudante e gestor.
 
 ## 6. Pendências
 - [ ] Identificar responsável institucional concreto.
 - [ ] Confirmar papéis, permissões e processo.
 - [x] Registrar a realização das entrevistas simuladas para a entrega acadêmica.
-- [ ] Validar necessidades e prioridades com interessados reais antes de qualquer uso institucional.
+- [ ] Revisar necessidades e prioridades na avaliação acadêmica.
