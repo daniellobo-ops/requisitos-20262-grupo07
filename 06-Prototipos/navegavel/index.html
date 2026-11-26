@@ -336,7 +336,7 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 const state={page:"home",role:"visitante",selected:1,returnTo:null,editing:null,query:"",filterType:"",filterCountry:"",filterArea:"",opps:clone(initial),interests:[],nextOpp:5,nextInterest:1,student:"estudante-demo",toastTimer:null};
 const $=s=>document.querySelector(s);
 const esc=x=>String(x??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
-const fmt=x=>new Date(x+"T12:00:00").toLocaleDateString("pt-BR");
+const fmt=x=>{if(!x)return "Não informado";const d=new Date(x+"T12:00:00");return Number.isNaN(d.getTime())?"Data inválida":d.toLocaleDateString("pt-BR")};
 const status=(s)=>'<span class="chip '+(s==="Publicada"?"good":(s==="Encerrada"||s==="Arquivada")?"dim":"")+'">'+esc(s)+'</span>';
 const active=o=>o.state==="Publicada"&&o.deadline>=future(0);
 const eligible=o=>o.state==="Publicada"&&o.deadline>=future(0);
